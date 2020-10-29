@@ -6,6 +6,7 @@ public class C_ConversorEuroPesseta {
     public static Scanner lectmoney;
     public static void main (String[] args) {
         lectmoney = new Scanner(System.in);
+      
         // Variable double per si li volem entrar amb decimals i lectura double.
         System.out.println("\n\tBenvingut a la conversora € - pta.");
         System.out.println("\tIntrodueix els decimals amb coma si escau.\n");
