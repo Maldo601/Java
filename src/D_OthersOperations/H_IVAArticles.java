@@ -19,8 +19,8 @@ public class H_IVAArticles {
                                                                                                                       
         // OUTPUTS 
         
-        System.out.println("\n\tEl preu de l'article introduit amb IVA és: " + art + "€");
-        System.out.println("\n\tEl preu introduit sense iva és: " + (double)Math.round((artnoiva) * 100d) / 100d + "€");
-        System.out.println("\n\tL'IVA és de: " + (double)Math.round((art-artnoiva) * 100d) / 100d + "€\n");
+        System.out.println("\n\t\u001B[36mEl preu de l'article introduit amb IVA és: \u001B[37m" + art + "€");
+        System.out.println("\n\t\u001B[36mEl preu introduit sense iva és: \u001B[37m" + (double)Math.round((artnoiva) * 100d) / 100d + "€");
+        System.out.println("\n\t\u001B[36mL'IVA és de: \u001B[37m" + (double)Math.round((art-artnoiva) * 100d) / 100d + "€\n");
     }
 }
