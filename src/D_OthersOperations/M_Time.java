@@ -36,7 +36,7 @@ public class M_Time {
             day = hour / 24;
             hour = Math.floorMod(hour, 24);
         }
-        // Outputs
+        // Outputs 
         System.out.println("\n\tSegons: " + res);
         System.out.println("\tMinuts: " + min);
         System.out.println("\tHores: " + hour);
@@ -44,4 +44,7 @@ public class M_Time {
         
     }    
 }
+
+
+
 /*_Maldo_*/
