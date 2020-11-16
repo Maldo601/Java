@@ -8,7 +8,7 @@ public class B_ConditionalValueRange {
         lect = new Scanner(System.in);
         // Variable d'almacenament d'input.
         System.out.print("\n\t\u001B[36mIntroduiex un número entre el 0 i el 10: \u001B[0m");
-        Double age = lect.nextDouble();
+        int age = lect.nextInt();
         // Condicionals -- Outputs.
         if (age < 0 ) System.out.println("\n\t\u001B[31mValor massa petit !\n");
             /* Només s'executarà si el valor age es més gran. Si és
