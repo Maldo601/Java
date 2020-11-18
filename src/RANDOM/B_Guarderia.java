@@ -16,17 +16,20 @@ public class B_Guarderia {
     public static void main (String[] args ) {
         lect = new Scanner(System.in);
         final Double mat = (double) 500;
+        final Double desc1 = (double) (500 / 15);
+        final Double desc2 = (double) (500 / 20);
         System.out.print("Introdueix edat: ");
         int age = lect.nextInt();
-        if (age >= 0 || age <= 3)          
-            System.out.println(mat/20);
-            else if ( age >= 4 || age <= 5)
-            System.out.println(mat/15);
+        if (age >= 0 && age <= 3)          
+            System.out.println(mat - desc2);
+            else if ( age >= 4 && age <= 5)
+            System.out.println(mat - desc1);
             else if ( age == 6 )
-            System.out.println(mat/20);
+            System.out.println(mat - desc1);
             else if (age == 7 )
-            System.out.println(mat/15);
+            System.out.println(mat - desc2);
             else
             System.out.println("No hi ha descompte");  
     }
 }
+                                                                                                                                                                                                                                                                                               

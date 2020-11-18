@@ -16,14 +16,16 @@ public class random {
         System.out.print("Introdueix z: ");
         z = random.nextLong();
         // Condicionals
-        if ((x == y) && ( x == z) && (y == z) )
+        // introduir el comparatiu de la hipoptenusa i si son 0
+        //cc <= c2 || 
+        if ((x == y) && ( x == z) && (y == z) ) // no cal comparar el tercer 
             System.out.println("El triangle és Equilater");
-            else if ((x == y) && (x != z) && (y != z))
+            else if ((x == y) && (x != z) && (y != z)) // revisar 
                 System.out.println("El triangle és Isoceles");
-            else if ((x != y) && (x != z) && (y != z))
+            else if ((x != y) && (x != z) && (y != z)) // revisar
                 System.out.println("El triangle és Escalè");
         // Condicional Pitagores
-        if  ( x*x + y*y == z*z )
+        if  ( x*x + y*y == z*z ) // S'han de fer tres 
             System.out.print("El triangle és rectangle.");
             else
             System.out.println("El triangle no és rectangle.");
