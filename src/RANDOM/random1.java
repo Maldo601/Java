@@ -7,6 +7,7 @@ public class random1 {
         lect = new Scanner(System.in);
         // Variables
         String l = lect.nextLine();
+        // String [] vocales = { "A", "E", "I", "O","U" };
         // Condicionals
         if ( l.equals("A") || l.equals("E") || l.equals("I") || l.equals("O") || l.equals("U") )
             System.out.println("La lletra "+ l + " ... es majuscula i vocal.");
@@ -18,6 +19,22 @@ public class random1 {
             System.out.println("La lletra "+ l + " ...es la ultima lletra i minuscula ");
         else
         System.out.println( "La lletra "+ l + " ...No entra dintre els meus parametres.");
+ 
     }
 }
 // MALDO // 
+/*
+String [] vocales = { "A", "E", "I", "O","U" };
+
+
+
+
+
+
+
+
+
+
+
+
+*/
