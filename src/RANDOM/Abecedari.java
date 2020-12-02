@@ -1,7 +1,7 @@
 package RANDOM;
 // ARRAYS 
 import java.util.Scanner;
-public class random1 {
+public class Abecedari {
     public static Scanner lect;
     public static void main (String[] args) {
         lect = new Scanner(System.in);
