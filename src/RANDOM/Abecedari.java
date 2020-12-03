@@ -19,7 +19,6 @@ public class Abecedari {
             System.out.println("La lletra "+ l + " ...es la ultima lletra i minuscula ");
         else
         System.out.println( "La lletra "+ l + " ...No entra dintre els meus parametres.");
- 
     }
 }
 // MALDO // 
