@@ -5,7 +5,7 @@ public class D_RandomWords {
     public static void main (String[] args){
     int y = 1;
     for (y = 1; y <= 4; y++){
-    
+    // He usat bucles per no duplicar codi i per optimització.
         int x =1;
         // Bucle
         for (x = 1; x <= 4; x++){
@@ -18,3 +18,19 @@ public class D_RandomWords {
         }
     }
 }
+// Convencional
+/*
+int x = 0;
+    x = (int) (Math.random() * abc.length());
+char letter = abc.charAt(x);
+    System.out.print(letter);
+    x = (int) (Math.random() * abc.length());
+char letter = abc.charAt(x);
+    System.out.print(letter);
+    x = (int) (Math.random() * abc.length());
+char letter = abc.charAt(x);
+    System.out.print(letter);
+    x = (int) (Math.random() * abc.length());
+char letter = abc.charAt(x);
+    System.out.print(letter);
+*/
