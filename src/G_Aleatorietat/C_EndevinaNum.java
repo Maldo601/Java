@@ -6,7 +6,7 @@ public class C_EndevinaNum {
         lect = new Scanner(System.in);
         System.out.print("\nIntrodueix un numero del 1 al 6: ");
         int user = lect.nextInt();
-        int maquina = (int)Math.random() * (1-6+1) + 1;
+        int maquina = (int)(Math.random() * 6) +1;
         // Condicionals 
         if ( user > 6 || user < 1)
             System.out.println("\nEstas fora del rang per jugar.");
