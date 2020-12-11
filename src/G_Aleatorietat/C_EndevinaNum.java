@@ -17,3 +17,4 @@ public class C_EndevinaNum {
                                "\nEl que tu has posat es el: " + user);
     }
 }
+// MALDO // 
