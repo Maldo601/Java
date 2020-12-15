@@ -12,23 +12,17 @@ public class Ascensor {
 		System.out.println("Selecciona on vols anar: ");
 		String dest = lect.nextLine();
 		if ( dest.equals(nomPis) )
-			System.out.println("ja estem en aquesta planta");
-			else if ( dest.equals("P8") || dest.equals("P9"))
-				System.out.println("Area restringida");
-			else if ( lvls.indexOf(dest) < 0 )
-				System.out.println("Error.");
-			else if ( lvls.indexOf(dest) > lvls.indexOf(nomPis))
-				System.out.println("Muntant a... " + dest);
-			else 
-				System.out.println("Baixant a... " + dest);
+		System.out.println("Ja estem en aquesta planta.");
+		else if ( dest.equals("P8") || dest.equals("P9"))
+		System.out.println("Area restringida");
+		else if ( lvls.indexOf(dest) < 0 )
+		System.out.println("Error.");
+		else if ( lvls.indexOf(dest) > lvls.indexOf(nomPis))
+		System.out.println("Muntant a... " + dest);
+		else 
+		System.out.println("Baixant a... " + dest);
 	}
-	
 }
-    
- /*  FAIL CODE
-		
-     //String plantes
-        // {"S4","S3","S2","S1","PB","P1","P2","P3","P4","P5","P6","P7","P8","P9"};
-        String[] lvl = {"S4","S3","S2","S1","PB","P1","P2","P3","P4","P5","P6","P7","P8","P9"}; // 28
-*/
+// MALDO // MALDO // MALDO // MALDO // 
+
        
