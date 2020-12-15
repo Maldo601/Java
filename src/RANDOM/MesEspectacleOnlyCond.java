@@ -8,7 +8,6 @@ public class MesEspectacleOnlyCond {
         int adults = lect.nextInt();
         System.out.println("I quants menors porteu?: ");
         int menors = lect.nextInt();
-        
         if ( menors > adults*2)
             System.out.println("No podeu passar, hi han " + menors + " menors i " +adults+ " adults");
         else 
