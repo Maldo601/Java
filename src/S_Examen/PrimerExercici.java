@@ -27,7 +27,7 @@ public class PrimerExercici{
             System.out.println("Et surten al mateix preu");
             // System.out.println("");
         }
-        else if ( rollos >= 20 || rollos < 50){
+        else if ( rollos >= 20 && rollos < 50){
             desCol = rollos * col;
             desCot = rollos * scot;
             System.out.println("El preu de Colhogar son: " + desCol);
@@ -46,7 +46,7 @@ public class PrimerExercici{
                 else 
                     System.out.println("Et surten al mateix preu.");
         }
-        else if ( rollos >= 50 || rollos < 200){
+        else if ( rollos >= 50 && rollos < 200){
             desCol = rollos * col;
             desCot = rollos * scot;
             System.out.println("El preu de Colhogar son: " + desCol);
