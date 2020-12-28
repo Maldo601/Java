@@ -6,7 +6,7 @@ public class D_ParSen {
     public static Scanner lect;
     public static void main (String[] args) {
         lect = new Scanner(System.in);
-        System.out.print("Introdueix un valor: ");
+        System.out.print("\n\t\033[32mIntrodueix un valor: \u001B[0m");
         int n = lect.nextInt();
         // Output Condicional
         /* Mètode innecessari: 
@@ -16,7 +16,8 @@ public class D_ParSen {
                 sys...                    */
         // Òptim.
         System.out.println(
-            (n % 2 == 0 ? "Par" : "Impar")
+            (n % 2 == 0 ? "\t\033[32mPar\n" : "\t\033[31mImpar\n")
         );
     }
 }
+// M A L D O // 
