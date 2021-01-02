@@ -12,7 +12,5 @@ public class J_NumNarcisista {
            if (n == Math.pow(c,3)+Math.pow(d,3)+Math.pow(u,3))
             System.out.println(n);
        }
-       
-
     }
 }

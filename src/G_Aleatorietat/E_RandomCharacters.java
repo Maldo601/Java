@@ -6,7 +6,6 @@ public class E_RandomCharacters {
         int num = (int) (Math.random() * cad.length());
         char lletra=cad.charAt(num);
         System.out.println("\n\t"+lletra+"\n");
-
-        
     }
 }
+// MALDO // 
