@@ -1,5 +1,4 @@
 package G_Aleatorietat;
-
 public class D_RandomWords {
     // Bucle dintre de bucle que tira 5 resultats.
     public static void main (String[] args){
@@ -12,7 +11,7 @@ public class D_RandomWords {
             String abc = "AAAAABCÇDEEEEEFGHIIIIIJKLMNOOOOOPQRSTUUUUUVWXYZ"; //47
             int lletra = (int) (abc.length() * Math.random());
             char a = abc.charAt(lletra);
-            System.out.print(a);   
+            System.out.print("\u001B[36m"+a);   
         } 
         System.out.println("");
         }
