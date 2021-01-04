@@ -1,10 +1,6 @@
 package I_Arrays;
 import java.util.Arrays;
 import java.util.Scanner;
-
-import javax.lang.model.util.ElementScanner6;
-
-import java.util.Random;
 /*
     * Joan Marc Maldonado
     * - El codi conté prints descomentables per
@@ -16,12 +12,14 @@ public class B_Repetits {
         lect = new Scanner(System.in);
         // Variables, Arrays i counters.
         int counter = 0;
-        int v[] = new int[(int) 1000]; // Long. resultats.
+        int counter2 = 0;
+        int v[] = new int[10]; // Long. resultats.
+        int list[] = new int[11];
         System.out.println("Volcant resultats ...");
         // Main Loop
             for (int i=0; i < v.length; i++)
             {
-                v[i] = (int) (Math.random() * (int) (10e6-1)+1);    
+                v[i] = (int) (Math.random() * 10+1);    
                 counter++;
             }
             // Ordenació ascendent.
@@ -40,9 +38,15 @@ public class B_Repetits {
             else if (lec.equals("N"))
             //System.out.println(v[Insertar index per veure valor]); 
             System.out.println("S'han volcat " + counter + " resultats");
-            else 
+            else{
             System.out.println("Error. Introdueix Yes (Y) o No (N)");
-        // Loop per ordenar l'Array
-            
+            }
+            for (int i=0;i<v.length; i++){
+                list[v[i]] += 1;
+            }
+            for (int j=1;j<list.length;j++){
+                if(list[j] != 0 && list [j] !=1)
+                System.out.println("Num: " +j+":"+list[j]+" veces");
+            }        
+        }
     }
-}
