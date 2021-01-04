@@ -2,9 +2,8 @@ package I_Arrays;
 import java.util.Arrays;
 import java.util.Scanner;
 /*
-    * Joan Marc Maldonado
-    * - El codi conté prints descomentables per
-    * - executar proves o llistar.
+    * - Joan Marc Maldonado Negre
+    *-  1er DAW G2 
 */
 public class B_Repetits {
     public static Scanner lect;
@@ -12,8 +11,9 @@ public class B_Repetits {
         lect = new Scanner(System.in);
         // Variables, Arrays i counters.
         int counter = 0;                    // Comptador.
+        int counter2 = 0;
         int v[] = new int[(int) 1000000];   // Array max resultats.
-        int list[] = new int[(int) (10e6)]; // Array auxiliar.
+        int list[] = new int[(int) (10e7)]; // Array auxiliar.
         System.out.println("Volcant resultats ...");
         /* Main Loop
             Omple v[] de numeros aleatoris. Un contador compta voltes, per tirar la 
@@ -43,12 +43,22 @@ public class B_Repetits {
             else{
             System.out.println("Error. Introdueix Yes (Y) o No (N)");
             }
+            System.out.print("Vols llistar la quantitat de valor repetit? (Y/N): ");
+            lec = lect.nextLine();
+            if (lec.equals("Y"))
+            {
             for (int i=0;i<v.length; i++){
                 list[v[i]] += 1;
             }
             for (int j=1;j<list.length;j++){
-                if(list[j] != 0 && list [j] !=1)
+                
+                if(list[j] != 0 && list [j] !=1){
                 System.out.println("Num: " +j+":"+list[j]+" veces");
-            }        
+                counter2++;
+                }
+            }  
+            System.out.println("Quantitat de repetits: "+counter2); 
+            }else
+                System.out.println("Adeu");   
         }
     }
