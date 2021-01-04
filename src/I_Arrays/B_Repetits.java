@@ -1,29 +1,35 @@
 package I_Arrays;
 import java.util.Scanner;
-import java.util.Random;
+
 public class B_Repetits {
     public static Scanner lect;
     public static void main(String[] args) {
         lect = new Scanner(System.in);
-        int n = (int) 10e6;
-        int k = n;
-        int counter = 0;
-        int[] resultado = new int[n];
-        int[] numeros = new int[n];
-        Random rnd = new Random();
-        int res;
         // Loop 
-        for (int i = 0; i < n; i++) {
-            numeros[i] = i + 1;
+        int[] v = new int[(int) 10e5];
+        for (int i=0; i < (int) 10e5; i++){
+            v[i] = (int) (Math.random() * (int) 10e6);
+            System.out.println(v[i]);
         }
-        for (int i = 0; i < n; i++) {
-            res = rnd.nextInt(k);
-            resultado[i] = numeros[res];
-        }
-        for (int i = 0; i < 1000000; i++) {
-            System.out.println(resultado[i]);
-            counter++;
-        }
-        System.out.println("S'han imprimit " + counter + " de resultats.");
+        
     }
 }
+
+/*
+
+implementas un for que recorra desde la pocicion sub 0 hasta el tamaño maximo del array, y dentro del for vas poreguntando :
+
+int aux = 0;
+
+
+for (int i=0;i<array.length;i++)
+{
+
+if ( array[i] = array[i+1] )
+{
+aux++;
+}
+}
+
+System.out.println("El numero de elementos repetidos es : " + aux);
+*/
