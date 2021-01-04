@@ -1,45 +1,48 @@
 package I_Arrays;
-
+import java.util.Arrays;
 import java.util.Scanner;
 
+import javax.lang.model.util.ElementScanner6;
+
+import java.util.Random;
+/*
+    * Joan Marc Maldonado
+    * - El codi conté prints descomentables per
+    * - executar proves o llistar.
+*/
 public class B_Repetits {
     public static Scanner lect;
-<<<<<<< HEAD
-
-    public static void main (String[] args){
-        lect = new Scanner(System.in);
-        int matriz[][] = new int[(int) (Math.random()*9+1)][(int) (Math.random()*9+1)];
-        
-        System.out.print(matriz);
-=======
     public static void main(String[] args) {
         lect = new Scanner(System.in);
-        // Loop 
-        int[] v = new int[(int) 10e5];
-        for (int i=0; i < (int) 10e5; i++){
-            v[i] = (int) (Math.random() * (int) 10e6);
-            System.out.println(v[i]);
-        }
-        
->>>>>>> 5faba6b07dfe972cf5584f2a339c42d419d989b3
+        // Variables, Arrays i counters.
+        int counter = 0;
+        int v[] = new int[(int) 1000]; // Long. resultats.
+        System.out.println("Volcant resultats ...");
+        // Main Loop
+            for (int i=0; i < v.length; i++)
+            {
+                v[i] = (int) (Math.random() * (int) (10e6-1)+1);    
+                counter++;
+            }
+            // Ordenació ascendent.
+            Arrays.sort(v);
+            System.out.print("Vols llistar els valors ordenats? (Y/N): ");
+            String lec = lect.nextLine();
+            if (lec.equals("Y"))
+            {
+                // Bucle Print
+                for (int i=0; i < v.length; i++)
+                {
+                System.out.println(v[i]);
+                }
+                System.out.println("S'han volcat " + counter + " resultats");
+            }
+            else if (lec.equals("N"))
+            //System.out.println(v[Insertar index per veure valor]); 
+            System.out.println("S'han volcat " + counter + " resultats");
+            else 
+            System.out.println("Error. Introdueix Yes (Y) o No (N)");
+        // Loop per ordenar l'Array
+            
     }
 }
-
-/*
-
-implementas un for que recorra desde la pocicion sub 0 hasta el tamaño maximo del array, y dentro del for vas poreguntando :
-
-int aux = 0;
-
-
-for (int i=0;i<array.length;i++)
-{
-
-if ( array[i] = array[i+1] )
-{
-aux++;
-}
-}
-
-System.out.println("El numero de elementos repetidos es : " + aux);
-*/
