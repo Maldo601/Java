@@ -11,15 +11,17 @@ public class B_Repetits {
     public static void main(String[] args) {
         lect = new Scanner(System.in);
         // Variables, Arrays i counters.
-        int counter = 0;
-        int counter2 = 0;
-        int v[] = new int[10]; // Long. resultats.
-        int list[] = new int[11];
+        int counter = 0;                    // Comptador.
+        int v[] = new int[(int) 1000000];   // Array max resultats.
+        int list[] = new int[(int) (10e6)]; // Array auxiliar.
         System.out.println("Volcant resultats ...");
-        // Main Loop
+        /* Main Loop
+            Omple v[] de numeros aleatoris. Un contador compta voltes, per tirar la 
+            quantitat volcada per terminal, al bucle print del primer condicional.
+        */
             for (int i=0; i < v.length; i++)
             {
-                v[i] = (int) (Math.random() * 10+1);    
+                v[i] = (int) (Math.random() * 10e6+1);    
                 counter++;
             }
             // Ordenació ascendent.
