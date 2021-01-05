@@ -27,7 +27,7 @@ public class B_Repetits {
         */
             for (int i=0; i < v.length; i++)
             {
-                v[i] = (int) (Math.random() * 10e6+1);    
+                v[i] = (int) (Math.random() * (10e6-1)+1);    
                 counter++;
             }
             // Ordenació ascendent dels valors.
