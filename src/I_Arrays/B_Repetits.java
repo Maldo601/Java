@@ -34,7 +34,7 @@ public class B_Repetits {
             Arrays.sort(v);
             System.out.print("Vols llistar els valors ordenats? (Y/N): ");
             String lec = lect.nextLine();
-            if (lec.equals("Y"))
+            if (lec.equalsIgnoreCase("Y"))
             {
                 // Bucle Print
                 for (int i=0; i < v.length; i++)
@@ -43,14 +43,14 @@ public class B_Repetits {
                 }
                 System.out.println("S'han volcat " + counter + " resultats");
             }
-            else if (lec.equals("N"))
+            else if (lec.equalsIgnoreCase("N"))
             System.out.println("S'han volcat " + counter + " resultats");
             else{
             System.out.println("Error. Introdueix Yes (Y) o No (N)");
             }
             System.out.print("Vols llistar la quantitat de valor repetit? (Y/N): ");
             lec = lect.nextLine();
-            if (lec.equals("Y"))
+            if (lec.equalsIgnoreCase("Y"))
             {
             // Bucle d'Arrays amb Array auxiliar que te la funció de counter.
             /*
@@ -88,9 +88,11 @@ public class B_Repetits {
             System.out.println("Quantitat de repetits: "+counter2);
             System.out.println("Temps d'execució en localitzar repetits: " + time + " m/s");
             }
-            else
+            else if (lec.equalsIgnoreCase("N"))
             {
             System.out.println("Adeu.");
             }
+            else 
+            System.out.println("");
         }
     }
