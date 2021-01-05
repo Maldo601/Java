@@ -19,7 +19,7 @@ public class A_ReinaAlfil {
         v[rX][rY] = true; // Reina
         v[aX][aY] = true; // Alfil
         // Filtro de casella ocupada.
-        if ( (rX & rY) != (aY & aX) ){
+        if ( (rX != aX) && (rY != aY) ){
         // Moviment de Torre; REINA
         for (int i = 1; i < 4; i++) 
         {
@@ -92,16 +92,16 @@ public class A_ReinaAlfil {
             valorColumnaA++;
         }
         // Bucle Print
-        for (int f = 1; f < 4; f++) {
-            for (int c = 1; c < 4; c++) {
-                System.out.print("\t" + " " + v[f][c]);
+        for (int x = 1; x < v.length; x++) {
+            for (int y = 1; y < v.length; y++) {
+                System.out.print("\t" + " " + v[x][y]);
             }
                System.out.println();  
            }
-        for ( int f = 1; f < v.length; f++){
-            for (int c = 1; c < v.length; c++){
-                if(v[f][c] == false){
-                    System.out.print("\t"+"Posicio disponible a: "+"["+f+"]"+"["+c+"]");
+        for ( int x = 1; x < v.length; x++){
+            for (int y = 1; y < v.length; y++){
+                if(v[x][y] == false){
+                    System.out.print("\t"+"Posicio disponible a: "+"["+x+"]"+"["+y+"]");
                     System.out.println();
                 }
             }
