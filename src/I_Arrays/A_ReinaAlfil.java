@@ -95,22 +95,26 @@ public class A_ReinaAlfil {
             valorColumnaA++;
         }
         // Bucle Print
-        for (int x = 1; x < v.length; x++) {
-            for (int y = 1; y < v.length; y++) {
+        for (int x = 1; x < v.length; x++){
+            for (int y = 1; y < v.length; y++){
                 System.out.print("\t" + " " + v[x][y]);
             }
-               System.out.println();  
-           }
+                System.out.println();  
+        }
+        int counter = 0;
         for ( int x = 1; x < v.length; x++){
             for (int y = 1; y < v.length; y++){
                 // Filtro de falsos
                 if(v[x][y] == false){
                     System.out.print("\t"+"Posicio disponible a: "+"["+x+"]"+"["+y+"]");
                     System.out.println();
+                    counter++;
                 }
             }
         }
+        System.out.println("\tHi han " + counter + " posicions no amenaçades.");
         }
-        }   
     }
+}   
+    
 // MALDO // 
