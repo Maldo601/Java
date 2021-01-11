@@ -9,6 +9,5 @@ public class K_SumaProductes {
             sum += m*m;
             System.out.println(sum);
         }
-
     }
 }
