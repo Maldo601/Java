@@ -11,7 +11,18 @@ public class H_GOnlyInt {
         do {
             System.out.print("Introdueix els dies treballats: ");
             d = lect.nextLine();
-            System.out.println("Has treballat " + d + " dies.");
+            if (!isDigit(d))
+            System.out.println("ERROR, introdueix un número.");
+            else if (Integer.parseInt(d) < 0 || Integer.parseInt(d) > 31)
+            System.out.println("T'he demanat els dies treballats en un mes. " +
+                               "\nLa quantitat introduida no es correspon als dies que es contenen en un mes");
+            else 
+            System.out.println("Has treballat " + d + " dies");
         }while(!isDigit(d) || Integer.parseInt(d) > 31);    
     }
 }
+// M A L D O // 
+
+
+
+
