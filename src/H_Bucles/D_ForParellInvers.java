@@ -7,3 +7,7 @@ public class D_ForParellInvers {
             System.out.print(String.format("%3d,   ",n));
     }
 }
+
+
+
+

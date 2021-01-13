@@ -14,5 +14,4 @@ public class H_GOnlyInt {
             System.out.println("Has treballat " + d + " dies.");
         }while(!isDigit(d) || Integer.parseInt(d) > 31);    
     }
-    
 }
