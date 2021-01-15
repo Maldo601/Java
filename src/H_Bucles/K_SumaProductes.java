@@ -1,5 +1,4 @@
 package H_Bucles;
-
 public class K_SumaProductes {
     public static void main (String[] args){
         byte m =2;
@@ -11,3 +10,6 @@ public class K_SumaProductes {
         }
     }
 }
+// M A L D O // 
+
+
