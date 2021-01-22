@@ -9,7 +9,7 @@ public class BuscarVector {
          lect = new Scanner(System.in);
          // Counters.
          int counter = 0;                    
-         int counter2 = 0;
+         // int counter2 = 0;
          // Array max resultats.
          int v[] = new int[(int) 10000];       
          int list[] = new int[(int) (10e6+1)]; // Array auxiliar, aquest tamany correspon als resultats possibles de Random.
