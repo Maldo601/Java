@@ -1,7 +1,7 @@
-package RANDOM;
+package F_Condicionals;
 // ARRAYS 
 import java.util.Scanner;
-public class Abecedari {
+public class N_Abecedari {
     public static Scanner lect;
     public static void main (String[] args) {
         lect = new Scanner(System.in);

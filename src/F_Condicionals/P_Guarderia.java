@@ -1,4 +1,4 @@
-package RANDOM;
+package F_Condicionals;
 /*
 1) Un col·legi-guarderia fa un descompte als nens nouvinguts en funció de l'edat.
 De 0 a 3 anys - 10 % de descompte.
@@ -11,7 +11,7 @@ també el cost mensual tenint en compte que sense descompte s'han de pagar 500 �
 */
 import java.util.Scanner; 
 
-public class B_Guarderia {
+public class P_Guarderia {
     public static Scanner lect;
     public static void main (String[] args ) {
         lect = new Scanner(System.in);

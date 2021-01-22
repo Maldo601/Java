@@ -1,6 +1,6 @@
-package RANDOM;
+package F_Condicionals;
 import java.util.Scanner;
-public class MesEspectacleOnlyCond {
+public class P_MesEspectacleOnlyCond {
     public static Scanner lect;
     public static void main (String[] args){
         lect = new Scanner(System.in);

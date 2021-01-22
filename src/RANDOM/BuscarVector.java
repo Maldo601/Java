@@ -52,7 +52,7 @@ public class BuscarVector {
                  if(list[j] != 0 && list [j] !=1)
                  {
                  System.out.println("Numero: " +j+": s'ha repetit "+list[j]+" vegades");
-                 counter2++;
+                 //counter2++;
                  }
                  if (j == 800){
                      break;
