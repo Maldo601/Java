@@ -7,9 +7,9 @@ public class dosnuevefor {
                     for (int o=2; o<=9; o+=7)
                     // Metodo lento. 
                     /*      if( (n==2 || n==9) && 
-                             (m==2 || m==9) &&
-                            (i==2 || i==9) &&
-                           (o==2 || o==9) )
+                              (m==2 || m==9) &&
+                              (i==2 || i==9) &&
+                              (o==2 || o==9) )
                     */
                             System.out.println(n+""+m+""+i+""+o);
                 }
