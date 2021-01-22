@@ -1,7 +1,7 @@
 package H_Bucles;
 public class K_SumaProductes {
     public static void main (String[] args){
-        byte m =2;
+        byte m = 2;
         short sum = 5;
         while( (Math.sqrt(sum) != (byte)Math.sqrt(sum)) ){
             m++;

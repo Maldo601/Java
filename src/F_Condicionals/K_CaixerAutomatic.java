@@ -1,6 +1,6 @@
-package RANDOM;
+package F_Condicionals;
 import java.util.Scanner;
-public class CaixerAutomatic {
+public class K_CaixerAutomatic {
     public static Scanner lect;
     public static void main (String[] args){
         lect = new Scanner(System.in);

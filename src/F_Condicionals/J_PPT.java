@@ -1,6 +1,6 @@
-package RANDOM;
+package F_Condicionals;
 import java.util.Scanner;
-public class ppt {
+public class J_PPT {
     public static Scanner random;
     public static void main (String[] args) {
         random = new Scanner(System.in);

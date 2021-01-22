@@ -1,6 +1,6 @@
-package RANDOM;
+package F_Condicionals;
 import java.util.Scanner;
-public class random {
+public class I_Triangles {
     public static Scanner random;
       public static void main (String[] args) {
         random = new Scanner(System.in);
