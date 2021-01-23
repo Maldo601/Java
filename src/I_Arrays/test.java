@@ -6,7 +6,7 @@ public class test {
 
 	public static void main(String[] args) {
 
-		int [] vector_x = new int [10];
+		int [] vector_x = new int [1000];
 
 		for (int y = 0; y < vector_x.length; y++) {
 			vector_x[y] = (int) Math.round(Math.random() * 10);
