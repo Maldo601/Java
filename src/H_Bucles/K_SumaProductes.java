@@ -1,9 +1,9 @@
 package H_Bucles;
 public class K_SumaProductes {
     public static void main (String[] args){
-        byte m = 2;
-        short sum = 5;
-        while( (Math.sqrt(sum) != (byte)Math.sqrt(sum)) ){
+        int m = 2;
+        int sum = 5;
+        while( (Math.sqrt(sum) != (int)Math.sqrt(sum)) ){
             m++;
             sum += m*m;
             System.out.println(sum);
