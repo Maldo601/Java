@@ -19,7 +19,7 @@ public class I_ArraySolicitudAbsolut {
         while(userInt < 0 || userInt > 150); 
             for ( int x = 0; x < v.length; x++) {
                   v[x] = (int) (Math.random() * (-100-100)+100);
-                  if (userInt == Math.abs(v[x]))
+                  if (userInt == Math.abs(v[x]) && )
                     counter++;
             }
         System.out.println("S'ha trobat el valor [" + userInt + "] " + counter + " vegades, absolutament.");
