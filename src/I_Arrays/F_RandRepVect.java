@@ -6,16 +6,16 @@ public class F_RandRepVect {
     int counter = 0;
     for (int i = 0; i < v.length; i++){
         v[i] = (int) (Math.random() * (1500-1000)+1000);
-    }
-    for (int x = 0; x < v.length; x++){
-        if (v[x] == 1250){
+        if (v[i] == 1250){
             counter++;
         }
-    } 
+    }
     System.out.println("S'ha trobat el 1250 " + counter + " vegades.");
     }  
 }   
 // M A L D O // 
+
+
 
 
 
