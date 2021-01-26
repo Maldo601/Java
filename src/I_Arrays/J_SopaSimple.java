@@ -9,7 +9,7 @@ public class J_SopaSimple {
             "patata", "ancla", "huevo",
             "switch", "ventana", "plus",
             "altavoz", "supercalifragilistico", "internet",
-            "comic"};
+            "comic", "lapiz"};
           // Matriz Sopera 
           final char soup[][] = { 
             {'p','a','t','a','t','a','i','u','o','b'},
