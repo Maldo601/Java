@@ -9,7 +9,7 @@ public class J_SopaSimple {
             "patata", "ancla", "huevo",
             "switch", "ventana", "plus",
             "altavoz", "supercalifragilistico", "internet",
-            "comic", "lapiz"};
+            "comic", "lapiz", "pizza", "venta", "lola"};
           // Matriz Sopera 
           final char soup[][] = { 
             {'p','a','t','a','t','a','i','u','o','b'},
@@ -52,14 +52,14 @@ public class J_SopaSimple {
         }
         // Analisis de Verticales 
         for ( int v = 0; v < words.length; v++){
-            if (verticales.contains(words[v]) ){
+            if (verticales.contains(words[v])){
             System.out.println("Se encontró en vertical: " + words[v]);
             depuradora += words[v];
             }
         }
         // Analisis de Horizontales.
         for ( int h = 0; h < words.length; h++){
-            if (horizontales.contains(words[h]) ){
+            if (horizontales.contains(words[h])){
             System.out.println("Se encontró en horizontal: " + words[h]);
             depuradora += words[h];
             }
