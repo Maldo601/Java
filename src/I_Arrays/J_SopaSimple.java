@@ -70,5 +70,4 @@ public class J_SopaSimple {
             System.out.println("No se encontró: " + words[d]);
     }
 }
-
 // MALDO // 
