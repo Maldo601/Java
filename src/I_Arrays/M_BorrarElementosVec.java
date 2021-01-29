@@ -1,6 +1,7 @@
 package I_Arrays;
 import java.util.Scanner;
 public class M_BorrarElementosVec {
+    public static Scanner sc;
     public static void main(String[] args) {
 
         // VERSION EFICIENTE
@@ -11,7 +12,7 @@ public class M_BorrarElementosVec {
         // La longitud final del vector queda en la variable l.
         // Más eficiente que BorrarElementosVector, ya que aquel desplaza todo
         // el vector para cada elemento borrado.
-        Scanner sc = new Scanner(System.in);
+        sc = new Scanner(System.in);
         int [] v = {5,5,5,2,3,4,5,3,4,1,2,5,7,8,9,5,5,5,2,3,4,1,8,5,5,5,4,3,5,5,5};
         int l = v.length;           // Longitud inicial y final del vector
         int b;                      // Valor a borrar del vector

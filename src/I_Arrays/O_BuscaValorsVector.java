@@ -1,6 +1,7 @@
 package I_Arrays;
 import java.util.Scanner;
 public class O_BuscaValorsVector {
+    public static Scanner sc;
     public static void main(String[] args) {
         /* 1) - Crear un vector de 10000 enteros
            2) - Rellenarlo con valores aleatorios entre 500 y 1000 (las 10000 posiciones)
@@ -12,7 +13,7 @@ public class O_BuscaValorsVector {
                   y si no es así, indicar esta eventualidad al usuario, sin contar el valor
                   incorrecto introducido)
         */
-        Scanner sc = new Scanner(System.in);
+        sc = new Scanner(System.in);
         int dato;   // Dato a buscar
         int c;    // Contador para contar cuantas veces aparece el valor
         // Declaramos vector de enteros
