@@ -1,4 +1,4 @@
-package S_Examen;
+package S_E1;
 
 public class QuartExercici {
    

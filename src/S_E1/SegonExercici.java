@@ -1,4 +1,4 @@
-package S_Examen;
+package S_E1;
 public class SegonExercici {
     public static void main (String[] args){
         int rand = (int) (Math.random() * (25 - 5+1)) + 5;

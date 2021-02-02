@@ -1,4 +1,4 @@
-package S_Examen;
+package S_E1;
 import java.util.Scanner;
 public class TercerExercici {
     public static Scanner lect;

@@ -1,4 +1,4 @@
-package T_Examen2;
+package T_E2;
 public class Ej4 {
     public static void main (String[] args){
         

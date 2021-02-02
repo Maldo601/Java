@@ -30,7 +30,7 @@ public class B_Repetits {
                 v[i] = (int) (Math.random() * (10e6-1)+1);    
                 counter++;
             }
-            // Ordenació ascendent dels valors.
+            // Ordenació ascendent dels valors mitjançant la llibreria Array.sort. 
             Arrays.sort(v);
             System.out.print("Vols llistar els valors ordenats? (Y/N): ");
             String lec = lect.nextLine();
@@ -68,6 +68,7 @@ public class B_Repetits {
             {
                 list[v[i]] += 1;
             }
+            
             // Bucle print II & Filtro
             /*
                 Aquest bucle s'encarrega de filtrar i imprimir els resultats repetits trobats.

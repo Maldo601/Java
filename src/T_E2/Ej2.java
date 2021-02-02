@@ -1,4 +1,4 @@
-package T_Examen2;
+package T_E2;
 import java.util.Scanner;
 public class Ej2 {
     public static Scanner lect;
