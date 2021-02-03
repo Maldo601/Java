@@ -12,3 +12,4 @@ public class C_TruncarDecimals {
         return (int) x;
     }
 }
+// M A L D O // 
