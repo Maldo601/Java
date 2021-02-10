@@ -8,6 +8,7 @@ public class E_PermutarVector {
         permutar(v);
         System.out.println("Vector després: " + Arrays.toString(v));
     }
+    // Void no retorna res, conm podem veure en aquest cas no tenim cap "return". 
     public static void permutar(int v[]){
         int aux = v[0];
         v[0] = v[1];
