@@ -16,7 +16,8 @@ public class D_RealArrodonitEnter {
 // M A L D O 
 /* 
 DOSSIER : 
-    static int aleatori(int min, int max){
+    static int aleatori(int min, int max)
+{
         int aux;
         if (min > max ){
             aux = min;
@@ -24,5 +25,6 @@ DOSSIER :
             max = aux;
         }
     return (int) Math.random() * 
-    } 
+}
+    
 */
