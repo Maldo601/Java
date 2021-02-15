@@ -14,16 +14,16 @@ public class J_PPT {
         if (user.equals(v[0]) || user.equals(v[1]) || user.equals(v[2]) ) {
             // Sub-condicionals.
             if (maq.equals(user))
-            System.out.println("\n\t\u001B[33mEmpat" + "\n");
+            System.out.println("Empat" + "\n");
             else if (maq.equalsIgnoreCase(v[2]) && user.equalsIgnoreCase(v[1]))
-            System.out.println("\n\t\u001B[31mHa guanyat la maquina tirant \u001B[37m"+ maq + "\n");
+            System.out.println("Ha guanyat la maquina tirant "+ maq + "\n");
             else if (maq.equalsIgnoreCase(v[0]) && user.equalsIgnoreCase(v[2]))
-            System.out.println("\n\t\u001B[31mHa guanyat la maquina tirant \u001B[37m"+ maq + "\n");
+            System.out.println("Ha guanyat la maquina tirant "+ maq + "\n");
             else if (maq.equalsIgnoreCase(v[1]) && user.equalsIgnoreCase(v[0]))
-            System.out.println("\n\t\u001B[31mHa guanyat la maquina tirant \u001B[37m"+ maq + "\n");
+            System.out.println("Ha guanyat la maquina tirant "+ maq + "\n");
             else {        
-            System.out.println("\n\tHa guanyat l'usuari amb: \u001B[37m" + user);
-            System.out.println("\n\tLa màquina ha tirat: \u001B[37m" + maq + "\n");
+            System.out.println("\n\tHa guanyat l'usuari amb: " + user);
+            System.out.println("\n\tLa màquina ha tirat: " + maq + "\n");
             }
         }
         // Error de lectura. 
