@@ -1,24 +1,23 @@
 package L_Opcionals;
-import java.util.*;
 public class B_OchoReinas {
     public static void main(String[] args){
-        int t[][] = new int [8][8];
+        int t[] = {1,2,3,4,5,6,7,8};
+        /* 
         while(!correcte(t))
             t = shuffle(t);
         dibuixaTauler(t);
+        */
     
     }
-
-    private static void dibuixaTauler(int[][] t) {
+    private static void dibuixaTauler(int[] t) {
     }
-
-    private static int[][] shuffle(int[][] t) {
+    private static int[] shuffle(int[] t) {
         return null;
     }
-
-    public static boolean correcte(int[][] t) {
+    public static boolean correcte(int[] t) {
         return false;
     }
+    // Joan Marc Maldonado Negre 
 
 
 
