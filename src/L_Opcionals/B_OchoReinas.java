@@ -1,24 +1,58 @@
 package L_Opcionals;
+
+import java.util. *;
+
 public class B_OchoReinas {
+    public static List<Integer> t = Arrays.asList(1,2,3,4,5,6,7,8);
+    int numReines = 0;
     public static void main(String[] args){
-        int t[] = {1,2,3,4,5,6,7,8};
-        /* 
         while(!correcte(t))
             t = shuffle(t);
-        dibuixaTauler(t);
-        */
+        System.out.print(correcte(t));
     }
-    private static void dibuixaTauler(int[] t) {
+    /*
+    @int[] t => vector  
+    desordena el vector
+     */
+    public static List<Integer> shuffle(List<Integer> t) {
+        Collections.shuffle(t);
+        return t;
     }
-    private static int[] shuffle(int[] t) {
-        return null;
+    public static boolean correcte (List <Integer> t) { 
+        
+        for (int i = 0; i < t.size(); i++)
+        {
+            for (int j = 1; j> t.size();j++)
+            {
+                if (t.indexOf(i)+j  == t.indexOf(i+j) || t.indexOf(i)-j  == t.indexOf(i+j)){
+                    System.out.println(t);
+                   return false;
+                   
+                }
+            }
+        }
+        Collections.shuffle(t);
+        System.out.println(t);
+        return true;
     }
-    public static boolean correcte(int[] t) {
-        return false;
-    }
-    // Joan Marc Maldonado Negre 
-
-
-
-    
 }
+
+
+
+
+/*
+int index;
+        Random random = new Random();
+        for (int i = t.length - 1; i > 0; i--)
+        {
+            index = random.nextInt(i + 1);
+            if (index != i)
+            {
+                t[index] ^= t[i];
+                t[i] ^= t[index];
+                t[index] ^= t[i];
+            }
+        }
+
+
+*/

@@ -13,8 +13,8 @@ public class A_Veins {
                 return true;
             }
         */
-        if( !veins.get(4).equals("Adam") & !veins.get(4).equals("Cora") &&
-            !veins.get(0).equals("Bill") & !veins.get(0).equals("Cora") && 
+        if( !veins.get(4).equals("Adam") && !veins.get(4).equals("Cora") &&
+            !veins.get(0).equals("Bill") && !veins.get(0).equals("Cora") && 
             // Partint de que CORA no pot estar a sobre de Bill ni a sota de forma adjunta
             // i que Dale ha d'estar per damunt de Bill
             // s'entén que Cora tampoc pot estar a la posició 1, ja que Bill, si Cora ocupés la 1, estaria a 3 per força
@@ -41,6 +41,7 @@ public class A_Veins {
             counter++;
         }
         System.out.println("S'ha mesclat el vector " + counter + " vegades.");
+        
     }
 }
 // Joan Marc Maldonado

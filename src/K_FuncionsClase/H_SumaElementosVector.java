@@ -9,7 +9,7 @@ public class H_SumaElementosVector {
     }
     public static void main (String[] args){
         int uve[] = {1,2,3,4,5,6,7,8,9};
-        int v[] = {5,10,20};
+        
         System.out.println(sum(uve, 9)); // Tres primeros
     }
 }
