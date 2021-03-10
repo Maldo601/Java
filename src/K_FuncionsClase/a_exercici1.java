@@ -1,6 +1,6 @@
 package K_FuncionsClase;
 
-public class exercici1 {
+public class a_exercici1 {
     // MAX IV
     private static int mayor4 (int a, int b, int c, int d) {
         // o return max2(max2(a,b),max2(c,d))
