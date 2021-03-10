@@ -2,7 +2,6 @@ package K_FuncionsClase;
 public class K_VectorEntersSuma {
     // Exercici I
     static long sum (int[]v){
-        
         int resultatSuma = 0;
         for (int i = 0; i < v.length; i++){
             resultatSuma += v[i];
