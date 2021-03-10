@@ -1,6 +1,5 @@
 package J_Functions;
 import java.util.Scanner;
-
 public class F_NumeroMesGran {
     public static Scanner lect;
     // Funció d'Aleatorietat amb valors permutables. Contempla 3 opcions.

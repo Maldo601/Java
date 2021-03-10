@@ -5,13 +5,8 @@ public class H_DosDados {
     public static int dosDados(){
         return G_Dado.dado(1,6) + G_Dado.dado(1,6);
     }
-    // Partint de 0.
-    private static int dadoDotze(int min, int max){
-        return (int) (Math.random() * (max - min+1) + min);
-    }
     public static void main (String[] args){
-        System.out.println(dosDados());
-        System.out.println(dadoDotze(2,12));
+        System.out.println("\n\tResultat: " + dosDados());
     }
 }
 // JOAN MARC MALDONADO 

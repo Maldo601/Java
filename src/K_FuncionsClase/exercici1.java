@@ -22,6 +22,8 @@ public class exercici1 {
         System.out.println(mayor4(80,16,27,32));
         System.out.println(maxim3(78,89,90));
         System.out.println(max2(89,88));
+
+
     }
 }
 // M A L D O 

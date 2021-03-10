@@ -5,6 +5,11 @@ public class G_Dado {
         return (int) (Math.random() * (max - min+1) + min);
     }
     public static void main (String[] args){
-        System.out.println(dado(1,6));
+    /*
+        for (int x = 0; x < 10; x++){
+            System.out.print(dado(1,6));
+        }
+    */
+        System.out.print(dado(1,6));
     }
 }

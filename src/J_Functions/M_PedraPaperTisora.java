@@ -13,13 +13,13 @@ public class M_PedraPaperTisora {
     }
     public static String resultat (String maq, String player){
         if (maq.equals(player))
-        System.out.println("Empate");
+        System.out.println("\n\tEmpate");
             else if (maq.equals("Pedra") && player.equals("Tisora") )
-                System.out.println("Guanya MAQ tirant " + maq);
+                System.out.println("\n\tGuanya MAQ tirant " + maq);
             else if (maq.equals("Paper") && player.equals("Pedra"))
-                System.out.println("Guanya MAQ tirant " + maq);
+                System.out.println("\n\tGuanya MAQ tirant " + maq);
             else if (maq.equals("Tisora") && player.equals("Paper"))
-                System.out.println("Guanya MAQ tirant " + maq);
+                System.out.println("\n\tGuanya MAQ tirant " + maq);
         else 
         System.out.println("\n\tHa guanyat l'usuari amb: " + player);
 
@@ -27,7 +27,7 @@ public class M_PedraPaperTisora {
     }
     public static void main(String[] args){
         lect = new Scanner(System.in);
-        System.out.print("Pedra, paper o tisora?: ");
+        System.out.print("\n\tPedra, paper o tisora?: ");
         String player = lect.nextLine();
         String maq = maq("");
         System.out.println("\n\n\t\t" + maq + " <--v.S--> " + player);

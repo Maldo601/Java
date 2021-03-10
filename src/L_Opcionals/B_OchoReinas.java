@@ -22,7 +22,7 @@ public class B_OchoReinas {
         
         for (int i = 0; i < t.size(); i++)
         {
-            for (int j = 1; j> t.size();j++)
+            for (int j = 1; j> t.size(); j++)
             {
                 if (t.indexOf(i)+j  == t.indexOf(i+j) || t.indexOf(i)-j  == t.indexOf(i+j)){
                     System.out.println(t);

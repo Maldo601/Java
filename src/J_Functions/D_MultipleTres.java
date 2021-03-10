@@ -8,4 +8,3 @@ public class D_MultipleTres {
         return x*2;
     }
 }
-// Fer escalable*
