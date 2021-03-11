@@ -1,6 +1,8 @@
 package K_FuncionsClase;
-
+import java.util. *;
 public class variablesclase {
+    static Scanner lect;
+    
 /*
     // EL US DE LES VARIABLES GLOBALS ELS HI HA QUE RESTRINGIR EN LO MAXIM DEL POSSIBLE. 
         // Si tinc 100 funcions que necessiten la mateixa variable, si que es recomanable per no sobrecargar el pase de parametros. 
@@ -37,6 +39,27 @@ public class variablesclase {
         // Aqui ens donara error perque no reconeix la variable, perque esta dintre una altra funcio i no fora. 
         // System.out.println("La variable y de main = " + y);
         */
+        public static void main(String[] args) {
+            lect = new Scanner(System.in);
+            long n;
+            System.out.print("Introduce un número:\t");
+            n = lect.nextLong();
+            String num = String.valueOf(n);
+            for(int d = 0; d < 10; d++) {
+                int rep = 0;
+                for(int i = 0; i < num.length(); i++) {
+                    if(Integer.valueOf(String.valueOf(num.charAt(i))) == d) {
+                        rep++;
+                    }
+                }
+                if(rep > 0) {
+                    System.out.println(
+                        String.format("El número %d se repite %d %s", 
+                                      d, rep, (rep == 1 ? "vez" : "veces"))
+                    );
+                }
+            }
+        }
     }
 
 
