@@ -7,11 +7,13 @@ package K_FuncionsClase;
 */
 import java.util. *;
 public class M_XifresVector {
-    static int[] xifres(int n){
+    // Per la naturalesa de l'estructura, filtro té que anar com Static, ja que es cridat a varies funcions
+    static String filtro = "";
+    static Scanner lect;
+    // Aquesta funció retorna la funció d'inversió aplicada al filtro que s'extreu d'aquí.
+    static String xifres(int n){
         // Variables
-        int[] vec = new int [4];
         String chain = Integer.toString(n);
-        String filtro = "";
         // Bucles d'ocurrència.
         for (int d = 0; d < 10; d++) { // Digit max per index
             int counter = 0;
@@ -24,20 +26,16 @@ public class M_XifresVector {
                     // Acumulador de digits
                     // Si es mes petit de 2 (1) es que es pot passar aquest numero al filtro.
                     if( counter < 2){
-                        filtro += String.valueOf(chain.charAt(i));
-                    }
-                    // Plenament d'Array cridant a funció per invertir el valor de filtro
-                    // Es parseja a la vegada a enter, ja que omplim un vector d'enters. 
-                    for (int x = 0; x < filtro.length(); x++){
-                        vec[x] = Integer.valueOf(String.valueOf(inverted(filtro).charAt(x)));
+                        filtro += String.valueOf(chain.charAt(i)); 
                     }
                 }
             }
         }
+        // Resultats
         System.out.println("\n\tNúmero Original: " + n);
-        System.out.print("\tNumero Filtrat: " + filtro + "\n"); 
-        System.out.print("\tNúmero Invertit: " + inverted(filtro));
-        return vec;
+        System.out.print("\tNumero Filtrat Ascendent: " + filtro + "\n"); 
+        System.out.print("\tNúmero Descendent per passar a vector: ");
+        return inverted(filtro);
     }
     // Aquesta funció te la missió d'invertir cualsevol cadena. Em trenvava molt el codi posarla a l'altra
     // i he decidit tenirla aqui per a futures ocasions. 
@@ -48,8 +46,29 @@ public class M_XifresVector {
             invertedChain += p.charAt(k);
         return invertedChain;
     }
+    /*
+    Aquesta funció fa dues coses ( que be podrien estar separades en dos funcions mes ) pero conta 
+    els digits del número filtrat, actua en base a aquesta extracció com a variabilitzador de la longitud
+    del vector i, retorna el vector omplert amb la inversio. 
+    */
+    static int[] vector (String p){
+        int filtroCount = 0;
+        for (int y = 0; y < filtro.length(); y++){
+            filtroCount++;
+        }
+        // Te que anar aquí si o si per l'observat. 
+        int[] vec = new int [filtroCount];
+        for (int x = 0; x < filtro.length(); x++){
+            vec[x] = Integer.valueOf(String.valueOf(inverted(filtro).charAt(x)));
+        }
+        return vec;
+    }
     public static void main (String[] args){
-        int n = 430305;
-        System.out.println("\t" + Arrays.toString(xifres(n)));
+        lect = new Scanner(System.in);
+        System.out.print("Introdueix un enter: ");
+        int n = lect.nextInt();
+        System.out.println("\t" + xifres(n));
+        System.out.print("\n\tVector de longitud Variable: " + Arrays.toString(vector(inverted(filtro))) + "\n");
     }
 }
+// Joan Marc Maldonado 
