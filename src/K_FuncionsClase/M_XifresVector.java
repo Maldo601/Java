@@ -32,9 +32,9 @@ public class M_XifresVector {
             }
         }
         // Resultats
-        System.out.println("\n\tNúmero Original: " + n);
-        System.out.print("\tNumero Filtrat Ascendent: " + filtro + "\n"); 
-        System.out.print("\tNúmero Descendent per passar a vector: ");
+        // System.out.println("\n\tNúmero Original: " + n);
+        // System.out.print("\tNumero Filtrat Ascendent: " + filtro + "\n"); 
+        // System.out.print("\tNúmero Descendent per passar a vector: ");
         return inverted(filtro);
     }
     // Aquesta funció te la missió d'invertir cualsevol cadena. Em trenvava molt el codi posarla a l'altra
@@ -67,8 +67,9 @@ public class M_XifresVector {
         lect = new Scanner(System.in);
         System.out.print("Introdueix un enter: ");
         int n = lect.nextInt();
-        System.out.println("\t" + xifres(n));
+        System.out.println("\t" + xifres(n)); 
+        // Output
         System.out.print("\n\tVector de longitud Variable: " + Arrays.toString(vector(inverted(filtro))) + "\n");
-    }
+    }                                                        // funcions integrades recursivament
 }
 // Joan Marc Maldonado 
