@@ -71,7 +71,7 @@ public class L_Matriu {
             }
         System.out.println("\t[0] -> " + zero);
         System.out.println("\t[1] -> " + one);
-        System.out.println("\t[2] -> " + two);    
+        System.out.println("\t[2] -> " + two);   
     }
     static int columna (int [][] m, int x){
         for (int i = 0; i < m.length; i++)

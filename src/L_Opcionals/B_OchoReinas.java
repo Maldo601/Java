@@ -19,21 +19,17 @@ public class B_OchoReinas {
         return t;
     }
     public static boolean correcte (List <Integer> t) { 
-        
         for (int i = 0; i < t.size(); i++)
-        {
-            for (int j = 1; j> t.size(); j++)
-            {
-                if (t.indexOf(i)+j  == t.indexOf(i+j) || t.indexOf(i)-j  == t.indexOf(i+j)){
+            for (int j = 0 ; j < t.size(); j++){
+                if ( (t.get(i)+j  == t.get(i+j)) || (t.get(i)-j  == t.get(i+j))){
                     System.out.println(t);
                    return false;
                    
                 }
-            }
         }
         Collections.shuffle(t);
         System.out.println(t);
-        return true;
+        return false;
     }
 }
 
