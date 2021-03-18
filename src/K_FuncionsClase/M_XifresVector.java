@@ -15,7 +15,7 @@ public class M_XifresVector {
         // Variables
         String chain = Integer.toString(n);
         // Bucles d'ocurrència.
-        for (int d = 0; d < 10; d++) { // Digit max per index
+        for (int d = 0; d < 10; d++) { // Digit max per index  int m = 0; m>=0; m++
             int counter = 0;
             // Calcula si les seguents posicions contenen el mateix valor que la actual. Es 
             // Recorren els dos bucles, aquest i l'extern. Si una posició repeteix el valor 
