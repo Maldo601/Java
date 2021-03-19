@@ -17,22 +17,7 @@ public class A_DNI {
         return lectura;
     }
     static boolean nifCorrecte(String nif){
-        // 26 linies 
-        // torna true if: 9 charlength // 8 primers son xifres o ?
-        // Ultim ha de ser lletra valida o ?
-        // no mes de 6 interrogants. 
-
-        // char let = "TRWAGMYFPDXBNJZSQVHLCKE".charAt(dni % 23);
-        int numPart = Integer.parseInt(nif.substring(0,8));
-        char letter = "TRWAGMYFPDXBNJZSQVHLCKE".charAt(numPart % 23);
-
-        boolean length;
-        boolean trueNum;
-        boolean validLett;
-        boolean inter;
-        if (nif.length() == 9)
-            length = true;
-        if (nif.indexOf(9) == letter)
+       
 
         return false;
         
