@@ -8,7 +8,8 @@ public class A_DNI {
     static String Validar = "";
     static char lletraOperacional;
     static Scanner lect;
-    static String v[] = new String [9];
+    static String historial [] = new String[1]; // S'incrementa la mesura del vector 
+    static List <String> list = Arrays.asList(historial);
     // Funció de Lectura. 
     static String llegeixNif(){
         lect = new Scanner(System.in);
@@ -54,23 +55,25 @@ public class A_DNI {
     /* Funció on es comprovarà el que hi ha al vector i es pendran mesures oportunes. Aquestes son: 
         - 1_ Si hi ha lletra i hi ha una part numerica completa, es passarà a comprobar si es vàlid.
         - 2_ Si falten digits a la part numèrica pero hi ha lletra, crida a Aleatorietat per generar els valors.
-             El vector ja amb valors i lletra, es passarà a la funció de validar la redundancia.
+             El vector ja amb valors i lletra, es passarà a la funció de Validar la redundancia.
 
              - 2.1_ Si es valid OK. 
              - 2.2_ Si no es vàlid, tornarà a cridar a aleatorietat. 
 
-        - 3_ Si falta digit i lletra, reomplirem els buits dels digits i validarem cada una de les parts 
+        - 3_ Si falta digit i lletra, reomplirem els buits dels digits i Validarem cada una de les parts 
              numeriques per extraure la lletra que li correspon.
     */
-    static String[] addStringArray (String nif){   
+    static void addStringArray (String nif){
+        int i = 0;
+        while ( i <= 1000){   
         if (nifCorrecte(nif) == true ){
             // Passa indiscriminadament una cadena al vector. 
             for (int x = 0; x < nif.length(); x++){
                 nifsOk[x] = String.valueOf(nif.charAt(x));
-                v[x] = nifsOk[x];
             }
             // Generadora de numeros aleatoris si hi han interrogants.
             String numP = "";
+            Validar = "";
             for ( int y = 0; y < nif.length()-1; y++){
                 if (nifsOk[y].equals("?")){
                     numP = String.valueOf( (int) (Math.random() * (9-0+1)) + 0);
@@ -78,26 +81,42 @@ public class A_DNI {
                 }
                 Validar += nifsOk[y];
             }
-            // Generadora de lletra final. 
+            boolean comprova = false;
+            if(!validNif(Validar)){ // Benvinguts a la recursivitat.
+                nifsOk[8] = ""+lletraOperacional;
+            } 
+            if (validNif(Validar)){ // Sempre arribara en lletra. 
+                List<String> list = Arrays.asList(historial);
+               if(!list.contains(Validar)){
+                        historial = Arrays.copyOf(historial, historial.length + 1);
+                        historial[historial.length-1] = Validar; 
+                }
+                else 
+                comprova = true;
+                if(!comprova){
+                    System.out.println(Arrays.toString(nifsOk));
+                }
+            }
         }
-        // LOGS
-        System.out.println("\n\t" + Arrays.toString(v));
-        return nifsOk;
+        i++;
+        }
     }
     static boolean validNif(String nif){
-        String lastLetter = v[8];
-        System.out.println(Validar);
-        lletraOperacional = "TRWAGMYFPDXBNJZSQVHLCKE".charAt((Integer.parseInt(Validar) % 23));
-        Validar = "";
+        String lastLetter = nifsOk[8];
+        lletraOperacional = "TRWAGMYFPDXBNJZSQVHLCKE".charAt((Integer.parseInt(nif) % 23));
         if (lastLetter.equals(String.valueOf(lletraOperacional)))
             return true;
         else
         return false;
     }
+    static char returnLetter (String nif){
+        
+        return lletraOperacional;
+    }
     public static void main (String [] args){
         String nif = llegeixNif();
-        System.out.println("\n\t" + Arrays.toString(addStringArray(nif)));
-
+        addStringArray(nif);
+        System.out.println("\n\n");
         }
     }
 
