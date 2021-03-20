@@ -1,12 +1,15 @@
 package N_Recursivitat;
 import java.util. *;
 public class A_DNI {
+    // Variables Globals
     static final int MAXINTERROGANTS = 6;
     static String [] nifsOk = new String[9];
     static int numNIFs = 0;
     static String Validar = "";
+    static char lletraOperacional;
     static Scanner lect;
     static String v[] = new String [9];
+    // Funció de Lectura. 
     static String llegeixNif(){
         lect = new Scanner(System.in);
         System.out.print("Introdueix els caràcters del NIF incomplet, indicant en ? el caracter desconegut: ");
@@ -60,12 +63,11 @@ public class A_DNI {
              numeriques per extraure la lletra que li correspon.
     */
     static String[] addStringArray (String nif){   
-        if (nifCorrecte(nif) == true){
+        if (nifCorrecte(nif) == true ){
             // Passa indiscriminadament una cadena al vector. 
             for (int x = 0; x < nif.length(); x++){
                 nifsOk[x] = String.valueOf(nif.charAt(x));
                 v[x] = nifsOk[x];
-                Validar += nifsOk[x];
             }
             // Generadora de numeros aleatoris si hi han interrogants.
             String numP = "";
@@ -74,31 +76,28 @@ public class A_DNI {
                     numP = String.valueOf( (int) (Math.random() * (9-0+1)) + 0);
                     nifsOk[y] = numP;
                 }
+                Validar += nifsOk[y];
             }
             // Generadora de lletra final. 
         }
-        // LOGS 
-        System.out.println("\n\tDNI a Chain: " + Validar);
+        // LOGS
         System.out.println("\n\t" + Arrays.toString(v));
         return nifsOk;
     }
     static boolean validNif(String nif){
-        
-        // char letter = "TRWAGMYFPDXBNJZSQVHLCKE".charAt(String.valueOf(validLetr % 23));
+        String lastLetter = v[8];
+        System.out.println(Validar);
+        lletraOperacional = "TRWAGMYFPDXBNJZSQVHLCKE".charAt((Integer.parseInt(Validar) % 23));
+        Validar = "";
+        if (lastLetter.equals(String.valueOf(lletraOperacional)))
+            return true;
+        else
         return false;
     }
     public static void main (String [] args){
         String nif = llegeixNif();
         System.out.println("\n\t" + Arrays.toString(addStringArray(nif)));
-        /*resolveNif(nif);
-        for (int n = 0; n < numNIFs; n++){
-            System.out.printf("Trobat NIF: " + nifsOk[n] + "\n", n+1);
-        if (numNIFs == 0){
-            System.out.println("No s'ha trobat cap solució que satisfagui els requeriments del problema");
+
         }
-        else 
-        System.out.println("Trobats un total de " + numNIFs + " NIF que satisfan els requeriments del problema");
-        }
-        */
     }
-}
+
