@@ -1,15 +1,20 @@
 package N_Recursivitat;
 import java.util. *;
 /*
-
     Joan Marc Maldonado
-    ----------------------------
+    GitHub: https://github.com/Maldo601
+    -------------------------------------------------------------------------------------------------------------
     - El programa funciona correctament en els casos de
 
         1.- Nif complet. 
         2.- Nif amb part digital completa i lletra interrogant. 
         3.- Nif amb interrogants a la part digital i lletra interrogant.
-
+        4.- Nif amb lletra establerta i part digital amb interrogants.
+        5.- Validador.
+        6.- Funció principal
+        7.- Ramificador
+        8.- Missatge d'error si la part Alfabètica és numèrica.
+        
     - Presenta problemes a resoldre amb NIFS de...{
 
         1.- Nif amb lletra establerta i part digital amb interrogants.
@@ -19,21 +24,21 @@ import java.util. *;
                 R: Resolt amb la extraccio desde llegeixNif() de dos variables globals que son cridades a 
                    la ramificació booleana si s'entra un DNI com he especificat. 
 
-        2.- No és recursiu, pero funciona de la forma mes complicada que la recursiva.
-        3.- Excés de variables globals i codi complicat de lectura. 
-        4.- No demana 
+        2.- Excés de variables globals i codi complicat de lectura. 
+        3.- No demana reiteradament el DNI en cas de mala introducció.
+        4.- No és recursiu, pero funciona.
+        5.- El programa peta si es passen lletres a la part digital. 
 */
 public class A_DNI {
-    // Variables Globals
-    static final int MAXINTERROGANTS = 6;
-    static String [] nifsOk = new String[9]; // Vector Principal
-    static int numNIFs = 0;                  // Quantitat de NIFS 
-    static String Validar = "";
-    static char lletraOperacional;
-    static String lletra1 = "";
-    static String DNI = "";
-    static Scanner lect;
-    static String historial [] = new String[1]; // S'incrementa la llargaria del vector. 
+    // VARIABLES GLOBALS 
+    static String [] nifsOk = new String[9];    // Vector Principal
+    static int numNIFs = 0;                     // Quantitat de NIFS 
+    static String Validar = "";                 // Part digital després de randomitzar.
+    static char lletraOperacional;              // Lletra Assignable a digits.
+    static String lletra1 = "";                 // Lletra Original.
+    static String DNI = "";                     // DNI complet entrat.
+    static Scanner lect;                        // Scanner de lectura.
+    static String historial [] = new String[1]; // Logs DNI, Array de longitud incrementable, inicia a 1.
     static List <String> list = Arrays.asList(historial);
     // FUNCIO DE LECTURA
         /* S'encarrega de registrar a la variable NIF */
@@ -46,14 +51,6 @@ public class A_DNI {
                DNI = lectura;
                lletra1 = String.valueOf(lectura.charAt(8));
         return lectura;
-    }
-    // Esta funció s'encarregarà de convertir els interrogants del bucle en números. La lletra no. 
-    static String aleatorietat (String nif){
-        String numP = "";
-        for ( int a = 0; a < nif.length(); a++){
-            numP = String.valueOf( (int) (Math.random() * (9-0+1)) + 0);
-        }
-        return numP;
     }
     static boolean nifCorrecte(String nif){
         int interrogants = 0;
@@ -82,47 +79,50 @@ public class A_DNI {
             return true;
         return false;
     }
-    
+    // FUNCIO PRINCIPAL
     static void addStringArray (String nif){
-        int i = 0;
-        while ( i <= 1000){   
-        if (nifCorrecte(nif) == true ){
-            // Passa indiscriminadament una cadena al vector. 
-            for (int x = 0; x < nif.length(); x++){
-                nifsOk[x] = String.valueOf(nif.charAt(x));
-            }
-            // Generadora de numeros aleatoris si hi han interrogants.
-            String numP = "";
-            Validar = "";
-            for ( int y = 0; y < nif.length()-1; y++){
-                if (nifsOk[y].equals("?")){
-                    numP = String.valueOf( (int) (Math.random() * (9-0+1)) + 0);
-                    nifsOk[y] = numP;
-                }
-                Validar += nifsOk[y];
-            }
-            boolean comprova = false;
-            if(!validNif(Validar)){ 
-                nifsOk[ 8 ] = "" + lletraOperacional;
-            } 
-            if (validNif(Validar)){ // Sempre arribara en lletra. 
-                List<String> list = Arrays.asList( historial );
-                if( !list.contains( Validar ) ){
-                    historial = Arrays.copyOf( historial, historial.length + 1 );
-                    historial[ historial.length -1 ] = Validar; 
-                }
-                else 
-                comprova = true;
+        if (nifCorrecte(nif)==true){
+            int i = 0;
+            while ( i <= 1000){   
+                if (nifCorrecte(nif) == true ){
+                    // Passa indiscriminadament una cadena al vector. 
+                    for (int x = 0; x < nif.length(); x++){
+                        nifsOk[x] = String.valueOf(nif.charAt(x));
+                    }
+                    // Generadora de numeros aleatoris si hi han interrogants.
+                    String numP = "";
+                    Validar = "";
+                    for ( int y = 0; y < nif.length()-1; y++){
+                        if (nifsOk[y].equals("?")){
+                            numP = String.valueOf( (int) (Math.random() * (9-0+1)) + 0);
+                            nifsOk[y] = numP;
+                        }
+                        Validar += nifsOk[y];
+                    }
+                    boolean comprova = false;
+                    if(!validNif(Validar)){ 
+                        nifsOk[ 8 ] = "" + lletraOperacional;
+                    } 
+                    if (validNif(Validar)){ // Sempre arribara en lletra. 
+                        List<String> list = Arrays.asList( historial );
+                    if( !list.contains( Validar ) ){
+                        historial = Arrays.copyOf( historial, historial.length + 1 );
+                        historial[ historial.length -1 ] = Validar; 
+                    }
+                    else 
+                    comprova = true;
+                        if( !comprova ){
+                            numNIFs++;
+                            System.out.println(Arrays.toString(nifsOk));
 
-                if( !comprova ){
-
-                System.out.println(Arrays.toString(nifsOk));
-
+                        }
+                    }
                 }
+                i++;
             }
-        }
-        i++;
-    }
+            System.out.println("\nS'han trobat " + numNIFs + " DNI's vàlids.");
+        }else
+        System.out.println("\n\tError Fatal. Format d'entrada no vàlid");
     }
     // RAMIFICACIO OPERACIONAL BOOLEANA
     static boolean validNif(String nif){ 
@@ -141,8 +141,9 @@ public class A_DNI {
     }
     public static void main (String [] args){
         String nif = llegeixNif();
-        
+        System.out.println("\n");
         addStringArray(nif);
         }
     }
+
 
