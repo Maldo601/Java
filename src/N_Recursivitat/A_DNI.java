@@ -14,7 +14,7 @@ import java.util. *;
         6.- Funció principal
         7.- Ramificador
         8.- Missatge d'error si la part Alfabètica és numèrica.
-        
+
     - Presenta problemes a resoldre amb NIFS de...{
 
         1.- Nif amb lletra establerta i part digital amb interrogants.
@@ -31,25 +31,24 @@ import java.util. *;
 */
 public class A_DNI {
     // VARIABLES GLOBALS 
-    static String [] nifsOk = new String[9];    // Vector Principal
-    static int numNIFs = 0;                     // Quantitat de NIFS 
-    static String Validar = "";                 // Part digital després de randomitzar.
-    static char lletraOperacional;              // Lletra Assignable a digits.
-    static String lletra1 = "";                 // Lletra Original.
-    static String DNI = "";                     // DNI complet entrat.
-    static Scanner lect;                        // Scanner de lectura.
-    static String historial [] = new String[1]; // Logs DNI, Array de longitud incrementable, inicia a 1.
-    static List <String> list = Arrays.asList(historial);
+    static String [] nifsOk = new String[ 9 ];    // Vector Principal
+    static int numNIFs = 0;                       // Quantitat de NIFS 
+    static String Validar = "";                   // Part digital després de randomitzar.
+    static char lletraOperacional;                // Lletra Assignable a digits.
+    static String lletra1 = "";                   // Lletra Original.
+    static String DNI = "";                       // DNI complet entrat.
+    static Scanner lect;                          // Scanner de lectura.
+    static String historial [] = new String[ 1 ]; // Logs DNI, Array de longitud incrementable, inicia a 1.
+    static List <String> list = Arrays.asList( historial) ;
     // FUNCIO DE LECTURA
         /* S'encarrega de registrar a la variable NIF */
     static String llegeixNif(){
-        
-        lect = new Scanner(System.in);
-        System.out.print("Introdueix els caràcters del NIF incomplet, indicant en ? el caracter desconegut: ");
+        lect = new Scanner( System.in );
+        System.out.print( "Introdueix els caràcters del NIF incomplet, indicant en ? el caracter desconegut: " );
         String lectura = lect.nextLine();
                lectura.toUpperCase();
                DNI = lectura;
-               lletra1 = String.valueOf(lectura.charAt(8));
+               lletra1 = String.valueOf( lectura.charAt( 8 ));
         return lectura;
     }
     static boolean nifCorrecte(String nif){
@@ -65,12 +64,12 @@ public class A_DNI {
             - 8 digits en interrogants i lletra interrogant
         */
         for ( int i = 0; i < nif.length(); i++){
-            if ( nif.charAt(i) == '?' )
+            if ( nif.charAt( i ) == '?' )
                 interrogants++;
                 
-            if (nif.charAt(i) <= 9 || nif.charAt(i) >= 0 || nif.charAt(i) == '?')
+            if (nif.charAt( i ) <= 9 || nif.charAt( i ) >= 0 || nif.charAt( i ) == '?' )
                 maxEnter = true;
-            if (!nif.substring(8).matches("\\d*"))
+            if (!nif.substring( 8 ).matches( "\\d*" ))
                 lastLetter = true;
         }
         if (interrogants <= 6)
@@ -84,7 +83,6 @@ public class A_DNI {
         if (nifCorrecte(nif)==true){
             int i = 0;
             while ( i <= 1000){   
-                if (nifCorrecte(nif) == true ){
                     // Passa indiscriminadament una cadena al vector. 
                     for (int x = 0; x < nif.length(); x++){
                         nifsOk[x] = String.valueOf(nif.charAt(x));
@@ -103,23 +101,21 @@ public class A_DNI {
                     if(!validNif(Validar)){ 
                         nifsOk[ 8 ] = "" + lletraOperacional;
                     } 
-                    if (validNif(Validar)){ // Sempre arribara en lletra. 
+                    if ( validNif( Validar )){ // Sempre arribara en lletra. 
                         List<String> list = Arrays.asList( historial );
-                    if( !list.contains( Validar ) ){
-                        historial = Arrays.copyOf( historial, historial.length + 1 );
-                        historial[ historial.length -1 ] = Validar; 
-                    }
-                    else 
-                    comprova = true;
-                        if( !comprova ){
-                            numNIFs++;
-                            System.out.println(Arrays.toString(nifsOk));
-
+                        if( !list.contains( Validar ) ){
+                            historial = Arrays.copyOf( historial, historial.length + 1 );
+                            historial[ historial.length -1 ] = Validar; 
                         }
-                    }
+                        else 
+                        comprova = true;
+                            if( !comprova ){
+                                numNIFs++;
+                                System.out.println( Arrays.toString( nifsOk ));
+                            }
+                        }
+                    i++;
                 }
-                i++;
-            }
             System.out.println("\nS'han trobat " + numNIFs + " DNI's vàlids.");
         }else
         System.out.println("\n\tError Fatal. Format d'entrada no vàlid");
