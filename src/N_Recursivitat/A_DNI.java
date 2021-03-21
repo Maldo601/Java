@@ -3,45 +3,39 @@ import java.util. *;
 /*
     Joan Marc Maldonado
     GitHub: https://github.com/Maldo601
-    -------------------------------------------------------------------------------------------------------------
+    ----------------------------------------------------------------------------------
     - El programa funciona correctament en els casos de
 
-        1.- Nif complet. 
-        2.- Nif amb part digital completa i lletra interrogant. 
-        3.- Nif amb interrogants a la part digital i lletra interrogant.
-        4.- Nif amb lletra establerta i part digital amb interrogants.
-        5.- Validador.
-        6.- Funció principal
-        7.- Ramificador
-        8.- Missatge d'error si la part Alfabètica és numèrica.
+        1.- Nif vàlid  complet. 
+        2.- Nif vàlid amb part digital completa i lletra interrogant. 
+        3.- Nifs vàlids amb interrogants a la part digital i lletra interrogant.
+        4.- Nifs vàlids amb lletra establerta i part digital amb interrogants.
+        5.- Detecta nifs no vàlids presentant interrogants o complets. ( Resultat 0 )
+        6.- Validador.
+        7.- Funció principal.
+        8.- Ramificador.
+        9.- Missatge d'error si la part Alfabètica és numèrica.
+        10. Es compleix la sequència relacional de resultat retornat en base als
+            interrogants introduits (10,100,1000,10000,100000...)
 
-    - Presenta problemes a resoldre amb NIFS de...{
+    - Presenta problemes del tipo ... {
 
-        1.- Nif amb lletra establerta i part digital amb interrogants.
-            Retorna una aleatorietat de lletres valides corresponents a la combinació
-            de números, tot i estar el resultat vàlid entre ells, necessita ser filtrat. 
-                
-                R: Resolt amb la extraccio desde llegeixNif() de dos variables globals que son cridades a 
-                   la ramificació booleana si s'entra un DNI com he especificat. 
-
-        2.- Excés de variables globals i codi complicat de lectura. 
-        3.- No demana reiteradament el DNI en cas de mala introducció.
-        4.- No és recursiu, pero funciona.
-        5.- El programa peta si es passen lletres a la part digital. 
+        1.- Excés de variables globals i codi complicat de lectura. 
+        2.- No demana reiteradament el DNI en cas de mala introducció.
+        3.- No és recursiu, pero funciona.
+        4.- El programa peta si es passen lletres a la part digital. 
 */
 public class A_DNI {
     // VARIABLES GLOBALS 
-    static String [] nifsOk = new String[ 9 ];    // Vector Principal
-    static int numNIFs = 0;                       // Quantitat de NIFS 
-    static String Validar = "";                   // Part digital després de randomitzar.
-    static char lletraOperacional;                // Lletra Assignable a digits.
-    static String lletra1 = "";                   // Lletra Original.
-    static String DNI = "";                       // DNI complet entrat.
-    static Scanner lect;                          // Scanner de lectura.
-    static String historial [] = new String[ 1 ]; // Logs DNI, Array de longitud incrementable, inicia a 1.
-    static List <String> list = Arrays.asList( historial) ;
-    // FUNCIO DE LECTURA
-        /* S'encarrega de registrar a la variable NIF */
+    static String [] nifsOk = new String[ 9 ];             // Vector Principal                                
+    static String Validar = "";                            // Part digital després de randomitzar.
+    static char lletraOperacional;                         // Lletra Assignable a digits.
+    static String lletra1 = "";                            // Lletra Original.
+    static String DNI = "";                                // DNI complet entrat.
+    static Scanner lect;                                   // Scanner de lectura.
+    static String historial [] = new String[ 1 ];          // Logs DNI, Array de longitud incrementable, inicia a 1.
+    static List <String> list = Arrays.asList(historial);
+    // FUNCIO DE LECTURA INICIAL 
     static String llegeixNif(){
         lect = new Scanner( System.in );
         System.out.print( "Introdueix els caràcters del NIF incomplet, indicant en ? el caracter desconegut: " );
@@ -51,18 +45,12 @@ public class A_DNI {
                lletra1 = String.valueOf( lectura.charAt( 8 ));
         return lectura;
     }
+    // PLANTILLA D'ENTRADA CORRECTA
     static boolean nifCorrecte(String nif){
         int interrogants = 0;
         boolean interrogant = false;
         boolean maxEnter = false;
         boolean lastLetter = false;
-        // Al passar lletres retorna true, arreglar. 
-        // Funciona en true passantli
-        /*
-            - 8 digits 1 lletra
-            - 8 digits en interrogants i lletra
-            - 8 digits en interrogants i lletra interrogant
-        */
         for ( int i = 0; i < nif.length(); i++){
             if ( nif.charAt( i ) == '?' )
                 interrogants++;
@@ -72,17 +60,20 @@ public class A_DNI {
             if (!nif.substring( 8 ).matches( "\\d*" ))
                 lastLetter = true;
         }
-        if (interrogants <= 6)
-            interrogant  = true;
-        if ( (interrogant && maxEnter && lastLetter) == true )
-            return true;
-        return false;
-    }
-    // FUNCIO PRINCIPAL
-    static void addStringArray (String nif){
-        if (nifCorrecte(nif)==true){
-            int i = 0;
-            while ( i <= 1000){   
+        //Si s'incrementa per damunt de 6, s'ha d'afegir un "0" al WHILE de addString Array
+        if (interrogants <= 6)//------------------------------------------------*
+            interrogant  = true;                                               //
+        if ( (interrogant && maxEnter && lastLetter) == true )                 //
+            return true;                                                       //
+        return false;                                                          //                            
+    }                                                                          //                               
+    // FUNCIO PRINCIPAL                                                        //         
+    static void addStringArray (String nif){                                   //
+        int numNIFs = 0;                                                       //                           
+        if (nifCorrecte(nif)==true){                                           //
+            int i = 0;                                                         //            
+            // Incrementar un 0 si es modifica el limit d'interrogants.        //      
+            while ( i <= 1000000){ //-------------------------------------------* 
                     // Passa indiscriminadament una cadena al vector. 
                     for (int x = 0; x < nif.length(); x++){
                         nifsOk[x] = String.valueOf(nif.charAt(x));
@@ -110,10 +101,13 @@ public class A_DNI {
                         else 
                         comprova = true;
                             if( !comprova ){
+                                // Counter de NIFS vàlids
                                 numNIFs++;
+                                // Output Final
                                 System.out.println( Arrays.toString( nifsOk ));
                             }
                         }
+                    // Counter de repetició
                     i++;
                 }
             System.out.println("\nS'han trobat " + numNIFs + " DNI's vàlids.");
@@ -121,6 +115,14 @@ public class A_DNI {
         System.out.println("\n\tError Fatal. Format d'entrada no vàlid");
     }
     // RAMIFICACIO OPERACIONAL BOOLEANA
+    /*
+        Originalment la segona part (!) no estaba. No obstant al detectar que 
+        tots els casos operaven be menys els que tenien la lletra i interrogants, es fa necessari
+        reservar la original entrada, de no ser aixi la primera part la maxacaba, ja que
+        al haver una part digital completa, aleatoritzada o no, reassignaba la lletra per una valida, sent
+        diferent de la introduida. En cada una es compara si la lletra entrada originalment
+        correspon a la part numerica.  
+    */
     static boolean validNif(String nif){ 
         if (lletra1.equals("?")){
             String lastLetter = nifsOk[8];
@@ -135,6 +137,7 @@ public class A_DNI {
         }
         return false;
     }
+    // MAIN 
     public static void main (String [] args){
         String nif = llegeixNif();
         System.out.println("\n");
