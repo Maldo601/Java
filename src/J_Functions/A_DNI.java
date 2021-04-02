@@ -1,4 +1,4 @@
-package N_Recursivitat;
+package J_Functions;
 import java.util. *;
 /*
     Joan Marc Maldonado
