@@ -1,5 +1,7 @@
 package J_Functions;
-import java.util. *;
+
+import java.util.*;
+
 /*
     Joan Marc Maldonado
     GitHub: https://github.com/Maldo601
@@ -63,142 +65,145 @@ import java.util. *;
           Amb això s'imprimiran tots els resultats vàlids sense duplicitats. 
 */
 public class A_DNI {
-    // VARIABLES GLOBALS 
-    static String [] nifsOk = new String[ 9 ];             // Vector Principal                                
-    static String Validar = "";                            // Part digital després de randomitzar.
-    static char lletraOperacional;                         // Lletra Assignable a digits.
-    static String lletra1 = "";                            // Lletra Original.
-    static String DNI = "";                                // DNI complet entrat.
-    static Scanner lect;                                   // Scanner de lectura.
-    static String historial [] = new String[ 1 ];          // Logs DNI, Array de longitud incrementable, inicia a 1.
-    static List <String> list = Arrays.asList(historial);
-    
+    // VARIABLES GLOBALS
+    static String[] nifsOk = new String[9]; // Vector Principal
+    static String Validar = ""; // Part digital després de randomitzar.
+    static char lletraOperacional; // Lletra Assignable a digits.
+    static String lletra1 = ""; // Lletra Original.
+    static String DNI = ""; // DNI complet entrat.
+    static Scanner lect; // Scanner de lectura.
+    static String historial[] = new String[1]; // Logs DNI, Array de longitud incrementable, inicia a 1.
+    static List<String> list = Arrays.asList(historial);
+
     // PLANTILLA D'ENTRADA CORRECTA
-    static boolean nifCorrecte(String nif){
+    static boolean nifCorrecte(String nif) {
         if (nif.length() != 9)
-                return false;
+            return false;
         // Tenia que posar aixo a algun puesto perque al main trencava el programa.
-        lletra1 = String.valueOf( nif.charAt( 8 ));
+        lletra1 = String.valueOf(nif.charAt(8));
         int interrogants = 0;
         if (nif.length() != 9)
-                return false;
-        if (!"TRWAGMYFPDXBNJZSQVHLCKE?".contains(String.valueOf(nif.charAt(nif.length()-1))))
-                return false;
-        for ( int i = 0; i < nif.length()-1; i++){
-            if ( nif.charAt( i ) == '?' )
+            return false;
+        if (!"TRWAGMYFPDXBNJZSQVHLCKE?".contains(String.valueOf(nif.charAt(nif.length() - 1))))
+            return false;
+        for (int i = 0; i < nif.length() - 1; i++) {
+            if (nif.charAt(i) == '?')
                 interrogants++;
-                if (!"0123456789?".contains(String.valueOf(nif.charAt(i))))
+            if (!"0123456789?".contains(String.valueOf(nif.charAt(i))))
                 return false;
         }
-        //Si s'incrementa per damunt de 6, s'ha d'afegir un "0" al WHILE de addString Array
-        if (interrogants > 6)//------------------------------------------------*
-            return false;                                                      //
-        return true;                                                           //                            
-    }                                                                          //                               
-    // FUNCIO PRINCIPAL                                                        //         
-    static void addStringArray (String nif){                                   //
-        int numNIFs = 0;                                                       //                           
-        if (nifCorrecte(nif)==true){                                           //
-            int i = 0;                                                         //            
-            // Incrementar un 0 si es modifica el limit d'interrogants.        //      
-            while (i <= 1000000){ //--------------------------------------------* 
-                // Passa indiscriminadament una cadena al vector. 
-                for (int x = 0; x < nif.length(); x++){
+        // Si s'incrementa per damunt de 6, s'ha d'afegir un "0" al WHILE de addString
+        // Array
+        if (interrogants > 6)// ------------------------------------------------*
+            return false; //
+        return true; //
+    } //
+      // FUNCIO PRINCIPAL //
+
+    static void addStringArray(String nif) { //
+        int numNIFs = 0; //
+        if (nifCorrecte(nif) == true) { //
+            int i = 0; //
+            // Incrementar un 0 si es modifica el limit d'interrogants. //
+            while (i <= 1000000) { // --------------------------------------------*
+                // Passa indiscriminadament una cadena al vector.
+                for (int x = 0; x < nif.length(); x++) {
                     nifsOk[x] = String.valueOf(nif.charAt(x));
                 }
                 // Generadora de numeros aleatoris si hi han interrogants.
                 String numP = "";
                 Validar = "";
-                for ( int y = 0; y < nif.length()-1; y++){
-                    if (nifsOk[y].equals("?")){
-                        numP = String.valueOf( (int) (Math.random() * (9-0+1)) + 0);
+                for (int y = 0; y < nif.length() - 1; y++) {
+                    if (nifsOk[y].equals("?")) {
+                        numP = String.valueOf((int) (Math.random() * (9 - 0 + 1)) + 0);
                         nifsOk[y] = numP;
                     }
                     Validar += nifsOk[y];
                 }
                 boolean comprova = false;
-                if(!validNif(Validar)){ 
-                    nifsOk[ 8 ] = "" + lletraOperacional;
-                } 
-                if ( validNif( Validar )){  
-                    List<String> list = Arrays.asList( historial );
-                    if( !list.contains( Validar ) ){
-                        historial = Arrays.copyOf( historial, historial.length + 1 );
-                        historial[ historial.length -1 ] = Validar; 
-                    }
-                    else 
-                    comprova = true;
-                        if( !comprova ){
-                            // Counter de NIFS vàlids
-                            numNIFs++;
-                            // OUTPUT FINAL
-                            //System.out.println( Arrays.toString( nifsOk ));
-                        //  System.out.println( Arrays.toString( historial ));
-                        }
-                    }
-                    // Counter de repetició
-                    i++;
+                if (!validNif(Validar)) {
+                    nifsOk[8] = "" + lletraOperacional;
                 }
+                if (validNif(Validar)) {
+                    List<String> list = Arrays.asList(historial);
+                    if (!list.contains(Validar)) {
+                        historial = Arrays.copyOf(historial, historial.length + 1);
+                        historial[historial.length - 1] = Validar;
+                    } else
+                        comprova = true;
+                    if (!comprova) {
+                        // Counter de NIFS vàlids
+                        numNIFs++;
+                        // OUTPUT FINAL
+                        // System.out.println( Arrays.toString( nifsOk ));
+                        // System.out.println( Arrays.toString( historial ));
+                    }
+                }
+                // Counter de repetició
+                i++;
+            }
             System.out.println("\nS'han trobat " + numNIFs + " DNI's vàlids.");
-        }else{
-        
+        } else {
+
         }
     }
+
     // RAMIFICACIO OPERACIONAL BOOLEANA
     /*
-        Originalment la segona part (!) no estaba. No obstant al detectar que 
-        tots els casos operaven be menys els que tenien la lletra i interrogants, es fa necessari
-        reservar la original entrada, de no ser aixi la primera part la maxacaba, ja que
-        al haver una part digital completa, aleatoritzada o no, reassignaba la lletra per una valida, sent
-        diferent de la introduida. En cada una es compara si la lletra entrada originalment
-        correspon a la part numerica.  
-    */
-    static boolean validNif(String nif){ 
-        if (lletra1.equals("?")){
+     * Originalment la segona part (!) no estaba. No obstant al detectar que tots
+     * els casos operaven be menys els que tenien la lletra i interrogants, es fa
+     * necessari reservar la original entrada, de no ser aixi la primera part la
+     * maxacaba, ja que al haver una part digital completa, aleatoritzada o no,
+     * reassignaba la lletra per una valida, sent diferent de la introduida. En cada
+     * una es compara si la lletra entrada originalment correspon a la part
+     * numerica.
+     */
+    static boolean validNif(String nif) {
+        if (lletra1.equals("?")) {
             String lastLetter = nifsOk[8];
             lletraOperacional = "TRWAGMYFPDXBNJZSQVHLCKE".charAt((Integer.parseInt(nif) % 23));
             if (lastLetter.equals(String.valueOf(lletraOperacional)))
                 return true;
-            }
-        else if(!lletra1.equals("?")){
+        } else if (!lletra1.equals("?")) {
             lletraOperacional = "TRWAGMYFPDXBNJZSQVHLCKE".charAt((Integer.parseInt(nif) % 23));
             if (lletra1.equals(String.valueOf(lletraOperacional)))
                 return true;
         }
         return false;
     }
-    
-    // BUCLE MAIN METHOD 
-    public static void main (String[] args){
-        lect = new Scanner( System.in );
-        System.out.print( "Introdueix els caràcters del NIF incomplet, indicant en ? el caracter desconegut: " );
+
+    // BUCLE MAIN METHOD
+    public static void main(String[] args) {
+        lect = new Scanner(System.in);
+        System.out.print("Introdueix els caràcters del NIF incomplet, indicant en ? el caracter desconegut: ");
         String nif = lect.nextLine();
-               nif.toUpperCase();
-               DNI = nif;
-               // Fi de la recursivitat d'error. Mort del Programa.
-               if (nif.equals("ESC")){
-               System.exit(0);
-            }
+        nif.toUpperCase();
+        DNI = nif;
+        // Fi de la recursivitat d'error. Mort del Programa.
+        if (nif.equals("ESC")) {
+            System.exit(0);
+        }
         // Validació d'entrada
         if (nifCorrecte(nif) == true)
             addStringArray(nif);
-            else if (!nifCorrecte(nif) == true){
-                //Errors i reiteració d'entrada.
-                System.out.println("\n\tError Fatal. Format d'entrada no vàlid. Possibles causes: ");
-                System.out.println("\t\t-Lletres a la part numèrica.");
-                System.out.println("\t\t-Números a la part de la lletra.");
-                System.out.println("\t\t-Longitud Incorrecta.");
-                System.out.println("\t\t-Superat límit operacional d'interrogants." + "\n");
-                System.out.println("\n\t-Introdueix les dades de nou o escriu \"ESC\" per sortir." + "\n");
-                /*  
-                   A partir d'aquí s'em plantejen dubtes de codi existencials, com si el programa
-                   senser ha acabat sent recursiu perque el main es recursiu cridantse a ell mateix i cridant
-                   al seu contingut cuan es crida a ell mateix. Tot i no resoldre-ho recursivament
-                   
-                */
-                main(args);
-            }
+        else if (!nifCorrecte(nif) == true) {
+            // Errors i reiteració d'entrada.
+            System.out.println("\n\tError Fatal. Format d'entrada no vàlid. Possibles causes: ");
+            System.out.println("\t\t-Lletres a la part numèrica.");
+            System.out.println("\t\t-Números a la part de la lletra.");
+            System.out.println("\t\t-Longitud Incorrecta.");
+            System.out.println("\t\t-Superat límit operacional d'interrogants." + "\n");
+            System.out.println("\n\t-Introdueix les dades de nou o escriu \"ESC\" per sortir." + "\n");
+            /*
+             * A partir d'aquí s'em plantejen dubtes de codi existencials, com si el
+             * programa senser ha acabat sent recursiu perque el main es recursiu cridantse
+             * a ell mateix i cridant al seu contingut cuan es crida a ell mateix. Tot i no
+             * resoldre-ho recursivament
+             * 
+             */
+            main(args);
         }
-    } 
-//... Continuará, idea de passarlo a una app d'escriptori amb JavaFX o Swing o algun Builder. 
-
+    }
+}
+// ... Continuará, idea de passarlo a una app d'escriptori amb JavaFX o Swing o
+// algun Builder.
