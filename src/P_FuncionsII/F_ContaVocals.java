@@ -1,12 +1,11 @@
 package P_FuncionsII;
-
 public class F_ContaVocals {
-
+  // Retorna un enter que son totes les vegades que es reemplaça una vocal
+  // quan es troba al patró.
   static int quantesVocals(String cad, String sonVocals) {
-    return 0;
+    return cad.replaceAll(sonVocals, "").length();
   }
-
   public static void main(String[] args) {
-    System.out.println(quantesVocals("Ara no el trobarà", "aeiou"));
+    System.out.println( quantesVocals("Ara no el trobarà", "[^AEIOUaeiouÁÉÍÓÚÀÈÌÒÙáàéèíìóòúùÄËÏÖÜäëïöü]") );
   }
 }
