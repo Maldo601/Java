@@ -1,7 +1,7 @@
 package P_FuncionsII;
 
 public class H_Bruixes {
-  static String str;
+  static String str;;
   // Genera una cadena de longitud "n" amb els caracters que formen
   // una bruixa, aleatoritzats.
   static String explanada(int n) {
@@ -44,8 +44,20 @@ public class H_Bruixes {
               ? str + "\n" + quantesBruixes(str)
               : "";
   }
+  static String mataBruixa (String explanada){
+    int i = explanada.indexOf("=()=");
+    return explanada.substring(0,i) + explanada.substring(i+4);
+  }
+  static int mataBruixes ( String explanada ){
+    
+
+
+
+    return 0;
+  }
   public static void main(String[] args) {
     // System.out.println(quantesBruixes(explanada(80)));
-       System.out.println(explanadaDeBruixes(800, 5));
+    //   System.out.println(explanadaDeBruixes(800, 5));
+    //      System.out.println(mataBruixa("))(=()=))))()"));
   }
 }
