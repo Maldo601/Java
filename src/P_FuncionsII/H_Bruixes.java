@@ -48,16 +48,19 @@ public class H_Bruixes {
     int i = explanada.indexOf("=()=");
     return explanada.substring(0,i) + explanada.substring(i+4);
   }
+  // Pendent
   static int mataBruixes ( String explanada ){
-    
-
-
-
-    return 0;
+    int counter = 0;
+    while (quantesBruixes(explanada) != 0)
+           explanada = mataBruixa(explanada);
+           counter++;
+  
+      return counter;
   }
   public static void main(String[] args) {
     // System.out.println(quantesBruixes(explanada(80)));
     //   System.out.println(explanadaDeBruixes(800, 5));
     //      System.out.println(mataBruixa("))(=()=))))()"));
+              System.out.println(mataBruixes("=(=(=()=)=)="));
   }
 }
