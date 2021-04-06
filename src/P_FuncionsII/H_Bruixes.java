@@ -37,10 +37,15 @@ public class H_Bruixes {
     // System.out.println(str);
     return counter;
   }
-  static String explanadaDeBruixes ( String explanada ){
-    return "";
+  static String explanadaDeBruixes ( int n, int numBruixes ){
+    return ( explanada(n).length() >= 50 &&
+             explanada(n).length() < 1000 &&
+             quantesBruixes(str) >= numBruixes ) 
+              ? str + "\n" + quantesBruixes(str)
+              : "";
   }
   public static void main(String[] args) {
-    System.out.println(quantesBruixes(explanada(80)));
+    // System.out.println(quantesBruixes(explanada(80)));
+       System.out.println(explanadaDeBruixes(800, 5));
   }
 }
