@@ -51,7 +51,7 @@ public class H_Bruixes {
   // Pendent
   static int mataBruixes ( String explanada ){
     int counter = 0;
-    while (quantesBruixes(explanada) > 0)
+    while (quantesBruixes(explanada) != 0)
            explanada = mataBruixa(explanada);
            counter++;
       return counter;
