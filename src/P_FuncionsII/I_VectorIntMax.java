@@ -6,9 +6,15 @@ public class I_VectorIntMax {
         Arrays.sort(aux);
         return aux[aux.length-1];
     }
+    static double max (double d[]){
+        double aux[] = Arrays.copyOf(d, d.length);
+        Arrays.sort(aux);
+        return aux[aux.length-1];
+    }
     public static void main (String [ ] args ){
-        int v[ ] = {5,2,32,4,5,6};
-        System.out.println(max(v));
+        int v[ ] = {5,2,32,4,5,6}; double d[ ] = {5.0,5.2,5.9};
+        max(v); max(d);
+        System.out.println(max(d));
     }
 }
 // Maldo
