@@ -7,7 +7,7 @@ public class A_testMain {
     public static void main ( String [] args ) {
         if (args.length == 0)
             System.out.println("\n\tT'has olvidat de passar parametros.");
-        else{
+        else {
             Arrays.sort(args);
             // Bucle for - loop
             for (String arg : args)
