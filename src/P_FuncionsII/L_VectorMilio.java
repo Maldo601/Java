@@ -11,6 +11,5 @@ public class L_VectorMilio {
             v[i] = Math.random();
         }
         // long time = System.currentTimeMillis();
-
     }
 }
