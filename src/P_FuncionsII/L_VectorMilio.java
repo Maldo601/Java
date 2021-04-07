@@ -2,7 +2,7 @@ package P_FuncionsII;
 
 public class L_VectorMilio {
     static int max (double v[]){
-
+        return 0;
     }
 
     public static void main (String [ ] args){
