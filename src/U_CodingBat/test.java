@@ -116,14 +116,19 @@ public class test {
         return str;
       }
     // Retorna el color si apareix al principi de la cadena:
-    public String seeColor(String str) {
+    static String seeColor(String str) {
         if(str.indexOf("red") == 0)
           return "red";
         if(str.indexOf("blue") == 0)
           return "blue";
         return "";
       }
-      
+    // Retorna true si els dos primers caracters son iguals als dos ultims caracters
+    static boolean frontAgain(String str) {
+        if( str.length() < 2)
+          return false;
+        return (str.substring(0,2).equals(str.substring(str.length()-2))) ? true : false;
+    }  
       
 
     public static void main (String[] args){
