@@ -94,7 +94,7 @@ public class test {
         return a.charAt(0) + b.substring(b.length()-1, b.length());
       }
       // Concatena les dos parts. Si el final de "a" es == al principi de "b", elimina el caracter.
-     static String conCat(String a, String b) {
+    static String conCat(String a, String b) {
         if (a.equals(""))
             return b;
         if (b.equals(""))
@@ -103,6 +103,19 @@ public class test {
             return a + b.substring(1);
         return a + b;
       }
+    // Permutar la posicio dels dos ultims caracters i contempla la nulitat o monocaracter
+    static String lastTwo(String str) {
+        if (str.length() >= 2){
+          String cad = str.substring(0,str.length()-2);
+          String last = str.substring(str.length()-1);
+          String pre = str.substring(str.length()-2);
+          return cad + last + ""+pre.charAt(0);
+        }
+        if (str.length() == 0)
+          return "";
+        return str;
+      }
+      
 
     public static void main (String[] args){
         System.out.println(conCat("abc","cat"));
