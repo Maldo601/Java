@@ -24,6 +24,8 @@ public class test {
     public String middleTwo(String str) {
         String cad = str.substring( (str.length()/2)-1);
         return cad.substring(0,2);
+        // Torna tres caracters del mig de una cadena:
+        //     return cad.substring(0,3);
     }
     // Torna boolean si el patro acaba en "ly"
     public boolean endsLy(String str) {
@@ -42,7 +44,29 @@ public class test {
     return ( str.length() > index+1 && index >= 0 ) ? str.substring(index, index+2)
                                                     : str.substring(0, 2);
     }
-      
+    /* Retorna true o false si la string conté el patró "bad" al index 0 o 1.
+       Té en compte casos d'error de pas de parametre. 
+    */
+    public boolean hasBad(String str) {
+        int i = str.indexOf("bad");
+        if (i != -1 && i <= 1)
+          return true;
+        return false;
+      }
+    // Un altre exemple de l'anterior proposat per CodingBat diferent al meu. 
+    public boolean hasBad2(String str) {
+        if (str.length()>=3 && str.substring(0, 3).equals("bad")) 
+          return true;    
+        if (str.length()>=4 && str.substring(1, 4).equals("bad")) 
+          return true;
+        return false;
+        // Solution notes: basically want to call substring(0, 3) and
+        // substring(1, 4) and check if that equals "bad". Need to check
+        // the length first so as to not go off the end of the string.
+        // Alternately one could use indexOf() -- that code is short
+        // but it runs much slower, since it needlessly checks over the whole
+        // string.
+      }
       
       
       
