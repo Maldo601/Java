@@ -130,13 +130,25 @@ public class test {
         return (str.substring(0,2).equals(str.substring(str.length()-2))) ? true : false;
     }
     // Retorna una cadena concatenada a la mesura de la mes petita passada
-    public String minCat(String a, String b) {
+    static String minCat(String a, String b) {
         if (a.length() > b.length())
           return a.substring(a.length()-b.length()) + b;
           else if(a.length() < b.length())
             return a + b.substring(b.length() - a.length());
         return "";
       }
+    // Retorna 3 vegades els dos primers caracters. Si es mono caracter 1. 
+    static String extraFront(String str) {
+    String cad = "";
+        for (int i = 0; i < 3; i++){
+          if(str.length() > 1)
+            cad += str.substring(0,2);
+          else if (str.length() == 1)
+            cad += str.substring(0);
+        }
+        return cad;
+    }
+       
       
       
 
