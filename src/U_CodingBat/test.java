@@ -25,6 +25,18 @@ public class test {
         String cad = str.substring( (str.length()/2)-1);
         return cad.substring(0,2);
       }
+    // Torna boolean si el patro acaba en "ly"
+    public boolean endsLy(String str) {
+        if ( str.length() < 2 )
+          return false;
+        return (str.substring(str.length()-2).equals("ly")) ? true 
+                                                            : false;
+      }
+    // Torna la cadena tallada per front i back (n)
+    public String nTwice(String str, int n) {
+        return str.substring(0,n) + str.substring(str.length()-n);
+      }
+      
       
       
       
