@@ -128,7 +128,16 @@ public class test {
         if( str.length() < 2)
           return false;
         return (str.substring(0,2).equals(str.substring(str.length()-2))) ? true : false;
-    }  
+    }
+    // Retorna una cadena concatenada a la mesura de la mes petita passada
+    public String minCat(String a, String b) {
+        if (a.length() > b.length())
+          return a.substring(a.length()-b.length()) + b;
+          else if(a.length() < b.length())
+            return a + b.substring(b.length() - a.length());
+        return "";
+      }
+      
       
 
     public static void main (String[] args){
