@@ -93,14 +93,18 @@ public class test {
         }
         return a.charAt(0) + b.substring(b.length()-1, b.length());
       }
-      
-      
-      
-      
-      
-      
-      
+      // Concatena les dos parts. Si el final de "a" es == al principi de "b", elimina el caracter.
+     static String conCat(String a, String b) {
+        if (a.equals(""))
+            return b;
+        if (b.equals(""))
+            return a;
+        if (a.substring(a.length()-1).equals(""+b.charAt(0)))
+            return a + b.substring(1);
+        return a + b;
+      }
+
     public static void main (String[] args){
-        
+        System.out.println(conCat("abc","cat"));
     }
 }
