@@ -115,6 +115,15 @@ public class test {
           return "";
         return str;
       }
+    // Retorna el color si apareix al principi de la cadena:
+    public String seeColor(String str) {
+        if(str.indexOf("red") == 0)
+          return "red";
+        if(str.indexOf("blue") == 0)
+          return "blue";
+        return "";
+      }
+      
       
 
     public static void main (String[] args){
