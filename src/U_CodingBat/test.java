@@ -148,7 +148,18 @@ public class test {
         }
         return cad;
     }
-       
+    // Si els dos primers caracters son iguals als dos ultims, lleva els primers dos i torna str. 
+    // Si no, torna cadena sencera 
+    static String without2(String str) {
+        if (str.length()==1)
+          return String.valueOf(str.charAt(0));
+        else if (str.equals(""))
+          return "";
+        if ( str.substring(0,2).equals(str.substring(str.length()-2 )))
+          return str.substring(2, str.length());
+        return str;
+      }
+      
       
       
 
