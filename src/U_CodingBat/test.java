@@ -52,7 +52,7 @@ public class test {
         if (i != -1 && i <= 1)
           return true;
         return false;
-      }
+    }
     // Un altre exemple de l'anterior proposat per CodingBat diferent al meu. 
     public boolean hasBad2(String str) {
         if (str.length()>=3 && str.substring(0, 3).equals("bad")) 
@@ -66,7 +66,35 @@ public class test {
         // Alternately one could use indexOf() -- that code is short
         // but it runs much slower, since it needlessly checks over the whole
         // string.
+    }
+    /* Retorna els dos primers caracters. Si nomes hi ha un caracter retorna caracter + @
+       si no hi ha res, dos arrobes.
+    */
+    public String atFirst(String str) {
+        if (str.equals(""))
+          return "@@";
+        return (str.length() <= 1 ) ? str.substring(0) + "@" : str.substring(0,2) ;                         
+    }
+    /* 
+       Retorna la primera lletra de A i la ultima de B
+       Si la cadena es buida es retorna una "@"
+    */
+    public String lastChars(String a, String b) {
+        String cad = "";
+        if ( a.equals("") && b.equals("") )
+          return "@@";
+        if ( a.equals("")){
+          cad = "@";
+          return cad + b.substring(b.length()-1);
+        }
+        if ( b.equals ("")){
+          cad = a.charAt(0) + "@";
+          return cad;
+        }
+        return a.charAt(0) + b.substring(b.length()-1, b.length());
       }
+      
+      
       
       
       
