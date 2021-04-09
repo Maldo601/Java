@@ -94,18 +94,18 @@ public class A_DNI {
         }
         // Si s'incrementa per damunt de 6, s'ha d'afegir un "0" al WHILE de addString
         // Array
-        if (interrogants > 6)// ------------------------------------------------*
-            return false; //
-        return true; //
-    } //
-      // FUNCIO PRINCIPAL //
-
-    static void addStringArray(String nif) { //
-        int numNIFs = 0; //
-        if (nifCorrecte(nif) == true) { //
-            int i = 0; //
-            // Incrementar un 0 si es modifica el limit d'interrogants. //
-            while (i <= 1000000) { // --------------------------------------------*
+        if (interrogants > 6)// <-------------------------------------------------
+            return false;                                                       //
+        return true;                                                            //
+    }                                                                           //
+      // FUNCIO PRINCIPAL                                                       //
+                                                                                //
+    static void addStringArray(String nif) {                                    //
+        int numNIFs = 0;                                                        //
+        if (nifCorrecte(nif) == true) {                                         //
+            int i = 0;                                                          //
+            // Incrementar un 0 si es modifica el limit d'interrogants.         //
+            while (i <= 1000000) { // <-------------------------------------------
                 // Passa indiscriminadament una cadena al vector.
                 for (int x = 0; x < nif.length(); x++) {
                     nifsOk[x] = String.valueOf(nif.charAt(x));
@@ -121,9 +121,8 @@ public class A_DNI {
                     Validar += nifsOk[y];
                 }
                 boolean comprova = false;
-                if (!validNif(Validar)) {
+                if (!validNif(Validar))
                     nifsOk[8] = "" + lletraOperacional;
-                }
                 if (validNif(Validar)) {
                     List<String> list = Arrays.asList(historial);
                     if (!list.contains(Validar)) {
