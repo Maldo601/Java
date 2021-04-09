@@ -307,6 +307,14 @@ public class test {
             return 1;
     return 2;
   }
+  /*
+    Si la suma de a i b esta entre 10 i 19, retorna 20. Tot el resto es suma normal
+  */
+  static int sortaSum(int a, int b) {
+    if ( (a + b) <= 19 && (a+b) >=10)
+      return 20;
+    return a+b;
+  }
   
   // MAIN 
   public static void main(String[] args) {
