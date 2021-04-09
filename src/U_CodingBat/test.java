@@ -184,6 +184,29 @@ public class test {
     
       return "";
     }
+  /* 
+     Retorna una cadena de la longitud de la segona paraula on si la primera lletra
+     no es igual a la de la primera paraula, es permuta a aquesta, aquest caracter.
+     Si les lletres seguents, alguna no coincideix amb el contingut de la primera, es retorna
+     cadena buida. Mes info al penultim exercici de Strings 1 de codeBat.
+  */
+  static String startWord(String str, String word) {
+  
+    if (!str.contains(word.substring(1,word.length())))
+      return "";
+      
+    if (str.length() < word.length() )
+      return "";
+      
+    if( str.contains(word) )
+      return str.substring( 0 ,word.length() );
+    
+    if ( str.charAt(0) != word.charAt(0) )
+      return word.replaceFirst(""+word.charAt(0), ""+str.charAt(0));
+  
+    return "";
+  }
+  
     
       
       
