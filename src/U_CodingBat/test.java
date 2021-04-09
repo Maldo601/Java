@@ -256,6 +256,20 @@ public class test {
         return str;
     return str.replaceFirst("x", "");
   }
+
+
+
+  // B O O L E A N      B A S I C S 
+
+  /* Retorna true o false si entre semana uns esquirols tenen entre 40 i 60 cigarrros. 
+     en fi de setmana esta gent no te limit 
+  */
+  public boolean cigarParty(int cigars, boolean isWeekend) {
+    if (isWeekend == false && cigars >60)
+      return false;
+    return (cigars >= 40) ? true : false ;
+  }
+  
   // MAIN 
   public static void main(String[] args) {
     System.out.println(conCat("abc", "cat"));
