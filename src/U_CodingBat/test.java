@@ -264,7 +264,7 @@ public class test {
   /* Retorna true o false si entre semana uns esquirols tenen entre 40 i 60 cigarrros. 
      en fi de setmana esta gent no te limit 
   */
-  public boolean cigarParty(int cigars, boolean isWeekend) {
+  static boolean cigarParty(int cigars, boolean isWeekend) {
     if ( isWeekend == false && cigars > 60 )
       return false;
     return ( cigars >= 40 ) ? true : false ;
