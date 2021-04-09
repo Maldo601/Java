@@ -244,8 +244,19 @@ public class test {
       return str.substring(0,str.length()-1);
     return str;
   }
-  
-
+  /*
+    Elimina el primer i el segon caracter si son una "x". Torna la cadena del resto.
+  */
+  static String withoutX2(String str) {
+    if ( str.length() < 2)
+      return "";
+    if (str.charAt(0) == 'x' && str.charAt(1) == 'x')
+      return str.substring(2);
+      else if (str.charAt(0) != 'x' && str.charAt(1) != 'x')
+        return str;
+    return str.replaceFirst("x", "");
+  }
+  // MAIN 
   public static void main(String[] args) {
     System.out.println(conCat("abc", "cat"));
   }
