@@ -278,13 +278,22 @@ public class test {
     Si es te una puntuacio de mes de 8 i l'altre mes de dos es retorna 1
     Si es un barriobajero algu dels dos, es retorna una puntuacio de 0 i sels fot fora del restaurantç
   */
-  public int dateFashion(int you, int date) {
+  static int dateFashion(int you, int date) {
     if (you <=2 || date <=2)
         return 0;
     if (you >= 8 || date >=8)
       return 2;
     return 1;
   }
+  /*
+    Si el valor es true, rango entre 60 y 100. Si es false el verano, 60-90
+  */
+  static boolean squirrelPlay(int temp, boolean isSummer) {
+    if(isSummer == true)
+      return (temp >= 60 && temp <= 100) ? true : false;
+    return (temp >= 60 && temp <=90) ? true : false;
+  }
+  
   // MAIN 
   public static void main(String[] args) {
     System.out.println(conCat("abc", "cat"));
