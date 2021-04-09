@@ -257,19 +257,31 @@ public class test {
     return str.replaceFirst("x", "");
   }
 
-
-
   // B O O L E A N      B A S I C S 
 
-  /* Retorna true o false si entre semana uns esquirols tenen entre 40 i 60 cigarrros. 
-     en fi de setmana esta gent no te limit 
+  /* 
+    Retorna true o false si entre semana uns esquirols tenen entre 40 i 60 cigarrros. 
+    en fi de setmana esta gent no te limit 
   */
   static boolean cigarParty(int cigars, boolean isWeekend) {
     if ( isWeekend == false && cigars > 60 )
       return false;
     return ( cigars >= 40 ) ? true : false ;
   }
-  
+
+  /*
+    Parelles al restaurant i elegancia de la roba per elegir taula. 
+    Si una parella te una puntuacio de menos de 2 o 2, se retorna 0
+    Si es te una puntuacio de mes de 8 i l'altre mes de dos es retorna 1
+    Si es un barriobajero algu dels dos, es retorna una puntuacio de 0 i sels fot fora del restaurantç
+  */
+  public int dateFashion(int you, int date) {
+    if (you <=2 || date <=2)
+        return 0;
+    if (you >= 8 || date >=8)
+      return 2;
+    return 1;
+  }
   // MAIN 
   public static void main(String[] args) {
     System.out.println(conCat("abc", "cat"));
