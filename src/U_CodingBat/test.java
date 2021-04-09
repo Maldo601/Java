@@ -159,7 +159,32 @@ public class test {
           return str.substring(2, str.length());
         return str;
       }
+    // Porta Booleana.
+    /*
+    Si teniu una cadena, torneu una versió sense els 2 primers caràcters. 
+    Excepte guardeu el primer caràcter si és "a" i mantingueu el segon caràcter si és "b". 
+    La corda pot tenir qualsevol longitud. Més difícil del que sembla
+    */
+    static String deFront(String str) {
+  
+      if( str.charAt(0) == 'a' && str.charAt(1) != 'b')
+        return str.replaceFirst(""+str.charAt(1), "");
+    
+      if (str.charAt(1) == 'b' && str.charAt(0) != 'a')
+        return str.substring(1);
+        
+      if (str.charAt(0) == 'a' && str.charAt(1) == 'b' && str.length() <= 3)
+        return str;
+        
+      if (str.charAt(0) == 'a' && str.charAt(1) == 'b' && str.length() > 3)
+        return str;
       
+      if (str.charAt(0) != 'a' && str.charAt(1) != 'b' && str.length() > 2)
+        return str.substring(2);
+    
+      return "";
+    }
+    
       
       
 
