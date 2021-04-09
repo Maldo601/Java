@@ -1,6 +1,9 @@
 package U_CodingBat;
 
 public class test {
+
+  // S T R I N G S      B A S I C S    LVL 1 
+
   // Rotar cadenes.
   static String left2(String str) {
     return str.substring(2, str.length()) + str.substring(0, 2);
@@ -257,7 +260,7 @@ public class test {
     return str.replaceFirst("x", "");
   }
 
-  // B O O L E A N      B A S I C S 
+  // B O O L E A N      B A S I C S  LVL 1 
 
   /* 
     Retorna true o false si entre semana uns esquirols tenen entre 40 i 60 cigarrros. 
