@@ -293,6 +293,20 @@ public class test {
       return (temp >= 60 && temp <= 100) ? true : false;
     return (temp >= 60 && temp <=90) ? true : false;
   }
+  /*
+    Multes de transit. Si es el teu cumple pots correr 5 punts mes. Si no, apareixen 
+    les seguents limitacions que retornen un enter representant la magnitud de la multa. 
+      - Si es true, li restem 5 punts a speed per treballar mes facil i no alterar valors finals. 
+  */
+  static int caughtSpeeding(int speed, boolean isBirthday) {
+    if (isBirthday == true)
+      speed -= 5;
+      else if (speed <= 60)
+        return 0;
+          else if (speed >= 61 && speed <= 80)
+            return 1;
+    return 2;
+  }
   
   // MAIN 
   public static void main(String[] args) {
