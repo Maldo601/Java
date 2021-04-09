@@ -265,9 +265,9 @@ public class test {
      en fi de setmana esta gent no te limit 
   */
   public boolean cigarParty(int cigars, boolean isWeekend) {
-    if (isWeekend == false && cigars >60)
+    if ( isWeekend == false && cigars > 60 )
       return false;
-    return (cigars >= 40) ? true : false ;
+    return ( cigars >= 40 ) ? true : false ;
   }
   
   // MAIN 
