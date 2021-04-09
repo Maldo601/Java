@@ -229,6 +229,22 @@ public class test {
 
     return "";
   }
+  /*
+  Si es dóna una cadena, si el primer o l'últim caràcter són 'x', torneu la cadena sense aquests caràcters 'x' 
+  i, en cas contrari, torneu la cadena sense canvis.
+  */
+  static String withoutX(String str) {
+    if (str.length() < 2)
+      return "";      
+    if (str.charAt(0) == 'x' && str.substring(str.length()-1).equals("x") )
+      return str.substring(1,str.length()-1);
+    else if (str.charAt(0) =='x')
+      return str.substring(1);
+    else if (str.substring(str.length()-1).equals("x"))
+      return str.substring(0,str.length()-1);
+    return str;
+  }
+  
 
   public static void main(String[] args) {
     System.out.println(conCat("abc", "cat"));
