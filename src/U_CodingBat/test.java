@@ -8,24 +8,20 @@ public class test {
   static String left2(String str) {
     return str.substring(2, str.length()) + str.substring(0, 2);
   }
-
   // Rotar cadenes a la dreta "Hello -> loHel"
   static String right2(String str) {
     return str.substring(str.length() - 2) + str.substring(0, str.length() - 2);
   }
-
   // True retorna primer caracter. False últim
   static String theEnd(String str, boolean front) {
     if (front == true)
       return "" + str.charAt(0);
     return str.substring(str.length() - 1);
   }
-
   // Retallar primer i ultima posicio.
   static String withouEnd2(String str) {
     return (str.length() <= 2) ? "" : str.substring(1, str.length() - 1);
   }
-
   // Torna els dos caracters de la mitat d'una cadena
   static String middleTwo(String str) {
     String cad = str.substring((str.length() / 2) - 1);
@@ -33,25 +29,21 @@ public class test {
     // Torna tres caracters del mig de una cadena:
     // return cad.substring(0,3);
   }
-
   // Torna boolean si el patro acaba en "ly"
   static boolean endsLy(String str) {
     if (str.length() < 2)
       return false;
     return (str.substring(str.length() - 2).equals("ly")) ? true : false;
   }
-
   // Torna la cadena tallada per front i back (n)
   static String nTwice(String str, int n) {
     return str.substring(0, n) + str.substring(str.length() - n);
   }
-
   // Agafa partint de l'index un caracter mes. Si no es possible o l'index passat
   // no es valid, torna els dos primers caracters de la cadena.
   static String twoChar(String str, int index) {
     return (str.length() > index + 1 && index >= 0) ? str.substring(index, index + 2) : str.substring(0, 2);
   }
-
   /*
    * Retorna true o false si la string conté el patró "bad" al index 0 o 1. Té en
    * compte casos d'error de pas de parametre.
@@ -62,7 +54,6 @@ public class test {
       return true;
     return false;
   }
-
   // Un altre exemple de l'anterior proposat per CodingBat diferent al meu.
   static boolean hasBad2(String str) {
     if (str.length() >= 3 && str.substring(0, 3).equals("bad"))
@@ -77,7 +68,6 @@ public class test {
     // but it runs much slower, since it needlessly checks over the whole
     // string.
   }
-
   /*
    * Retorna els dos primers caracters. Si nomes hi ha un caracter retorna
    * caracter + @ si no hi ha res, dos arrobes.
@@ -87,7 +77,6 @@ public class test {
       return "@@";
     return (str.length() <= 1) ? str.substring(0) + "@" : str.substring(0, 2);
   }
-
   /*
    * Retorna la primera lletra de A i la ultima de B Si la cadena es buida es
    * retorna una "@"
@@ -106,7 +95,6 @@ public class test {
     }
     return a.charAt(0) + b.substring(b.length() - 1, b.length());
   }
-
   // Concatena les dos parts. Si el final de "a" es == al principi de "b", elimina
   // el caracter.
   static String conCat(String a, String b) {
@@ -118,7 +106,6 @@ public class test {
       return a + b.substring(1);
     return a + b;
   }
-
   // Permutar la posicio dels dos ultims caracters i contempla la nulitat o
   // monocaracter
   static String lastTwo(String str) {
@@ -132,7 +119,6 @@ public class test {
       return "";
     return str;
   }
-
   // Retorna el color si apareix al principi de la cadena:
   static String seeColor(String str) {
     if (str.indexOf("red") == 0)
@@ -141,14 +127,12 @@ public class test {
       return "blue";
     return "";
   }
-
   // Retorna true si els dos primers caracters son iguals als dos ultims caracters
   static boolean frontAgain(String str) {
     if (str.length() < 2)
       return false;
     return (str.substring(0, 2).equals(str.substring(str.length() - 2))) ? true : false;
   }
-
   // Retorna una cadena concatenada a la mesura de la mes petita passada
   static String minCat(String a, String b) {
     if (a.length() > b.length())
@@ -157,7 +141,6 @@ public class test {
       return a + b.substring(b.length() - a.length());
     return "";
   }
-
   // Retorna 3 vegades els dos primers caracters. Si es mono caracter 1.
   static String extraFront(String str) {
     String cad = "";
@@ -169,7 +152,6 @@ public class test {
     }
     return cad;
   }
-
   // Si els dos primers caracters son iguals als dos ultims, lleva els primers dos
   // i torna str.
   // Si no, torna cadena sencera
@@ -182,7 +164,6 @@ public class test {
       return str.substring(2, str.length());
     return str;
   }
-
   // Porta Booleana.
   /*
    * Si teniu una cadena, torneu una versió sense els 2 primers caràcters. Excepte
@@ -208,7 +189,6 @@ public class test {
 
     return "";
   }
-
   /*
    * Retorna una cadena de la longitud de la segona paraula on si la primera
    * lletra no es igual a la de la primera paraula, es permuta a aquesta, aquest
@@ -271,7 +251,6 @@ public class test {
       return false;
     return ( cigars >= 40 ) ? true : false ;
   }
-
   /*
     Parelles al restaurant i elegancia de la roba per elegir taula. 
     Si una parella te una puntuacio de menos de 2 o 2, se retorna 0
@@ -310,11 +289,22 @@ public class test {
   /*
     Si la suma de a i b esta entre 10 i 19, retorna 20. Tot el resto es suma normal
   */
-  public int sortaSum(int a, int b) {
+  static int sortaSum(int a, int b) {
     return((a + b) <= 19 && (a+b) >=10) ? 20 : a+b;
   }
-  
-  
+  /*
+    Alarma que retorna unes condicions horaries i festives
+  */
+  static String alarmClock(int day, boolean vacation) {
+  if (vacation == true && (day == 6 || day == 0 ))
+    return "off";
+    else if (vacation == false && (day == 6 || day == 0))
+      return "10:00";
+    else if (vacation == true && day >= 1 && day < 6)
+      return "10:00";
+  return "7:00";
+}
+
   // MAIN 
   public static void main(String[] args) {
     System.out.println(conCat("abc", "cat"));
