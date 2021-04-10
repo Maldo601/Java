@@ -323,8 +323,11 @@ public class test {
   return false;
 }
   /*
-  
+    Torna true si es multiple de 11 o si n+1 tambe ho es. El resto a false.
   */
+  static boolean specialEleven(int n) {
+    return  ( n % 11 == 0 || n % 11 == 1 ) ? true : false;
+}
 
   // MAIN 
   public static void main(String[] args) {
