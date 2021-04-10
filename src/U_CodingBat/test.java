@@ -310,6 +310,21 @@ public class test {
   static boolean love6(int a, int b) {
   return (a == 6 || b == 6 || Math.abs(a-b) == 6 || a+b == 6) ? true : false;
 }
+  /*
+    Retorna true o false depenent de l'estat de outsideMode i dels numeros
+  */
+  static boolean in1To10(int n, boolean outsideMode) {
+  if(outsideMode == false && n <= 0)
+    return false;
+    else if ( (n >= 1 && n <= 10) && outsideMode == false)
+      return true;
+      else if ( n <= 1 || n >= 10 && outsideMode == true)
+        return true;
+  return false;
+}
+  /*
+  
+  */
 
   // MAIN 
   public static void main(String[] args) {
