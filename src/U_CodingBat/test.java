@@ -304,6 +304,12 @@ public class test {
       return "10:00";
   return "7:00";
 }
+  /* 
+    Torna true o false si "a" + o - "b" == 6 absolut
+  */
+  static boolean love6(int a, int b) {
+  return (a == 6 || b == 6 || Math.abs(a-b) == 6 || a+b == 6) ? true : false;
+}
 
   // MAIN 
   public static void main(String[] args) {
