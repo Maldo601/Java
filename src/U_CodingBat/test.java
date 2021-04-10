@@ -333,9 +333,17 @@ public class test {
   */
   static boolean more20(int n) {
     return ( n % 20 == 1 || n % 20 == 2 ) ? true : false;
-}
+  }
+  /* Torna true si "n" es multiple de 5 o de 3, pero no dels dos alhora. */
+  static boolean old35(int n) {
+    if ( n % 5 == 0 && n % 3 == 0 )
+      return false;
+    return ( n % 5 == 0 || n % 3 == 0) ? true : false;
+  }
+  
+  
+  
   // MAIN 
   public static void main(String[] args) {
-    System.out.println(conCat("abc", "cat"));
   }
 }
