@@ -340,7 +340,15 @@ public class test {
       return false;
     return ( n % 5 == 0 || n % 3 == 0) ? true : false;
   }
-  
+  /*
+    Torna true si n+1 o n+2 es %20 !!! OJO EN LOS PARENTESIS !!! 
+  */
+  static boolean less20(int n) {
+  if ( (n+1) % 20 == 0 || (n+2) % 20 == 0)
+    return true;
+  return false;
+}
+
   
   
   // MAIN 
