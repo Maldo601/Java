@@ -328,7 +328,12 @@ public class test {
   static boolean specialEleven(int n) {
     return  ( n % 11 == 0 || n % 11 == 1 ) ? true : false;
 }
-
+  /*
+    Torna true si n+1 o n+2 es multiple de 20.
+  */
+  static boolean more20(int n) {
+    return ( n % 20 == 1 || n % 20 == 2 ) ? true : false;
+}
   // MAIN 
   public static void main(String[] args) {
     System.out.println(conCat("abc", "cat"));
