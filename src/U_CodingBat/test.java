@@ -413,8 +413,10 @@ public class test {
   */
   static boolean twoAsOne(int a, int b, int c) {
     return (a+b == c || Math.abs(a-b) == c || b - a == c) ? true : false;
-}
-
+  }
+  /*
+    Retorna 
+  */
   // MAIN 
   public static void main(String[] args) {
   }
