@@ -355,6 +355,12 @@ public class test {
     return ( (num+2) % 10 <= 4) ? true : false;
 }
   /*
+    Retorna 19 o la suma dels dos 
+  */
+  static int teenSum(int a, int b) {
+    return ((a >= 13 && a <= 19) || (b >= 13 && b <=19 ) ) ? 19 : a+b;
+}
+  /* 
     Retorna
   */
   
