@@ -348,8 +348,15 @@ public class test {
     return true;
   return false;
 }
-
-  
+  /* 
+    Retorna true o false si el numero +2 esta a residu 4 o menos
+  */
+  static boolean nearTen(int num) {
+    return ( (num+2) % 10 <= 4) ? true : false;
+}
+  /*
+    Retorna
+  */
   
   // MAIN 
   public static void main(String[] args) {
