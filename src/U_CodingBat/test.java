@@ -457,7 +457,32 @@ public class test {
     }
     return die1 + die2;
   }
-
+  /*
+    Retorna el numero mes gran dels dos 
+  */
+  static int maxMod5(int a, int b) {
+  if(a == b)
+   return 0;
+    else if(a % 5 == b % 5)
+      return (a < b) ? a 
+                     : b;
+    return a > b ? a : b;
+}
+  /*
+    Retorna
+  */
+  static int redTicket(int a, int b, int c) {
+   if(a == 2 && b == 2 && c == 2)
+        return 10;
+          
+    if(a == b && b == c)
+        return 5;
+                    
+    if(a != b && a != c)
+        return 1;
+                            
+    return 0;
+  }
 
   // MAIN 
   public static void main(String[] args) {
