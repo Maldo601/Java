@@ -361,9 +361,16 @@ public class test {
     return ((a >= 13 && a <= 19) || (b >= 13 && b <=19 ) ) ? 19 : a+b;
 }
   /* 
-    Retorna
+    Sona el telèfon mòbil. Torneu a cert si heu de respondre-ho. Normalment responeu, 
+    excepte que al matí només responeu si la vostra mare truca. En tots els casos, 
+    si estàs adormit, no respon
   */
-  
+  static boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
+    if(isAsleep)
+      return false;
+    return (isMorning && !isMom) ? false : true;
+  }
+
   // MAIN 
   public static void main(String[] args) {
   }
