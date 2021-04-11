@@ -415,10 +415,22 @@ public class test {
     return (a+b == c || Math.abs(a-b) == c || b - a == c) ? true : false;
   }
   /*
-    Retorna 
+    No cal explicarlo massa. 
   */
   static boolean inOrder(int a, int b, int c, boolean bOk) {
     return ( b > a && b < c && bOk == false ) || ( b < c && bOk == true) ? true : false;
+  }
+  /*
+    Retorna true si els numeros estan estrictament en ordre ascendent si equal OK es fals.
+    Si es true, permet la igualtat de numeros sempre i quan estiguen ascendents.
+    Tot el resto a false.
+  */
+  static boolean inOrderEqual(int a, int b, int c, boolean equalOk) {
+    if (a < b && b < c && equalOk == false )
+      return true;
+    else if ( equalOk == true && a <= b && b <= c)
+      return true;
+  return false;
   }
 
   // MAIN 
