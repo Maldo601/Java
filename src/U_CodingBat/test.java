@@ -426,12 +426,11 @@ public class test {
     Tot el resto a false.
   */
   static boolean inOrderEqual(int a, int b, int c, boolean equalOk) {
-    if (a < b && b < c && equalOk == false )
-      return true;
-    else if ( equalOk == true && a <= b && b <= c)
-      return true;
-  return false;
-  }
+    return (a < b && b < c && equalOk == false ) || ( equalOk == true && a <= b && b <= c)
+    ? true
+    : false ;
+}
+
 
   // MAIN 
   public static void main(String[] args) {
