@@ -417,6 +417,10 @@ public class test {
   /*
     Retorna 
   */
+  static boolean inOrder(int a, int b, int c, boolean bOk) {
+    return ( b > a && b < c && bOk == false ) || ( b < c && bOk == true) ? true : false;
+  }
+
   // MAIN 
   public static void main(String[] args) {
   }
