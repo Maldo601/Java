@@ -507,6 +507,29 @@ public class test {
           return 5;                    
     return 0;
 }
+  /*
+  
+  */
+  static boolean shareDigit(int a, int b) {
+    int al = a / 10;
+    int ar = a % 10;
+    int bl = b / 10;
+    int br = b % 10;
+    return al == bl || al == br || ar == bl || ar == br;
+}
+  /*
+  
+  */
+  static int sumLimit(int a, int b) {
+  int sum = a + b;
+    int aLength = String.valueOf(a).length();
+    int sumLength = String.valueOf(sum).length();
+        
+    if(sumLength == aLength)
+        return sum;
+                  
+    return a;
+}
 
   // MAIN 
   public static void main(String[] args) {
