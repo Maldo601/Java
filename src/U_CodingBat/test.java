@@ -380,7 +380,22 @@ public class test {
       return 2;
   return 1;
 }
-
+  /*
+    Return "Fizz" or "Buzz" or "FizzBuzz" or str if starts with "F" or ends with "B" or F && B 
+  */
+  static String fizzString(String str) {
+    if (str.charAt(0) == 'f' && str.substring(str.length()-1).equals("b"))
+      return "FizzBuzz";
+        else if (str.charAt(0) == 'f')
+          return "Fizz";
+        else if (str.substring(str.length()-1).equals("b"))
+          return "Buzz";
+    return str;
+}
+  /*
+  
+  
+  */
   // MAIN 
   public static void main(String[] args) {
   }
