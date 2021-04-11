@@ -408,6 +408,12 @@ public class test {
         return "Buzz" + car;
     return ""+n+car;
 }
+  /*
+    Si en a o b se pot formar c, torna true o false.
+  */
+  static boolean twoAsOne(int a, int b, int c) {
+    return (a+b == c || Math.abs(a-b) == c || b - a == c) ? true : false;
+}
 
   // MAIN 
   public static void main(String[] args) {
