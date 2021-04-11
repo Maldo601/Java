@@ -393,9 +393,22 @@ public class test {
     return str;
 }
   /*
-  
-  
+    Si es divisible per 3 -> Fizz ! 
+    Si es divisible per 5 -> Buzz !
+    Els dos               -> FizzBuzz !
+    else                  -> num + ! 
   */
+  static String fizzString2(int n) {
+    String car = "!";
+      if (n%3 == 0 && n%5 == 0)
+        return "FizzBuzz" + car;
+      else if (n%3 == 0)
+        return "Fizz" + car;
+      else if (n%5 == 0)
+        return "Buzz" + car;
+    return ""+n+car;
+}
+
   // MAIN 
   public static void main(String[] args) {
   }
