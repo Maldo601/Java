@@ -438,6 +438,26 @@ public class test {
             ? true 
             : false ;
   }
+  /*
+    Retorna true o false si un dels numeros es 10 menor que els altres
+  */
+  static boolean lessBy10(int a, int b, int c) {
+    return (Math.abs(a-b) >= 10 || Math.abs(a-c) >= 10|| Math.abs(b-c) >= 10) 
+            ? true
+            : false ;
+  }
+  /*
+    
+  */
+  static int withoutDoubles(int die1, int die2, boolean noDoubles) {
+    if(noDoubles && die1 == die2) {
+      die1++;
+        if(die1 == 7)
+         die1 = 1;
+    }
+    return die1 + die2;
+  }
+
 
   // MAIN 
   public static void main(String[] args) {
