@@ -551,6 +551,18 @@ public class test {
     int v[] = {3,1,4};
     return v;
   }
+  /*
+    Retorna true si el primer o ultim valor del primer vector es igual al primer valor o ultim
+    valor del segon vector
+  */
+  static boolean commonEnd(int[] a, int[] b) {
+    int Afirst = a[0];
+    int Aback = a[a.length-1];
+    int Bfirst = b[0];
+    int Bback = b[b.length-1];
+      return (Afirst == Bfirst || Aback == Bback) ? true : false;
+  }
+  
   
 
   // MAIN 
