@@ -562,7 +562,15 @@ public class test {
     int Bback = b[b.length-1];
       return (Afirst == Bfirst || Aback == Bback) ? true : false;
   }
-  
+  /*
+    Retorna la suma de tots los valors del vector a un counter. 
+  */
+  static int sum3(int[] nums) {
+    int counter = 0;
+    for (int i = 0; i < nums.length; i++)
+      counter += nums[i];
+    return counter;
+  }
   
 
   // MAIN 
