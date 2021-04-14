@@ -11,7 +11,7 @@ public class N_SumaVector {
                 v[i] = v2[i];
         return v;
     }
-    public static void main (String[] args){
+    public static void main (String[] args) {
         int v1[] = {1,2,3};
         int v2[] = {5,5,5,5,5};
         System.out.println(Arrays.toString(suma_vectors(v1,v2)));
