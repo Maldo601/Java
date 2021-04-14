@@ -134,7 +134,8 @@ public class A_DNI {
                         // Counter de NIFS vàlids
                         numNIFs++;
                         // OUTPUT FINAL
-                        // System.out.println( Arrays.toString( nifsOk ));
+                         //Arrays.sort(nifsOk);
+                         System.out.println( Arrays.toString( nifsOk ));
                         // System.out.println( Arrays.toString( historial ));
                     }
                 }
@@ -171,7 +172,7 @@ public class A_DNI {
         return false;
     }
 
-    // BUCLE MAIN METHOD
+    // BUCLE MAIN 
     public static void main(String[] args) {
         lect = new Scanner(System.in);
         System.out.print("Introdueix els caràcters del NIF incomplet, indicant en ? el caracter desconegut: ");

@@ -10,9 +10,8 @@ public class K_SumaVectorDouble {
     }
     static double mitja ( long d[] ){
         double value = 0;
-        for (int i = 0; i < d.length; i++){
+        for (int i = 0; i < d.length; i++)
             value += d[i];
-        }
         return value / d.length;
     }
     public static void main (String[] args){
