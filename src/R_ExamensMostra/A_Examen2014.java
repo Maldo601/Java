@@ -43,23 +43,20 @@ public class A_Examen2014 {
             // System.out.println(str) ;
         return false;
     }
-    static void constructor (){
-        allVowels();
-        vector();
-        vectorEnters(v1, v2);
-        primerUltim(str);
-    }
+    
     public static void main (String[] args){
             // VARS 
 
-        String str = "Haaaaaaaaaa";
-         int a[] = {5,3,1,2,8,3,8,9,6,4,7};
-         int v1[] = {5, 3,1,2,8, 3, 8,9,6,4,7};
-         int v2[] = {5,-3,8,2,8,-5,-8};
-        String v [][] = {
+        // String str = "Haaaaaaaaaa";
+         // int a[] = {5,3,1,2,8,3,8,9,6,4,7};
+         // int v1[] = {5, 3,1,2,8, 3, 8,9,6,4,7};
+         // int v2[] = {5,-3,8,2,8,-5,-8};
+         /*
+         String v [][] = {
                          {"a","a","b","b","e","e","i","o","u"},
                          {"a","a","h","y","e","m","o","u","u"}
                         }; 
-        System.out.printf(constructor());
+        */
+    
     }
 }
