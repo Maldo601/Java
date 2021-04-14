@@ -531,6 +531,28 @@ public class test {
     return a;
 }
 
+
+
+  //       A  R  R  A  Y  S     C O D I N G B A T 
+  /*
+    Mira si el vector te el primer valor i l'ultim valor son iguals 
+    i si el vector te un punt mes de llargaria. En estos casos torna true
+    i si no false. 
+  */
+  static boolean sameFirstLast(int[] nums) {
+    if (nums.length < 1)
+      return false;
+    return (nums.length >= 1 && (nums[0] == nums[nums.length-1])) ? true : false;
+  }
+  /*
+    Plena un vector 
+  */
+  static int[] makePi() {
+    int v[] = {3,1,4};
+    return v;
+  }
+  
+
   // MAIN 
   public static void main(String[] args) {
   }
