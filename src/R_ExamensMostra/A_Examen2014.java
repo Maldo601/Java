@@ -38,9 +38,9 @@ public class A_Examen2014 {
             str.substring(0, str.length() ).contains("e") &&
             str.substring(0, str.length() ).contains("i") && 
             str.substring(0, str.length() ).contains("o") && 
-            str.substring(0, str.length() ).contains("u"))
+            str.substring(0, str.length() ).contains("u")   )
             return true;
-            // System.out.println(str);
+            // System.out.println(str) ;
         return false;
     }
     static void constructor (){
