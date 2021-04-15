@@ -748,6 +748,19 @@ public class test {
     System.arraycopy(b, 0, v, a.length, b.length);
     return v;
   }
+  /*
+    Permutar 1er valor per ultim i visceversa en un array, usant aux.
+  */
+  static int[] swapEnds(int[] nums) {
+    int aux;
+    aux = nums[0];
+    nums[0] = nums[nums.length-1];
+    nums[nums.length-1] = aux;
+    return nums;
+  }
+  /*
+  
+  */
   // MAIN 
   public static void main(String[] args) {
     int a[] = {1,2,3};
