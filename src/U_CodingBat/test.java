@@ -611,8 +611,17 @@ public class test {
     return v;
   }
   /*
+    Retorna un array nou on li passem el primer valor i ultim del que li passem
+    a la funció.
+  */
+  static int[] makeEnds(int[] nums) {
+    int v[] = {nums[0],nums[nums.length-1]};
+    return v;
+  }
+  /*
   
   */
+  
   
   
   
