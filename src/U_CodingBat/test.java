@@ -571,6 +571,15 @@ public class test {
       counter += nums[i];
     return counter;
   }
+  /*
+    Permutar primer valor i ultim del array en una variable auxiliar
+  */
+  static int[] reverse3(int[] nums) {
+    int aux = nums[nums.length-1];
+    nums[nums.length-1] = nums[0];
+    nums[0] = aux;
+    return nums;
+  }
   
   
   
