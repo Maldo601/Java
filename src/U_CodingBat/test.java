@@ -603,7 +603,16 @@ public class test {
       return nums[0] + nums[1];
     return (nums.length < 1) ? 0 : nums[0];
   }
+  /*
+    Torna en un nou Array el valor del mig.
+  */
+  static int[] middleWay(int[] a, int[] b) {
+    int v[] = {a[1],b[1]};
+    return v;
+  }
+  /*
   
+  */
   
   
   
