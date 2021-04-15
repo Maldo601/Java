@@ -1,5 +1,7 @@
 package U_CodingBat;
 
+import java.util.Arrays;
+
 public class test {
 
   // S T R I N G S      B A S I C S    LVL 1 
@@ -683,18 +685,73 @@ public class test {
       return count2 == 2 || count3 == 2;
     }
   /*
-    
+    Donada una longitud de la matriu int 3, si hi ha un 2 a la matriu immediatament 
+    seguit d'un 3, establiu l'element 3 a 0. Torneu la matriu modificada
   */
-
-
-  
-  
-  
-  
-  
-  
-
+  static int[] fix23(int[] nums) {
+    for (int i = 1; i < nums.length; i ++){
+      if (nums[i] == 3 && nums[i-1] == 2)
+          nums[i] = 0;
+    }
+    return nums;
+  }
+  /*
+    Comenceu amb 2 matrius int, a i b, de qualsevol longitud. Retorna quantes de les 
+    matrius tenen 1 com a primer element.
+  */
+  static int start1(int[] a, int[] b) {
+    int counter = 0;
+    for (int i = 0; i < a.length; i++){
+      if(a[i] == 1)
+      counter++;
+    }
+    for (int i = 0; i < b.length; i++){
+      if (b[i] == 1)
+      counter++;
+    }
+    return counter;
+  }
+  /*
+    Retorna de dos Arrays passats, l'Array que te la suma del seu contingut mes gran
+  */
+  static int[] biggerTwo(int[] a, int[] b) {
+    if(a[0] + a[1] < b[0] + b[1])
+          return b;
+      return a;
+  }
+  /*
+    Torna en un array nou, els dos numeros de la mitat del array original.
+  */
+  static int[] makeMiddle(int[] nums) {
+    int v[] = {nums[ (nums.length/2)-1 ], nums[ (nums.length/2)]};
+    return v;
+  }
+  /*
+    Copiar dos Arrays a un. En el primer metode veurem que si son longituds 
+    d'Array iguals, podem fer servir el seguent bucle.
+    Si no, es mes convenient usar la classe Arrays.Copy.
+  */
+  static int[] plusTwo(int[] a, int[] b) {
+    int v [] = new int [a.length+b.length];
+    for (int i = 0; i < a.length; i++){
+      v[i] += a[i];
+      v[i+a.length] = b[i];
+    }
+    return v;
+  }
+  static int[] plusTwov1(int[] a, int[] b) {
+    // Es dona llargaria al nou Array.
+    int v [] = new int [a.length+b.length];
+    // Parametros: "Array 1", "Inici Array 1", "ArrayDestí", "Posicio d'inici a Array destí", "longitud a copiar"
+    System.arraycopy(a, 0, v, 0, a.length);
+    // Parametros: "Array 2", "Inici Array 2", "A partir d'on es comença a copiar", "longitud a copiar"
+    System.arraycopy(b, 0, v, a.length, b.length);
+    return v;
+  }
   // MAIN 
   public static void main(String[] args) {
+    int a[] = {1,2,3};
+    int b[] = {1,2,3,4,5,6,7,8,9};
+    System.out.println(Arrays.toString(plusTwov1(a,b)));
   }
 }
