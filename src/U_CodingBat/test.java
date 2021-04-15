@@ -652,9 +652,41 @@ public class test {
     return v;
   }
   /*
+    Donat un array int, torneu a true si el array conté 2 dues vegades o 3 dues vegades. 
+    La matriu tindrà una longitud 0, 1 o 2.
+  */
+  // Una de les maneres mes efectives i escalables de fer aixo es la següent, pero el coding bat es idiota 
+  static boolean double23(int[] nums) {
+    for (int i = 1; i < nums.length; i++){
+      if (nums[i] == nums[i-1])
+        return true;
+    }
+    return false;
+  }
+    // laltra que tambe es valida i no va és:
+    static boolean double23v1(int[] nums) {
+      if (nums.length < 2 )
+        return false;
+        else if (nums[0] == nums[1])
+          return true;
+      return false;
+    }
+    // La que si que accepta és: 
+    static boolean double23v2(int[] nums) {
+      int count2 = 0;     int count3 = 0;  
+      for(int i = 0; i < nums.length; i++) {
+          if(nums[i] == 2)
+              count2++;            
+          if(nums[i] == 3)
+              count3++;
+      }                              
+      return count2 == 2 || count3 == 2;
+    }
+  /*
     
   */
-  
+
+
   
   
   
