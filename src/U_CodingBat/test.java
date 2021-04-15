@@ -630,9 +630,20 @@ public class test {
     return false;
   }
   /*
+    Lo mateix pero en inversio de condicions. Podem posar != mantenint els returns
+    o directament podem cambiar els returns.
+  */
+  static boolean no23(int[] nums) {
+    for (int i = 0; i < nums.length; i++){
+      if (nums[i] == 2 || nums[i] == 3)
+        return false;
+    }
+    return true;
+  }
+  /*
     
   */
-    
+  
   
   
   
