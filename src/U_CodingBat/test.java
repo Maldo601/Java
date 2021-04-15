@@ -759,8 +759,15 @@ public class test {
     return nums;
   }
   /*
-  
+    Donada una matriu d’intes de longitud senar, torneu una nova longitud de matriu 3
+    que contingui els elements del centre de la matriu. La longitud de la matriu serà com a mínim de 3.
+    Serveix per a totes les mides de un vector.
   */
+  static int[] midThree(int[] nums) {
+    int v[] = {nums[nums.length/2-1], nums[nums.length/2],nums[nums.length/2+1]};
+    return v;
+  }
+  
   // MAIN 
   public static void main(String[] args) {
     int a[] = {1,2,3};
