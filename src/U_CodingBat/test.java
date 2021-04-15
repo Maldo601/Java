@@ -593,6 +593,16 @@ public class test {
       nums[i] = aux;
     return nums;
   }
+  /*
+    Donada una matriu d’ints, retorneu la suma dels 2 primers elements de la matriu. Si la 
+    longitud de la matriu és inferior a 2, només cal resumir els elements que existeixen, 
+    retornant 0 si la matriu és de longitud 0.
+  */
+  static int sum2(int[] nums) {
+    if (nums.length >= 2)
+      return nums[0] + nums[1];
+    return (nums.length < 1) ? 0 : nums[0];
+  }
   
   
   
