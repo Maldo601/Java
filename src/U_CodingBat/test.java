@@ -833,8 +833,7 @@ public class test {
           return new int[] {a[0]};
       } else if(b.length > 0) {
           return new int[] {b[0]};
-      }
-                        
+      }          
       return new int[0];
   }
   
