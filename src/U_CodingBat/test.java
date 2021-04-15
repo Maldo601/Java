@@ -641,8 +641,17 @@ public class test {
     return true;
   }
   /*
-    
+    Si es dóna una matriu int, torneu una matriu nova amb el doble de longitud on el 
+    seu darrer element sigui el mateix que la matriu original i tots els altres elements 
+    siguin 0. La matriu original tindrà una longitud 1 o més. Nota: per defecte, una nova 
+    matriu int conté tots els 0.
   */
+  static int[] makeLast(int[] nums) {
+    int v[] = new int [nums.length * 2];
+    v[v.length-1] = nums[nums.length-1];
+    return v;
+  }
+  
   
   
   
