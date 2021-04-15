@@ -776,9 +776,29 @@ public class test {
               Math.max(nums[nums.length-1], nums[nums.length/2]));
   }
   /*
-  
+    Retorna els dos primers elements del Array. Si es mes petit a 2 hem de moure el pase 
+    de parametros baix del condicional.
   */
-
+  static int[] frontPiece(int[] nums) {
+    if (nums.length < 2)
+      return nums;
+    int v[] = {nums[0],nums[1]};
+    return v;
+  }
+  /*
+    Direm que un 1 immediatament seguit d'un 3 en una matriu és un "desafortunat" 1. Torneu cert 
+    si la matriu donada conté un 1 desafortunat en les primeres 2 o 2 darreres posicions de la matriu.
+  */
+  static boolean unlucky1(int[] nums) {
+    for (int i = 1; i < nums.length; i++){
+      if ( (nums[i] == 3 && nums[i-1] == 1) )
+        return true;
+        else if (nums[i] == 1 && nums[nums.length-2] == 3 )
+          return false;
+    }
+    return false;
+  }
+  
   
   // MAIN 
   public static void main(String[] args) {
