@@ -767,6 +767,18 @@ public class test {
     int v[] = {nums[nums.length/2-1], nums[nums.length/2],nums[nums.length/2+1]};
     return v;
   }
+  /*
+     Extreu el valor mes gran comparant la [0], la final i la meitat del Array
+  */
+  static int maxTriple(int[] nums) {
+    return Math.max( 
+              Math.max(nums[0],nums[nums.length-1]), 
+              Math.max(nums[nums.length-1], nums[nums.length/2]));
+  }
+  /*
+  
+  */
+
   
   // MAIN 
   public static void main(String[] args) {
