@@ -580,6 +580,20 @@ public class test {
     nums[0] = aux;
     return nums;
   }
+  /*
+    Donada una matriu de longitud de 3 ints, esbrineu quin és el primer o l'últim element de 
+    la matriu més gran i configureu tots els altres elements perquè siguin aquest valor. 
+    Retorna la matriu modificada.
+
+    Esta versio es escalable. La del coding bat es limita a una llargaria de Array de 3. 
+  */
+  static int[] maxEnd3(int[] nums) {
+    int aux = nums[0] > nums[nums.length-1] ? nums[0] : nums[nums.length-1];
+    for (int i = 0; i < nums.length; i++)
+      nums[i] = aux;
+    return nums;
+  }
+  
   
   
   
