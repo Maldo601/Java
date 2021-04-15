@@ -798,6 +798,45 @@ public class test {
     }
     return false;
   }
+  /*
+    Retorna una nova longitud de matriu 2 que contingui, tant com s'ajusti, els elements de a seguits dels elements de b. 
+    Les matrius poden tenir qualsevol longitud, inclòs 0, però hi haurà 2 o més elements disponibles entre les dues matrius.
+  */
+  static int[] make2(int[] a, int[] b) {
+    int[] arr = new int[2];
+      int count = 0;
+      int i;
+          
+      i = 0;
+      while(count < 2 && i < a.length) {
+          arr[count] = a[i];
+          count++;
+          i++;
+      }
+                              
+      i = 0;
+      while(count < 2 && i < b.length) {
+          arr[count] = b[i];
+          count++;
+          i++;
+      }
+                                                  
+      return arr;
+  }
+  /*
+    Meh
+  */
+  static int[] front11(int[] a, int[] b) {
+    if(a.length > 0 && b.length > 0) {
+          return new int[] {a[0], b[0]};
+      } else if(a.length > 0) {
+          return new int[] {a[0]};
+      } else if(b.length > 0) {
+          return new int[] {b[0]};
+      }
+                        
+      return new int[0];
+  }
   
   
   // MAIN 
