@@ -913,6 +913,19 @@ static boolean sum28(int[] nums) {
   }
   return ( sum == 8) ? true : false;
 }
+// Retorna true si el numero de 1ns es mes gran que el de cuatres
+static boolean more14(int[] nums) {
+  int countOne = 0;
+  int countFour = 0;
+  for ( int i = 0; i < nums.length; i ++){
+    if (nums[i] == 1)
+    countOne++;
+    if(nums[i] == 4)
+    countFour++;
+  }
+  return ( countOne > countFour) ? true : false;
+}
+
 
 
   
