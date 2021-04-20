@@ -971,6 +971,7 @@ static boolean isEverywhere(int[] nums, int val) {
               
   return true;
 }
+// Comprova que no hi haguen dos dos seguits i cuatre cuatre seguit. El resto true.
 static boolean either24(int[] nums) {
   boolean dos = false;
   boolean cuatre = false;
@@ -982,6 +983,7 @@ static boolean either24(int[] nums) {
   }
   return dos != cuatre;
 }
+
 
 
 
