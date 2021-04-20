@@ -992,7 +992,6 @@ static int matchUp(int[] nums1, int[] nums2) {
    return counter;
 }
 
-
   // MAIN 
   public static void main(String[] args) {
     int a[] = {1,2,3};
