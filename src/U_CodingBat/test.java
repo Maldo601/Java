@@ -951,6 +951,19 @@ static String[] fizzArray2(int n) {
   }
   return v;
 }
+// Si conte 1 i 4 retorna false. Un dels dos sols es true.
+static boolean no14(int[] nums) {
+  boolean countOne =false;
+  boolean countFour = false;
+  for (int i = 0; i < nums.length; i++){
+    if (nums[i] == 1)
+      countOne = true;
+    if (nums[i] == 4)
+      countFour = true;
+  }
+  return !countOne || !countFour;
+}
+
 
 
 
