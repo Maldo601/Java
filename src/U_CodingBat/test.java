@@ -943,6 +943,15 @@ static boolean only14(int[] nums) {
   }
   return true;
 }
+// Ompli un array del 0 hasta la seua llargaria, pero en versio String.
+static String[] fizzArray2(int n) {
+  String v[] = new String[n];
+  for (int i = 0; i < v.length; i ++){
+    v[i] = String.valueOf(i);
+  }
+  return v;
+}
+
 
 
 
