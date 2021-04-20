@@ -852,7 +852,24 @@ public class test {
     Arrays.sort(nums);
     return Math.abs (nums[0] - nums[nums.length-1]);
   }
-  
+  static int sum13(int[] nums) {
+    /*
+    Retorna la suma dels números de la matriu, retornant 0 per a una matriu buida. 
+    Llevat que el número 13 és molt desafortunat, de manera que no compta i els 
+    números que arriben immediatament després d'un 13 tampoc no compten.
+    */
+    int sum = 0;
+    int i = 0;
+      while(i < nums.length) {
+          if(nums[i] == 13)
+            i += 2;
+           else {
+            sum += nums[i];
+            i++;
+          }
+      }
+      return sum;
+  }
   
   
   
