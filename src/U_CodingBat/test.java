@@ -975,14 +975,23 @@ static boolean isEverywhere(int[] nums, int val) {
 static boolean either24(int[] nums) {
   boolean dos = false;
   boolean cuatre = false;
-  for (int i = 0; i < nums.length -1; i++){
-    if (nums[i] == 2 && nums [i+1] == 2)
+  for ( int i = 0; i < nums.length -1; i++ ){
+    if ( nums[i] == 2 && nums [i+1] == 2 )
       dos = true;
     else if( nums [i] == 4 && nums [i+1] == 4)
       cuatre = true;
   }
   return dos != cuatre;
 }
+static int matchUp(int[] nums1, int[] nums2) {
+  int counter = 0;
+   for(int i = 0; i < nums1.length; i++) {
+       if(Math.abs(nums1[i] - nums2[i]) <= 2 && nums1[i] != nums2[i])
+           counter++;
+   }
+   return counter;
+}
+
 
   // MAIN 
   public static void main(String[] args) {
