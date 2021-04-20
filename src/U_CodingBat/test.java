@@ -984,16 +984,6 @@ static boolean either24(int[] nums) {
   return dos != cuatre;
 }
 
-
-
-
-
-
-
-
-  
-  
-  
   // MAIN 
   public static void main(String[] args) {
     int a[] = {1,2,3};
