@@ -963,6 +963,26 @@ static boolean no14(int[] nums) {
   }
   return !countOne || !countFour;
 }
+static boolean isEverywhere(int[] nums, int val) {
+  for(int i = 0; i < nums.length - 1; i++) {
+      if(nums[i] != val && nums[i + 1] != val)
+          return false;
+  }
+              
+  return true;
+}
+static boolean either24(int[] nums) {
+  boolean dos = false;
+  boolean cuatre = false;
+  for (int i = 0; i < nums.length -1; i++){
+    if (nums[i] == 2 && nums [i+1] == 2)
+      dos = true;
+    else if( nums [i] == 4 && nums [i+1] == 4)
+      cuatre = true;
+  }
+  return dos != cuatre;
+}
+
 
 
 
