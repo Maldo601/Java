@@ -886,6 +886,24 @@ public class test {
     }
     return sum;
 }
+// Retorna true o false si hi han 2 2 junts
+static boolean has22(int[] nums) {
+
+  for (int i = 1; i < nums.length; i++){
+    if (nums[i-1] == 2 && nums[i] == 2)
+      return true;
+  }
+  return false;
+}
+// Retorna true o false si no hi ha 1 ni 3
+static boolean lucky13(int[] nums) {
+  for ( int i = 0; i < nums.length; i++){
+    if (nums[i] == 1 || nums [i] == 3)
+      return false;
+  }
+  return true;
+  }
+
   
   
   
