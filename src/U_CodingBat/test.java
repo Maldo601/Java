@@ -903,6 +903,17 @@ static boolean lucky13(int[] nums) {
   }
   return true;
   }
+// Si tots els dos del array tornen 8, retorna true, si no retorna false;
+static boolean sum28(int[] nums) {
+  /* Suma nomes els dos de la matriu i si dona 8 retorna true. */
+  int sum = 0;
+  for ( int i = 0; i < nums.length; i ++){
+    if ( nums[i] == 2)
+      sum += nums[i];
+  }
+  return ( sum == 8) ? true : false;
+}
+
 
   
   
