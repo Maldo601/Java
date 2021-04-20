@@ -1003,6 +1003,22 @@ static boolean has77(int[] nums) {
   }
   return false;
 }
+ /*
+  Si es dóna una matriu d’ints, torneu true si hi ha un 1
+  a la matriu amb un 2 en algun lloc posterior de la matriu.
+*/
+static boolean has12(int[] nums) {
+ 
+  boolean first = false;
+
+  for ( int i = 0; i < nums.length; i++){
+    if (nums[i] == 1)
+      first = true;
+    if(nums[i] == 2 && first )
+      return true;
+  }
+  return false;
+}
 
   // MAIN 
   public static void main(String[] args) {
