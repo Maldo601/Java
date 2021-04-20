@@ -837,6 +837,17 @@ public class test {
       return new int[0];
   }
   
+  // ARRAYS II 
+  // Retorna un counter en la quantitat de parells a l'Array:
+  static int countEvens(int[] nums) {
+    int counter = 0;
+    for ( int i = 0; i < nums.length; i ++ ){
+      if ( nums[i] % 2 == 0)
+        counter++;
+    }
+    return counter;
+  }
+  
   
   // MAIN 
   public static void main(String[] args) {
