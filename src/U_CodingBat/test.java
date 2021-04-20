@@ -917,13 +917,23 @@ static boolean sum28(int[] nums) {
 static boolean more14(int[] nums) {
   int countOne = 0;
   int countFour = 0;
-  for ( int i = 0; i < nums.length; i ++){
+  for ( int i = 0; i < nums.length; i ++) {
     if (nums[i] == 1)
-    countOne++;
+      countOne++;
     if(nums[i] == 4)
-    countFour++;
+      countFour++;
   }
   return ( countOne > countFour) ? true : false;
+}
+// Ompli un array del 0 fins a la seua llargaria 1 a 1.
+static int[] fizzArray(int n) {
+  int v[] = new int [n];
+  int omple = 0;
+  for (int i = 0; i < v.length; i++){
+    v[i] = omple;
+    omple++;
+  }
+  return v;
 }
 
 
