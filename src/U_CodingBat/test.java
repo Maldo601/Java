@@ -847,6 +847,13 @@ public class test {
     }
     return counter;
   }
+  // Resta absolutament el valor mes petit i mes gran del Array. 
+  static int bigDiff(int[] nums) {
+    Arrays.sort(nums);
+    return Math.abs (nums[0] - nums[nums.length-1]);
+  }
+  
+  
   
   
   // MAIN 
