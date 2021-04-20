@@ -991,6 +991,7 @@ static int matchUp(int[] nums1, int[] nums2) {
    }
    return counter;
 }
+// retorna true si te 7 al costat o una posicio +1
 static boolean has77(int[] nums) {
   for (int i = 0; i < nums.length-1; i++){
     if (nums[i] == 7 && nums[i+1] == 7)
