@@ -1194,6 +1194,15 @@ static String mixString(String a, String b) {
   }
   return new String(arr) + end;
 }
+// Torna les posicions finals de str en base a un numero "n" i les concatena "n" vegades
+static String repeatEnd(String str, int n) {
+  String cad = "";
+  String take = str.substring(str.length()-n);
+  for (int i = 0; i < n; i++){
+    cad += take;
+  }
+  return cad;
+}
 
   // MAIN 
   public static void main(String[] args) {
