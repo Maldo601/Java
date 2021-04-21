@@ -1203,6 +1203,17 @@ static String repeatEnd(String str, int n) {
   }
   return cad;
 }
+// El mateix que abans, pero començant per l'inici i fent coses com "ChocChoChC" "PitaPitPiP"
+static String repeatFront(String str, int n) {
+  String cad = "";
+  String front = str.substring(0,n);
+  int counter = front.length();
+  for (int i = 0; i < n; i++){
+    cad += front.substring(0,counter);
+    counter--;
+  }
+  return cad;
+}
 
   // MAIN 
   public static void main(String[] args) {
