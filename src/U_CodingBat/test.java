@@ -1214,6 +1214,15 @@ static String repeatFront(String str, int n) {
   }
   return cad;
 }
+// Repetix les vegades que se li pasen per numero, i intercala un separador, pero elimina el final d'este separador
+static String repeatSeparator(String word, String sep, int count) {
+  String cad = "";
+  int fw = sep.length();
+  for ( int i = 0; i < count; i++){
+    cad += word + sep;
+  }
+  return cad.substring(0,cad.length()-fw);
+}
 
   // MAIN 
   public static void main(String[] args) {
