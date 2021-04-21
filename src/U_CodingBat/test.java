@@ -1110,6 +1110,21 @@ static int countCode(String str) {
   }
   return counter;
 }
+static boolean endOther(String a, String b) {
+  /*
+  torneu a true si alguna de les cadenes apareix al final de 
+  l'altra cadena, ignorant les diferències entre majúscules 
+  i minúscules (en altres paraules, el càlcul no hauria de ser "sensible a majúscules"). 
+  Nota: str.toLowerCase () retorna la versió en minúscula d’una cadena.
+  */
+    if(a.length() < b.length()) {
+        String temp = a;
+        a = b.toLowerCase();
+        b = temp.toLowerCase();
+    }
+    return a.substring(a.length() - b.length()).equals(b);
+}
+
 
 
 
