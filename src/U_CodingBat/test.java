@@ -1031,6 +1031,51 @@ static boolean modThree(int[] nums) {
     return false;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// S T R I N G  I I 
+static String doubleChar(String str) {
+  /*
+  Si teniu una cadena, torneu una cadena on hi 
+  hagi dos caràcters per a cada caràcter de l'original.
+  */
+  String cad = "";
+  for ( int i = 0; i < str.length(); i++){
+    cad += ""+str.charAt(i) + str.charAt(i);
+  }
+  return cad;
+}
+
   // MAIN 
   public static void main(String[] args) {
     int a[] = {1,2,3};
