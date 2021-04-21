@@ -1096,6 +1096,22 @@ static boolean catDog(String str) {
   }
   return (dog == cat) ? true : false;
 }
+static int countCode(String str) {
+  /*
+  Torneu el nombre de vegades que apareix la 
+  cadena "codi" en qualsevol lloc de la cadena donada, excepte
+  que acceptarem qualsevol lletra per a la "d", 
+  de manera que es compten "cope" i "cooe".
+  */
+  int counter = 0;
+  for (int i = 0; i < str.length()-3; i++){
+    if (str.substring(i,i+2).equals("co") && str.charAt(i+3) == 'e')
+      counter++;
+  }
+  return counter;
+}
+
+
 
 
 
