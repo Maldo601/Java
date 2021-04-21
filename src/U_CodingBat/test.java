@@ -1223,6 +1223,20 @@ static String repeatSeparator(String word, String sep, int count) {
   }
   return cad.substring(0,cad.length()-fw);
 }
+static boolean prefixAgain(String str, int n) {
+  /*
+  considereu el prefix format pels primers N caràcters de la cadena. 
+  Aquesta cadena de prefix apareix en un altre lloc de la cadena? 
+  Suposem que la cadena no està buida i que N està en l'interval 1..str.length ().
+  */
+   String prefix = str.substring(0, n);
+    // Busquem desde n per no repetir la coincidencia. 
+    for(int i = n; i <= str.length() - n; i++) {
+        if(str.substring(i, i + n).equals(prefix))
+            return true;
+    }
+    return false;
+}
 
   // MAIN 
   public static void main(String[] args) {
