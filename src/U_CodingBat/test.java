@@ -1172,17 +1172,31 @@ static boolean xyBalance(String str) {
   }
   return true;
 }
-
-
-
-
-
-
+// Replenar posicio duna cadena i posicio de laltra a un array
+static String mixString(String a, String b) {
+  
+  char[] arr;
+  String end;
+  int count = 0;
+      
+  if(a.length() < b.length()) {
+      arr = new char[2 * a.length()];
+      end = b.substring(a.length());
+  } else {
+      arr = new char[2 * b.length()];
+      end = a.substring(b.length());
+  }
+  for(int i = 0; i < arr.length / 2; i++) {
+      arr[count] = a.charAt(i);
+      count++;
+      arr[count] = b.charAt(i);
+      count++;
+  }
+  return new String(arr) + end;
+}
 
   // MAIN 
   public static void main(String[] args) {
-    int a[] = {1,2,3};
-    int b[] = {1,2,3,4,5,6,7,8,9};
-    System.out.println(Arrays.toString(plusTwov1(a,b)));
+    
   }
 }
