@@ -1148,6 +1148,31 @@ static boolean bobThere(String str) {
   }
   return false;
 }
+static boolean xyBalance(String str) {
+  /*
+  Direm que una cadena té un equilibri xy si per a tots 
+  els caràcters 'x' de la cadena, hi ha un caràcter 'y' 
+  en algun lloc posterior de la cadena. Per tant, "xxy" 
+  és equilibrat, però "xyx" no. Una "y" pot equilibrar 
+  diverses "x". Retorna el valor vertader si la cadena donada té un equilibri xy.
+  */
+  boolean firstY = false;
+  /*
+  Com la validació ocurrix en Y's al final, usarem un decremental 
+  per comprovar-ho. Així evitem primer els problemes de trobar una Y
+  al principi d'un bucle normal, que ens farien validarlo sencer.
+  */
+  for ( int i = str.length()-1; i >= 0; i --){
+    if(str.charAt(i) == 'y')
+    firstY = true;
+    // Si troba "X" pero cap Y al final de la cadena on comencem a contar
+    // no valida.
+    if(str.charAt(i) == 'x' && firstY == false)
+    return false;
+  }
+  return true;
+}
+
 
 
 
