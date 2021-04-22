@@ -1296,12 +1296,36 @@ static String oneTwo(String str) {
   }
   return cad;
 }
+/*
+  Elimina tot el que estigue entre una "z" i una "p";
+  Es crea un String array i una string final. 
+  El primer bucle passa cada lletra al Array.
+  El segon bucle substitueix tot el que estigue entre z i p 
+     per un string buit.
+  Es printa el nou contingut del Array a una cadena que es 
+     la que es retorna. 
+*/ 
+public String zipZap(String str) {
+  String v[] = new String [str.length()];
+  String cad = "";
+  if (str.length() < 3)
+    return str;
+  for ( int i = 0; i < v.length; i++){
+    v[i] = ""+str.charAt(i);
+  }
+  for ( int n = 0; n < v.length; n++){
+    if (v[n].equals("z") && v[n+2].equals("p"))
+      v[n+1] = "";
+    cad += v[n];
+  }
+  return cad;
+}
 
 
 
   // MAIN 
   public static void main(String[] args) {
-    String str = "AAxyzBB";
-    System.out.println(xyzMiddle(str));
+    String str = "zipXzap";
+    System.out.println(zipZap(str));
   }
 }
