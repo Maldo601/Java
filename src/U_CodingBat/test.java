@@ -1237,9 +1237,15 @@ static boolean prefixAgain(String str, int n) {
     }
     return false;
 }
+static String xyzMiddle(String str) {
+    
+  String pureMid = ""+str.charAt(str.length()/2-1) + str.charAt(str.length()/2) + str.charAt(str.length()/2+1);
+  return pureMid;
+}
 
   // MAIN 
   public static void main(String[] args) {
-    
+    String str = "AAxyzBB";
+    System.out.println(xyzMiddle(str));
   }
 }
