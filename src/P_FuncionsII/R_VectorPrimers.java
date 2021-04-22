@@ -19,18 +19,20 @@ public class R_VectorPrimers {
                 "Para cualquier número natural (n) podemos encontrar un número primo (p) que cumple [n<sqrt{p}<n+1.] 
                  Es decir, podemos  encontrar un número primo (p) cuya raíz cuadrada «se cuela» entre  (n) y (n+1)."
                  https://cifrasyteclas.com/primos-raices-y-una-propuesta-irracional-para-numerar-el-carnaval/
-            */
+          
 
-            /*
+                
                 Un dels problemes es que a cada volta opera la arrel cuadrada. Per optimitzar aixo 
                 podem traureu fora del bucle. 
 
                 int m = (int) Math.sqrt(x);
 
-                                    i <= m                   */
-            /*
+                                    i <= m                   
+         
                 Podemos primero comprovar el 2 para quitarlo de encima fuera y empezar el bucle
                 a 3 pegando saltos de 2 en cada vuelta. 
+           
+                n * n <= x Sale mas rentable que operar en coma flotante con Math.sqrt();
             */
             for (int i = 2; i <= Math.sqrt(n) && prim; i++){
                 if (n % i == 0)
