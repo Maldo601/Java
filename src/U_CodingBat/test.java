@@ -1325,7 +1325,6 @@ public String zipZap(String str) {
 
   // MAIN 
   public static void main(String[] args) {
-    String str = "zipXzap";
-    System.out.println(zipZap(str));
+    
   }
 }
