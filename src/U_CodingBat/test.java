@@ -1243,25 +1243,27 @@ static String xyzMiddle(String str) {
   return pureMid;
 }
 // Torna el que estigue compres entre "bread"
-public String getSandwich(String str) {
-  int first = -1;
-  int last = -1;
-    
-  for(int i = 0; i < str.length() - 5; i++) {
-      if(str.substring(i, i + 5).equals("bread")) {
-          first = i;
-          break;
-      }
-  }                         
-  for(int i = str.length() - 5; i >= 0; i--) {
-      if(str.substring(i, i + 5).equals("bread")) {
-          last = i;
-          break;
-      }
-  }                                                    
-  if(first != -1 && last != -1 && first != last)
-      return str.substring(first + 5, last);                                                               
-  return "";
+static String getSandwich(String str) {
+  /*
+  Un entrepà és dos trossos de pa amb alguna cosa al mig. 
+  Torneu la cadena que hi ha entre la primera i l'última 
+  aparició de "pa" a la cadena donada, o bé torneu la cadena buida "" 
+  si no hi ha dos trossos de pa.
+  
+  Este exercici m'ha agradat resoldrel. 
+
+  */
+  String revCad = "";
+  String cad = "";
+  int inici = str.indexOf("bread") + 5;
+  for (int i = str.length()-1; i >= 0; i --){
+    revCad += str.charAt(i);
+  }
+  int fin = revCad.indexOf("daerb") + 5;
+  for ( int x = inici; x < str.length() - fin; x++){
+    cad += str.charAt(x);
+  }
+  return cad;
 }
 // Retorna true si el asterisco te les mateixes lletres davant o detras
 static boolean sameStarChar(String str) {
@@ -1325,6 +1327,6 @@ public String zipZap(String str) {
 
   // MAIN 
   public static void main(String[] args) {
-    
+ 
   }
 }
