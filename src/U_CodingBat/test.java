@@ -1272,6 +1272,31 @@ static boolean sameStarChar(String str) {
   }
   return true;
 }
+static String oneTwo(String str) {
+  /*
+  Donada una cadena, calculeu una nova cadena movent 
+  el primer caràcter que apareixerà després dels dos següents 
+  caràcters, de manera que "abc" produeix "bca". Repetiu aquest 
+  procés per a cada grup següent de 3 caràcters, de manera que "abcdef"
+  produeix "bcaefd". Ignoreu qualsevol grup de menys de 3 caràcters al final.
+  */
+
+  /*
+    Per resoldre este problema, tenim que tenir en conte que el bucle te que pegar 
+    saltos de tres en tres. Per cada salto de tres agafarem les posicions 1 i 2 del
+    fragment que ha agafat de la cadena i li concatenarem al final la posicio 0
+    en un charAt. Aixo es repetira cada cicle de tres vegades. La llargaria al 
+    agafar 3 caracters de la cadena, haurem de reduirla 2 punts al length().
+  */
+  String cad = "";
+  if (str.length() < 3)
+    return "";
+  for (int i = 0; i < str.length()-2; i+=3){
+    cad += str.substring(i+1,i+3) + str.charAt(i);
+  }
+  return cad;
+}
+
 
   // MAIN 
   public static void main(String[] args) {
