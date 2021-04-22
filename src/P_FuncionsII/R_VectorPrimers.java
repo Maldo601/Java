@@ -20,6 +20,14 @@ public class R_VectorPrimers {
                  Es decir, podemos  encontrar un número primo (p) cuya raíz cuadrada «se cuela» entre  (n) y (n+1)."
                  https://cifrasyteclas.com/primos-raices-y-una-propuesta-irracional-para-numerar-el-carnaval/
             */
+
+            /*
+                Un dels problemes es que a cada volta opera la arrel cuadrada. Per optimitzar aixo 
+                podem traureu fora del bucle. 
+
+                int m = (int) Math.sqrt(x);
+
+                                    i <= m                   */
             for (int i = 2; i <= Math.sqrt(n) && prim; i++){
                 if (n % i == 0)
                     prim = false;
