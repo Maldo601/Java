@@ -28,6 +28,10 @@ public class R_VectorPrimers {
                 int m = (int) Math.sqrt(x);
 
                                     i <= m                   */
+            /*
+                Podemos primero comprovar el 2 para quitarlo de encima fuera y empezar el bucle
+                a 3 pegando saltos de 2 en cada vuelta. 
+            */
             for (int i = 2; i <= Math.sqrt(n) && prim; i++){
                 if (n % i == 0)
                     prim = false;
