@@ -1326,8 +1326,6 @@ public String zipZap(String str) {
 
   // MAIN 
   public static void main(String[] args) {
-    String a = "xxx";
-    String b = "X";
-    System.out.println(Arrays.toString(mixString1(a,b)));
+
   }
 }
