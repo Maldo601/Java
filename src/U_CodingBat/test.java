@@ -555,6 +555,16 @@ static int fixTeen( int n ){
 static int noTeenSum(int a, int b, int c) {
     return fixTeen(a) + fixTeen(b) + fixTeen(c);
 }
+// Redondeja de 5 cap al 10 o cap al 0
+static int round10 (int num) {
+  int round = num % 10;
+  if (round >= 5)
+   return  num + 10 - round;
+  return num - round;
+}
+static int roundSum(int a, int b, int c) {
+  return round10(a) + round10(b) + round10(c);
+}
 
 
 
