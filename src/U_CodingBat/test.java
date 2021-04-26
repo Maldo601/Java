@@ -1142,6 +1142,16 @@ static boolean tripleUp(int[] nums) {
   }
   return false;
 }
+// Plena un Array que inicia a "start" hasta "end". La llargaria es la resta d'estos.
+static int[] fizzArray3(int start, int end) {
+  int v[] = new int [end - start];
+  int counter = start;
+  for (int i = 0; i < v.length; i++){
+    v[i] = counter;
+    counter++;
+  }
+  return v;
+}
 
 
 
