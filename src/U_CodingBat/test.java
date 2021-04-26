@@ -1378,6 +1378,16 @@ static int factorial(int n) {
     return 1;
   return n * factorial(n-1);
 }
+static int bunnyEars(int bunnies) {
+  /*
+  Tenim diversos conills i cada conillet té dues grans orelles. 
+  Volem calcular el nombre total d’orelles de tots els conillets de manera 
+  recursiva (sense bucles ni multiplicacions).
+  */
+  if (bunnies == 0)
+    return 0;
+  return 2 + bunnyEars(bunnies-1);
+}
 
   // MAIN 
   public static void main(String[] args) {
