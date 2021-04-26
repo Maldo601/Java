@@ -1122,7 +1122,14 @@ static boolean haveThree(int[] nums) {
   }
   return (counter == 3) ? true : false;
 }
-
+// Retorna true o false si els numeros del davant son iguals als dels de detras en base a "len";
+static boolean sameEnds(int[] nums, int len) {
+  for(int i = 0; i < len; i++) {
+      if(nums[i] != nums[nums.length - len + i])
+          return false;
+  }            
+  return true;
+}
 
 
 
