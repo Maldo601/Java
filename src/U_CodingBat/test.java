@@ -1130,6 +1130,18 @@ static boolean sameEnds(int[] nums, int len) {
   }            
   return true;
 }
+// Retorna true si hi han tres numeros en ordre creixent
+static boolean tripleUp(int[] nums) {
+  /*
+  Torneu cert si la matriu conté, en algun lloc, 
+  tres nombres adjacents creixents com .... 4, 5, 6, ... o 23, 24, 25.
+  */
+  for (int i = 0; i <= nums.length-3; i++){
+    if (nums[i] + 1 == nums[i+1] && nums[i+1] +1 == nums[i+2])
+      return true;
+  }
+  return false;
+}
 
 
 
