@@ -1403,6 +1403,19 @@ static int fibonacci(int n) {
       
   return fibonacci(n-1) + fibonacci(n-2);
 }
+static int bunnyEars2(int bunnies) {
+  /*
+  Els conills senars  (1, 3, ..) tenen les 2 orelles normals. 
+  Els conills parells (2, 4, ..) tenen 3 orelles, perquè cadascun té el peu aixecat. 
+  Torneu recursivament el nombre d'orelles" a la línia 1, 2, ... n del conillet 
+  */
+  if ( bunnies == 0)
+    return 0;
+  if ( bunnies % 2 == 1)
+    return 2 + bunnyEars2(bunnies -1);
+  return 3+ bunnyEars2(bunnies -1);
+}
+
 
   // MAIN 
   public static void main(String[] args) {
