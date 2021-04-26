@@ -1388,6 +1388,21 @@ static int bunnyEars(int bunnies) {
     return 0;
   return 2 + bunnyEars(bunnies-1);
 }
+static int fibonacci(int n) {
+  /*
+  Els dos primers valors de la seqüència són 0 i 1 (essencialment 2 casos base). 
+  Cada valor posterior és la suma dels dos valors anteriors, de manera que tota 
+  la seqüència és: 0, 1, 1, 2, 3, 5, 8, 13, 21, etc. Definiu un mètode recursiu 
+  de fibonacci (n) que retorni l'enèsim nombre de fibonacci, amb n = 0 que representa 
+  l'inici de la seqüència.
+  */
+  if (n == 0)
+    return 0;
+    else if (n == 1)
+      return 1;
+      
+  return fibonacci(n-1) + fibonacci(n-2);
+}
 
   // MAIN 
   public static void main(String[] args) {
