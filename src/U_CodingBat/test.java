@@ -1426,6 +1426,18 @@ static int triangle(int rows) {
     return 0;
   return rows + triangle(rows -1);
 }
+static int sumDigits(int n) {
+  /*
+  torneu la suma dels seus dígits recursivament (sense bucles). 
+  Tingueu en compte que el mod (%) per 10 proporciona el dígit més a la dreta 
+  (126% 10 és 6), mentre que dividir (/) per 10 elimina el dígit més a la dreta 
+  (126/10 és 12).
+  */
+    if(n == 0)
+        return 0;
+    return n % 10 + sumDigits(n / 10);
+}
+
 
 
 
