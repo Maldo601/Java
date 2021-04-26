@@ -565,6 +565,21 @@ static int round10 (int num) {
 static int roundSum(int a, int b, int c) {
   return round10(a) + round10(b) + round10(c);
 }
+// Retorna el valor mes proper a 21 sense pasarse per damunt d'este.
+static int blackjack(int a, int b) {
+  if ( a > 21 && b > 21 )
+    return 0;
+    else if (b == 21)
+      return b;
+    else if (a == 21)
+      return a;
+    else if ( a > 21 && b < 21)
+      return b;
+    else if ( b > 21 && a < 21)
+      return a;
+  return (21 - a > 21 - b) ? b : a;
+}
+
 
 
 
