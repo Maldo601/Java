@@ -1179,7 +1179,7 @@ static int[] pre4(int[] nums) {
   return v;
 }
 // 
-public int[] post4(int[] nums) {
+static int[] post4(int[] nums) {
   int i = nums.length - 1;
   
   while(nums[i] != 4)
