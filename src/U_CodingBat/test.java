@@ -1109,9 +1109,19 @@ static boolean modThree(int[] nums) {
     }
     return false;
 }
-
-
-
+// Torna true si el valor 3 apareix 3 vegades en l'Array
+static boolean haveThree(int[] nums) {
+  int counter = 0;
+  if (nums.length < 3)
+    return false;
+  if (nums[0] == 3)
+    counter++;
+  for ( int i = 1 ; i < nums.length; i ++){
+    if (nums[i-1] != 3 && nums[i] == 3 )
+      counter++;
+  }
+  return (counter == 3) ? true : false;
+}
 
 
 
