@@ -1172,6 +1172,7 @@ static boolean tripleUp(int[] nums) {
 
 
 
+
 // S T R I N G  I I 
 static String doubleChar(String str) {
   /*
