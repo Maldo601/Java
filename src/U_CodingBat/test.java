@@ -1415,6 +1415,18 @@ static int bunnyEars2(int bunnies) {
     return 2 + bunnyEars2(bunnies -1);
   return 3+ bunnyEars2(bunnies -1);
 }
+static int triangle(int rows) {
+  /*
+  Tenim un triangle fet de blocs. La fila superior té 1 bloc, 
+  la següent fila cap avall té 2 blocs, la següent fila té 3 blocs, etc. 
+  Calculeu recursivament (sense bucles ni multiplicacions) 
+  el nombre total de blocs en aquest triangle amb el nombre de files donat.
+  */
+  if (rows == 0)
+    return 0;
+  return rows + triangle(rows -1);
+}
+
 
 
   // MAIN 
