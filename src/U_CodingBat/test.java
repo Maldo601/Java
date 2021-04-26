@@ -1151,7 +1151,18 @@ static int[] fizzArray3(int start, int end) {
   }
   return v;
 }
-
+// Desplaça un Array una posicio a l'esquerra i posa el primer valor com a ultim
+static int[] shiftLeft(int[] nums) {
+  int v[] = new int [nums.length];
+  if (nums.length < 2)
+    return nums;
+  int aux = nums[0];
+  for ( int i = 0; i < v.length-1; i++){
+    v[i] = nums[i+1];
+  }
+  v[nums.length-1] = aux;
+  return v;
+}
 
 
 
