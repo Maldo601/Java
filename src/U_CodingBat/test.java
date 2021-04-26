@@ -1,4 +1,3 @@
-package U_CodingBat;
 
 import java.util.Arrays;
 
@@ -1358,8 +1357,30 @@ if(str.charAt(str.length()-1) != '*' &&
 return new String(arr, 0, count);
 }
 
+
+static String [] Sensible (String str){
+  String v[] = new String[str.length() * 2];
+  for ( int i = 0; i < v.length; i+=2){
+    v[i] = ""+str.charAt(i);
+  }
+  return v;
+}
+
+
+
+// R E C U R S I O N      I
+static int factorial(int n) {
+  /*
+  Donat n de 1 o més, torneu el factorial de n, que és n * (n-1) * (n-2) ... 1. 
+  Calculeu el resultat recursivament (sense bucles).
+  */
+  if (n == 1)
+    return 1;
+  return n * factorial(n-1);
+}
+
   // MAIN 
   public static void main(String[] args) {
-    
+    System.out.println(Arrays.toString(Sensible("Sensible")));
   }
 }
