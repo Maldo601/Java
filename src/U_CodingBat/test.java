@@ -1437,6 +1437,21 @@ static int sumDigits(int n) {
         return 0;
     return n % 10 + sumDigits(n / 10);
 }
+public int count7(int n) {
+  /*
+  Donat un int n no negatiu, torneu el recompte de les ocurrències de 7 com a dígit, 
+  de manera que, per exemple, 717 produeix 2. (sense bucles). Tingueu en compte que el 
+  mod (%) per 10 proporciona el dígit més a la dreta (126% 10 és 6),
+  mentre que dividir (/) per 10 elimina el dígit més a la dreta (126/10 és 12).
+  */
+   if(n == 0)
+        return 0;
+          
+    if(n % 10 == 7)
+        return 1 + count7(n / 10);
+                    
+    return count7(n / 10);
+}
 
 
 
