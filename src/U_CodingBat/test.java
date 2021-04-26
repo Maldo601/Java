@@ -531,6 +531,21 @@ public class test {
                   
     return a;
 }
+// L O G I C     II
+static int luckySum(int a, int b, int c) {
+  /*
+  Donats 3 valors int, a b c, retornen la seva suma. 
+  Tanmateix, si un dels valors és 13, llavors no compta per a la suma i els valors 
+  a la seva dreta no compten. Per exemple, si b és 13, tant b com c no compten.
+  */
+  if (a == 13)
+    return 0;
+  else if (b == 13)
+    return a;
+  else if (c == 13)
+    return a + b;
+  return a + b + c;
+}
 
 
 
@@ -1437,7 +1452,7 @@ static int sumDigits(int n) {
         return 0;
     return n % 10 + sumDigits(n / 10);
 }
-public int count7(int n) {
+static int count7(int n) {
   /*
   Donat un int n no negatiu, torneu el recompte de les ocurrències de 7 com a dígit, 
   de manera que, per exemple, 717 produeix 2. (sense bucles). Tingueu en compte que el 
