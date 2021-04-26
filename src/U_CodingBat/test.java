@@ -579,6 +579,33 @@ static int blackjack(int a, int b) {
       return a;
   return (21 - a > 21 - b) ? b : a;
 }
+static boolean evenlySpaced(int a, int b, int c) {
+  /*
+  Donades tres ints, a b c, una d’elles és petita, una de mitjana i una de gran. 
+  Torneu a cert si els tres valors estan espaiats uniformement, de manera que la 
+  diferència entre petit i mitjà és la mateixa que la diferència entre mitjà i gran.
+  */
+    int temp;
+    if(a > b) {
+        temp = a;
+        a = b;
+        b = temp;
+    }
+                    
+    if(b > c) {
+        temp = b;
+        b = c;
+        c = temp;
+    }
+                                      
+    if(a > b) {
+        temp = a;
+        a = b;
+        b = temp;
+    }
+                                                        
+    return b - a == c - b;
+}
 
 
 
