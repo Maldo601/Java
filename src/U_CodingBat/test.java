@@ -1163,6 +1163,21 @@ static int[] shiftLeft(int[] nums) {
   v[nums.length-1] = aux;
   return v;
 }
+// Es copia un Array a un altre, fent tope de copia al numero 4
+static int[] pre4(int[] nums) {
+  int counter = 0;
+  for (int i = 0; i < nums.length; i++){
+    if (nums[i] != 4)
+      counter++;
+      else if(nums[i] == 4)
+        break;
+  }
+  int v[] = new int [counter];
+  for (int n = 0; n < v.length; n++){
+    v[n] = nums[n];
+  }
+  return v;
+}
 
 
 
