@@ -546,6 +546,17 @@ static int luckySum(int a, int b, int c) {
     return a + b;
   return a + b + c;
 }
+// Retorna la suma dels numeros menos si son un rango de 13 a 19 sense contar 15 i 16
+static int fixTeen( int n ){
+  if (n >= 13 && n <= 19 && n != 15 && n != 16)
+    return 0;
+  return n;
+}
+static int noTeenSum(int a, int b, int c) {
+    return fixTeen(a) + fixTeen(b) + fixTeen(c);
+}
+
+
 
 
 
@@ -851,7 +862,9 @@ static int luckySum(int a, int b, int c) {
       return new int[0];
   }
   
-  // ARRAYS II 
+//    A R R A Y S     II
+
+
   // Retorna un counter en la quantitat de parells a l'Array:
   static int countEvens(int[] nums) {
     int counter = 0;
