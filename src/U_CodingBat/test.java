@@ -1159,6 +1159,7 @@ static boolean sameEnds(int[] nums, int len) {
 
 
 
+
 // S T R I N G  I I 
 static String doubleChar(String str) {
   /*
