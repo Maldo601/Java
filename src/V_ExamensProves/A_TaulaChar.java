@@ -8,17 +8,17 @@ public class A_TaulaChar {
     }
     
     public static char[][] omplirTaula(char c, int n, int d){
-        int quants = 0;     // Quants caràcters hem posat
+        int counter = 0;     // counter caràcters hem posat
         int x,y;    
         char [][] mat = new char[d][d];
         if (n>d*d)
             return mat;
-        while (quants < n){
+        while (counter < n){
             x = (int)(Math.random()*d);
             y = (int)(Math.random()*d);
             if (mat[x][y]!=c){
                 mat[x][y] = c;
-                quants++;
+                counter++;
             }  
         }
         return mat;
