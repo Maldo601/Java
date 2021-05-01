@@ -1,5 +1,3 @@
-package U_CodingBat;
-
 import java.util.Arrays;
 
 public class test {
@@ -567,6 +565,84 @@ public class test {
                   
     return a;
 }
+// L O G I C     II
+static int luckySum(int a, int b, int c) {
+  /*
+  Donats 3 valors int, a b c, retornen la seva suma. 
+  Tanmateix, si un dels valors és 13, llavors no compta per a la suma i els valors 
+  a la seva dreta no compten. Per exemple, si b és 13, tant b com c no compten.
+  */
+  if (a == 13)
+    return 0;
+  else if (b == 13)
+    return a;
+  else if (c == 13)
+    return a + b;
+  return a + b + c;
+}
+// Retorna la suma dels numeros menos si son un rango de 13 a 19 sense contar 15 i 16
+static int fixTeen( int n ){
+  if (n >= 13 && n <= 19 && n != 15 && n != 16)
+    return 0;
+  return n;
+}
+static int noTeenSum(int a, int b, int c) {
+    return fixTeen(a) + fixTeen(b) + fixTeen(c);
+}
+// Redondeja de 5 cap al 10 o cap al 0
+static int round10 (int num) {
+  int round = num % 10;
+  if (round >= 5)
+   return  num + 10 - round;
+  return num - round;
+}
+static int roundSum(int a, int b, int c) {
+  return round10(a) + round10(b) + round10(c);
+}
+// Retorna el valor mes proper a 21 sense pasarse per damunt d'este.
+static int blackjack(int a, int b) {
+  if ( a > 21 && b > 21 )
+    return 0;
+    else if (b == 21)
+      return b;
+    else if (a == 21)
+      return a;
+    else if ( a > 21 && b < 21)
+      return b;
+    else if ( b > 21 && a < 21)
+      return a;
+  return (21 - a > 21 - b) ? b : a;
+}
+static boolean evenlySpaced(int a, int b, int c) {
+  /*
+  Donades tres ints, a b c, una d’elles és petita, una de mitjana i una de gran. 
+  Torneu a cert si els tres valors estan espaiats uniformement, de manera que la 
+  diferència entre petit i mitjà és la mateixa que la diferència entre mitjà i gran.
+  */
+    int temp;
+    if(a > b) {
+        temp = a;
+        a = b;
+        b = temp;
+    }
+                    
+    if(b > c) {
+        temp = b;
+        b = c;
+        c = temp;
+    }
+                                      
+    if(a > b) {
+        temp = a;
+        a = b;
+        b = temp;
+    }
+                                                        
+    return b - a == c - b;
+}
+
+
+
 
 
 
@@ -872,11 +948,710 @@ public class test {
       return new int[0];
   }
   
+//    A R R A Y S     II
+
+
+  // Retorna un counter en la quantitat de parells a l'Array:
+  static int countEvens(int[] nums) {
+    int counter = 0;
+    for ( int i = 0; i < nums.length; i ++ ){
+      if ( nums[i] % 2 == 0)
+        counter++;
+    }
+    return counter;
+  }
+  // Resta absolutament el valor mes petit i mes gran del Array. 
+  static int bigDiff(int[] nums) {
+    Arrays.sort(nums);
+    return Math.abs (nums[0] - nums[nums.length-1]);
+  }
+  static int sum13(int[] nums) {
+    /*
+    Retorna la suma dels números de la matriu, retornant 0 per a una matriu buida. 
+    Llevat que el número 13 és molt desafortunat, de manera que no compta i els 
+    números que arriben immediatament després d'un 13 tampoc no compten.
+    */
+    int sum = 0;
+    int i = 0;
+      while(i < nums.length) {
+          if(nums[i] == 13)
+            i += 2;
+           else {
+            sum += nums[i];
+            i++;
+          }
+      }
+      return sum;
+  }
+  // No suma el rango comprès entre 6 o 7. 
+  public int sum67(int[] nums) {
+    int sum = 0;
+    boolean inRange = false;
+    for(int i = 0; i < nums.length; i++) {
+        if(nums[i] == 6)
+            inRange = true;
+
+        if(!inRange)
+            sum += nums[i];
+                                        
+        if(inRange && nums[i] == 7)
+            inRange = false;
+    }
+    return sum;
+}
+// Retorna true o false si hi han 2 2 junts
+static boolean has22(int[] nums) {
+
+  for (int i = 1; i < nums.length; i++){
+    if (nums[i-1] == 2 && nums[i] == 2)
+      return true;
+  }
+  return false;
+}
+// Retorna true o false si no hi ha 1 ni 3
+static boolean lucky13(int[] nums) {
+  for ( int i = 0; i < nums.length; i++){
+    if (nums[i] == 1 || nums [i] == 3)
+      return false;
+  }
+  return true;
+  }
+// Si tots els dos del array tornen 8, retorna true, si no retorna false;
+static boolean sum28(int[] nums) {
+  /* Suma nomes els dos de la matriu i si dona 8 retorna true. */
+  int sum = 0;
+  for ( int i = 0; i < nums.length; i ++){
+    if ( nums[i] == 2)
+      sum += nums[i];
+  }
+  return ( sum == 8) ? true : false;
+}
+// Retorna true si el numero de 1ns es mes gran que el de cuatres
+static boolean more14(int[] nums) {
+  int countOne = 0;
+  int countFour = 0;
+  for ( int i = 0; i < nums.length; i ++) {
+    if (nums[i] == 1)
+      countOne++;
+    if(nums[i] == 4)
+      countFour++;
+  }
+  return ( countOne > countFour) ? true : false;
+}
+// Ompli un array del 0 fins a la seua llargaria 1 a 1.
+static int[] fizzArray(int n) {
+  int v[] = new int [n];
+  int omple = 0;
+  for (int i = 0; i < v.length; i++){
+    v[i] = omple;
+    omple++;
+  }
+  return v;
+}
+// Torna true si tots els numeros del Array son 1 o 4.
+static boolean only14(int[] nums) {
+  for ( int i = 0; i < nums.length; i ++){
+    if ( nums[i] != 1 && nums[i] != 4)
+      return false;
+  }
+  return true;
+}
+// Ompli un array del 0 hasta la seua llargaria, pero en versio String.
+static String[] fizzArray2(int n) {
+  String v[] = new String[n];
+  for (int i = 0; i < v.length; i ++){
+    v[i] = String.valueOf(i);
+  }
+  return v;
+}
+// Si conte 1 i 4 retorna false. Un dels dos sols es true.
+static boolean no14(int[] nums) {
+  boolean countOne =false;
+  boolean countFour = false;
+  for (int i = 0; i < nums.length; i++){
+    if (nums[i] == 1)
+      countOne = true;
+    if (nums[i] == 4)
+      countFour = true;
+  }
+  return !countOne || !countFour;
+}
+static boolean isEverywhere(int[] nums, int val) {
+  for(int i = 0; i < nums.length - 1; i++) {
+      if(nums[i] != val && nums[i + 1] != val)
+          return false;
+  }
+              
+  return true;
+}
+// Comprova que no hi haguen dos dos seguits i cuatre cuatre seguit. El resto true.
+static boolean either24(int[] nums) {
+  boolean dos = false;
+  boolean cuatre = false;
+  for ( int i = 0; i < nums.length -1; i++ ){
+    if ( nums[i] == 2 && nums [i+1] == 2 )
+      dos = true;
+    else if( nums [i] == 4 && nums [i+1] == 4)
+      cuatre = true;
+  }
+  return dos != cuatre;
+}
+static int matchUp(int[] nums1, int[] nums2) {
+  int counter = 0;
+   for(int i = 0; i < nums1.length; i++) {
+       if(Math.abs(nums1[i] - nums2[i]) <= 2 && nums1[i] != nums2[i])
+           counter++;
+   }
+   return counter;
+}
+// retorna true si te 7 al costat o una posicio +1
+static boolean has77(int[] nums) {
+  for (int i = 0; i < nums.length-1; i++){
+    if (nums[i] == 7 && nums[i+1] == 7)
+    return true;
+  }
+  for (int i = 0; i < nums.length-2; i++){
+    if (nums [i] == 7 && nums[i+2] == 7)
+    return true;
+  }
+  return false;
+}
+ /*
+  Si es dóna una matriu d’ints, torneu true si hi ha un 1
+  a la matriu amb un 2 en algun lloc posterior de la matriu.
+*/
+static boolean has12(int[] nums) {
+ 
+  boolean first = false;
+
+  for ( int i = 0; i < nums.length; i++){
+    if (nums[i] == 1)
+      first = true;
+    if(nums[i] == 2 && first )
+      return true;
+  }
+  return false;
+}
+// Comprova que tres numeros seguits del array siguen parells 
+static boolean modThree(int[] nums) {
+  if(nums.length < 3)
+        return false;
+          
+    for(int i = 0; i <= nums.length - 3; i++) {
+        if(nums[i] % 2 == nums[i+1] % 2 && nums[i] % 2 == nums[i+2] % 2)
+            return true;
+    }
+    return false;
+}
+// Torna true si el valor 3 apareix 3 vegades en l'Array
+static boolean haveThree(int[] nums) {
+  int counter = 0;
+  if (nums.length < 3)
+    return false;
+  if (nums[0] == 3)
+    counter++;
+  for ( int i = 1 ; i < nums.length; i ++){
+    if (nums[i-1] != 3 && nums[i] == 3 )
+      counter++;
+  }
+  return (counter == 3) ? true : false;
+}
+// Retorna true o false si els numeros del davant son iguals als dels de detras en base a "len";
+static boolean sameEnds(int[] nums, int len) {
+  for(int i = 0; i < len; i++) {
+      if(nums[i] != nums[nums.length - len + i])
+          return false;
+  }            
+  return true;
+}
+// Retorna true si hi han tres numeros en ordre creixent
+static boolean tripleUp(int[] nums) {
+  /*
+  Torneu cert si la matriu conté, en algun lloc, 
+  tres nombres adjacents creixents com .... 4, 5, 6, ... o 23, 24, 25.
+  */
+  for (int i = 0; i <= nums.length-3; i++){
+    if (nums[i] + 1 == nums[i+1] && nums[i+1] +1 == nums[i+2])
+      return true;
+  }
+  return false;
+}
+// Plena un Array que inicia a "start" hasta "end". La llargaria es la resta d'estos.
+static int[] fizzArray3(int start, int end) {
+  int v[] = new int [end - start];
+  int counter = start;
+  for (int i = 0; i < v.length; i++){
+    v[i] = counter;
+    counter++;
+  }
+  return v;
+}
+// Desplaça un Array una posicio a l'esquerra i posa el primer valor com a ultim
+static int[] shiftLeft(int[] nums) {
+  int v[] = new int [nums.length];
+  if (nums.length < 2)
+    return nums;
+  int aux = nums[0];
+  for ( int i = 0; i < v.length-1; i++){
+    v[i] = nums[i+1];
+  }
+  v[nums.length-1] = aux;
+  return v;
+}
+// Es copia un Array a un altre, fent tope de copia al numero 4
+static int[] pre4(int[] nums) {
+  int counter = 0;
+  for (int i = 0; i < nums.length; i++){
+    if (nums[i] != 4)
+      counter++;
+      else if(nums[i] == 4)
+        break;
+  }
+  int v[] = new int [counter];
+  for (int n = 0; n < v.length; n++){
+    v[n] = nums[n];
+  }
+  return v;
+}
+// 
+static int[] post4(int[] nums) {
+  int i = nums.length - 1;
   
+  while(nums[i] != 4)
+      i--;
+            
+  int[] arr = new int[nums.length - i - 1];
+                
+  for(int j = 0; j < arr.length; j++)
+      arr[j] = nums[i + j + 1];
+                        
+  return arr;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// S T R I N G  I I 
+static String doubleChar(String str) {
+  /*
+  Si teniu una cadena, torneu una cadena on hi 
+  hagi dos caràcters per a cada caràcter de l'original.
+  */
+  String cad = "";
+  for ( int i = 0; i < str.length(); i++){
+    cad += ""+str.charAt(i) + str.charAt(i);
+  }
+  return cad;
+}
+// Retorna un counter per cada vegada que apareix "hi"
+static int countHi(String str) {
+  int counter = 0;
+  for (int i = 0; i < str.length()-1; i++){
+    if ( str.substring(i, i+2).equals("hi"))
+      counter++;
+  }
+  return counter;
+}
+// Retorna true o false si "cat" apareix les mateixes vegades que "dog"
+static boolean catDog(String str) {
+  int dog = 0;
+  int cat = 0;
+  for ( int i = 0; i < str.length()-2; i++){
+    if (str.substring(i,i+3).equals("cat"))
+      cat++;
+    if (str.substring(i,i+3).equals("dog"))
+      dog++;
+  }
+  return (dog == cat) ? true : false;
+}
+static int countCode(String str) {
+  /*
+  Torneu el nombre de vegades que apareix la 
+  cadena "codi" en qualsevol lloc de la cadena donada, excepte
+  que acceptarem qualsevol lletra per a la "d", 
+  de manera que es compten "cope" i "cooe".
+  */
+  int counter = 0;
+  for (int i = 0; i < str.length()-3; i++){
+    if (str.substring(i,i+2).equals("co") && str.charAt(i+3) == 'e')
+      counter++;
+  }
+  return counter;
+}
+static boolean endOther(String a, String b) {
+  /*
+  torneu a true si alguna de les cadenes apareix al final de 
+  l'altra cadena, ignorant les diferències entre majúscules 
+  i minúscules (en altres paraules, el càlcul no hauria de ser "sensible a majúscules"). 
+  Nota: str.toLowerCase () retorna la versió en minúscula d’una cadena.
+  */
+    if(a.length() < b.length()) {
+        String temp = a;
+        a = b.toLowerCase();
+        b = temp.toLowerCase();
+    }
+    return a.substring(a.length() - b.length()).equals(b);
+}
+static boolean xyzThere(String str) {
+  /*
+  Torneu a true si la cadena indicada conté una aparença 
+  de "xyz" on el punt (.) No va precedit directament del xyz. 
+  Per tant, "xxyz" compta, però "x.xyz" no.
+  */
+ if(str.length() >= 3 && str.substring(0, 3).equals("xyz"))
+        return true;
+          
+    for(int i = 1; i < str.length() - 2; i++) {
+        if(str.charAt(i - 1) != '.' && str.substring(i, i + 3).equals("xyz"))
+            return true;
+    }
+                          
+    return false;
+}
+// Retorna true si conte "b" + caracter aleatori + "b"
+static boolean bobThere(String str) {
+  for (int i = 0; i < str.length()-2; i ++){
+    if (str.charAt(i) == 'b' && str.charAt(i+2) == 'b')
+      return true;
+  }
+  return false;
+}
+static boolean xyBalance(String str) {
+  /*
+  Direm que una cadena té un equilibri xy si per a tots 
+  els caràcters 'x' de la cadena, hi ha un caràcter 'y' 
+  en algun lloc posterior de la cadena. Per tant, "xxy" 
+  és equilibrat, però "xyx" no. Una "y" pot equilibrar 
+  diverses "x". Retorna el valor vertader si la cadena donada té un equilibri xy.
+  */
+  boolean firstY = false;
+  /*
+  Com la validació ocurrix en Y's al final, usarem un decremental 
+  per comprovar-ho. Així evitem primer els problemes de trobar una Y
+  al principi d'un bucle normal, que ens farien validarlo sencer.
+  */
+  for ( int i = str.length()-1; i >= 0; i --){
+    if(str.charAt(i) == 'y')
+    firstY = true;
+    // Si troba "X" pero cap Y al final de la cadena on comencem a contar
+    // no valida.
+    if(str.charAt(i) == 'x' && firstY == false)
+    return false;
+  }
+  return true;
+}
+// Replenar posicio duna cadena i posicio de laltra a un array
+static String mixString(String a, String b) {
+  
+  char[] arr;
+  String end;
+  int count = 0;
+      
+  if(a.length() < b.length()) {
+      arr = new char[2 * a.length()];
+      end = b.substring(a.length());
+  } else {
+      arr = new char[2 * b.length()];
+      end = a.substring(b.length());
+  }
+  for(int i = 0; i < arr.length / 2; i++) {
+      arr[count] = a.charAt(i);
+      count++;
+      arr[count] = b.charAt(i);
+      count++;
+  }
+  return new String(arr) + end;
+}
+// Torna les posicions finals de str en base a un numero "n" i les concatena "n" vegades
+static String repeatEnd(String str, int n) {
+  String cad = "";
+  String take = str.substring(str.length()-n);
+  for (int i = 0; i < n; i++){
+    cad += take;
+  }
+  return cad;
+}
+// El mateix que abans, pero començant per l'inici i fent coses com "ChocChoChC" "PitaPitPiP"
+static String repeatFront(String str, int n) {
+  String cad = "";
+  String front = str.substring(0,n);
+  int counter = front.length();
+  for (int i = 0; i < n; i++){
+    cad += front.substring(0,counter);
+    counter--;
+  }
+  return cad;
+}
+// Repetix les vegades que se li pasen per numero, i intercala un separador, pero elimina el final d'este separador
+static String repeatSeparator(String word, String sep, int count) {
+  String cad = "";
+  int fw = sep.length();
+  for ( int i = 0; i < count; i++){
+    cad += word + sep;
+  }
+  return cad.substring(0,cad.length()-fw);
+}
+static boolean prefixAgain(String str, int n) {
+  /*
+  considereu el prefix format pels primers N caràcters de la cadena. 
+  Aquesta cadena de prefix apareix en un altre lloc de la cadena? 
+  Suposem que la cadena no està buida i que N està en l'interval 1..str.length ().
+  */
+   String prefix = str.substring(0, n);
+    // Busquem desde n per no repetir la coincidencia. 
+    for(int i = n; i <= str.length() - n; i++) {
+        if(str.substring(i, i + n).equals(prefix))
+            return true;
+    }
+    return false;
+}
+static String xyzMiddle(String str) {
+    
+  String pureMid = ""+str.charAt(str.length()/2-1) + str.charAt(str.length()/2) + str.charAt(str.length()/2+1);
+  return pureMid;
+}
+// Torna el que estigue compres entre "bread"
+static String getSandwich(String str) {
+  /*
+  Un entrepà és dos trossos de pa amb alguna cosa al mig. 
+  Torneu la cadena que hi ha entre la primera i l'última 
+  aparició de "pa" a la cadena donada, o bé torneu la cadena buida "" 
+  si no hi ha dos trossos de pa.
+  
+  Este exercici m'ha agradat resoldrel. 
+
+  */
+  String revCad = "";
+  String cad = "";
+  int inici = str.indexOf("bread") + 5;
+  for (int i = str.length()-1; i >= 0; i --){
+    revCad += str.charAt(i);
+  }
+  int fin = revCad.indexOf("daerb") + 5;
+  for ( int x = inici; x < str.length() - fin; x++){
+    cad += str.charAt(x);
+  }
+  return cad;
+}
+// Retorna true si el asterisco te les mateixes lletres davant o detras
+static boolean sameStarChar(String str) {
+
+  for (int i = 1; i < str.length()-1; i++){
+    if (str.charAt(i) == '*' && str.charAt(i-1) != str.charAt(i+1))
+      return false;
+  }
+  return true;
+}
+static String oneTwo(String str) {
+  /*
+  Donada una cadena, calculeu una nova cadena movent 
+  el primer caràcter que apareixerà després dels dos següents 
+  caràcters, de manera que "abc" produeix "bca". Repetiu aquest 
+  procés per a cada grup següent de 3 caràcters, de manera que "abcdef"
+  produeix "bcaefd". Ignoreu qualsevol grup de menys de 3 caràcters al final.
+  */
+
+  /*
+    Per resoldre este problema, tenim que tenir en conte que el bucle te que pegar 
+    saltos de tres en tres. Per cada salto de tres agafarem les posicions 1 i 2 del
+    fragment que ha agafat de la cadena i li concatenarem al final la posicio 0
+    en un charAt. Aixo es repetira cada cicle de tres vegades. La llargaria al 
+    agafar 3 caracters de la cadena, haurem de reduirla 2 punts al length().
+  */
+  String cad = "";
+  if (str.length() < 3)
+    return "";
+  for (int i = 0; i < str.length()-2; i+=3){
+    cad += str.substring(i+1,i+3) + str.charAt(i);
+  }
+  return cad;
+}
+/*
+  Elimina tot el que estigue entre una "z" i una "p";
+  Es crea un String array i una string final. 
+  El primer bucle passa cada lletra al Array.
+  El segon bucle substitueix tot el que estigue entre z i p 
+     per un string buit.
+  Es printa el nou contingut del Array a una cadena que es 
+     la que es retorna. 
+*/ 
+public String zipZap(String str) {
+  String v[] = new String [str.length()];
+  String cad = "";
+  if (str.length() < 3)
+    return str;
+  for ( int i = 0; i < v.length; i++){
+    v[i] = ""+str.charAt(i);
+  }
+  for ( int n = 0; n < v.length; n++){
+    if (v[n].equals("z") && v[n+2].equals("p"))
+      v[n+1] = "";
+    cad += v[n];
+  }
+  return cad;
+}
+static String starOut(String str) {
+  if(str.length() < 1)
+  return "";
+  
+if(str.length() == 1) {
+  if(str.charAt(0) == '*')
+      return "";
+  else
+      return str;
+}
+                              
+char[] arr = new char[str.length()];
+int count = 0;
+                                      
+                                          
+if(str.charAt(0) != '*' && str.charAt(1) != '*') {
+  arr[count] = str.charAt(0);
+  count++;
+}
+                                                        
+for(int i = 1; i < str.length() - 1; i++) {
+  if(str.charAt(i-1)!='*' && str.charAt(i) != '*' && 
+      str.charAt(i+1) != '*') {
+      arr[count] = str.charAt(i);
+      count++;
+  }
+}
+                                                                                  
+if(str.charAt(str.length()-1) != '*' && 
+  str.charAt(str.length()-2) != '*') {
+  arr[count] = str.charAt(str.length() - 1);
+  count++;
+}                                                                                            
+return new String(arr, 0, count);
+}
+
+
+static String [] Sensible (String str){
+  String v[] = new String[str.length() * 2];
+  for ( int i = 0; i < v.length; i+=2){
+    v[i] = ""+str.charAt(i);
+  }
+  return v;
+}
+
+
+
+// R E C U R S I O N      I
+static int factorial(int n) {
+  /*
+  Donat n de 1 o més, torneu el factorial de n, que és n * (n-1) * (n-2) ... 1. 
+  Calculeu el resultat recursivament (sense bucles).
+  */
+  if (n == 1)
+    return 1;
+  return n * factorial(n-1);
+}
+static int bunnyEars(int bunnies) {
+  /*
+  Tenim diversos conills i cada conillet té dues grans orelles. 
+  Volem calcular el nombre total d’orelles de tots els conillets de manera 
+  recursiva (sense bucles ni multiplicacions).
+  */
+  if (bunnies == 0)
+    return 0;
+  return 2 + bunnyEars(bunnies-1);
+}
+static int fibonacci(int n) {
+  /*
+  Els dos primers valors de la seqüència són 0 i 1 (essencialment 2 casos base). 
+  Cada valor posterior és la suma dels dos valors anteriors, de manera que tota 
+  la seqüència és: 0, 1, 1, 2, 3, 5, 8, 13, 21, etc. Definiu un mètode recursiu 
+  de fibonacci (n) que retorni l'enèsim nombre de fibonacci, amb n = 0 que representa 
+  l'inici de la seqüència.
+  */
+  if (n == 0)
+    return 0;
+    else if (n == 1)
+      return 1;
+      
+  return fibonacci(n-1) + fibonacci(n-2);
+}
+static int bunnyEars2(int bunnies) {
+  /*
+  Els conills senars  (1, 3, ..) tenen les 2 orelles normals. 
+  Els conills parells (2, 4, ..) tenen 3 orelles, perquè cadascun té el peu aixecat. 
+  Torneu recursivament el nombre d'orelles" a la línia 1, 2, ... n del conillet 
+  */
+  if ( bunnies == 0)
+    return 0;
+  if ( bunnies % 2 == 1)
+    return 2 + bunnyEars2(bunnies -1);
+  return 3+ bunnyEars2(bunnies -1);
+}
+static int triangle(int rows) {
+  /*
+  Tenim un triangle fet de blocs. La fila superior té 1 bloc, 
+  la següent fila cap avall té 2 blocs, la següent fila té 3 blocs, etc. 
+  Calculeu recursivament (sense bucles ni multiplicacions) 
+  el nombre total de blocs en aquest triangle amb el nombre de files donat.
+  */
+  if (rows == 0)
+    return 0;
+  return rows + triangle(rows -1);
+}
+static int sumDigits(int n) {
+  /*
+  torneu la suma dels seus dígits recursivament (sense bucles). 
+  Tingueu en compte que el mod (%) per 10 proporciona el dígit més a la dreta 
+  (126% 10 és 6), mentre que dividir (/) per 10 elimina el dígit més a la dreta 
+  (126/10 és 12).
+  */
+    if(n == 0)
+        return 0;
+    return n % 10 + sumDigits(n / 10);
+}
+static int count7(int n) {
+  /*
+  Donat un int n no negatiu, torneu el recompte de les ocurrències de 7 com a dígit, 
+  de manera que, per exemple, 717 produeix 2. (sense bucles). Tingueu en compte que el 
+  mod (%) per 10 proporciona el dígit més a la dreta (126% 10 és 6),
+  mentre que dividir (/) per 10 elimina el dígit més a la dreta (126/10 és 12).
+  */
+   if(n == 0)
+        return 0;
+          
+    if(n % 10 == 7)
+        return 1 + count7(n / 10);
+                    
+    return count7(n / 10);
+}
+
+
+
+
   // MAIN 
   public static void main(String[] args) {
-    int a[] = {1,2,3};
-    int b[] = {1,2,3,4,5,6,7,8,9};
-    System.out.println(Arrays.toString(plusTwov1(a,b)));
+    System.out.println(Arrays.toString(Sensible("Sensible")));
   }
 }
