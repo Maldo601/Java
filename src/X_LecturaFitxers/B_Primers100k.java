@@ -22,7 +22,6 @@ public class B_Primers100k {
                 }
             }catch(Exception e){
                 System.out.println("blabla");
-            
             }
             System.out.println(Arrays.toString(v));
         }
