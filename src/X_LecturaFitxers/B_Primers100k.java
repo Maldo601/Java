@@ -2,6 +2,9 @@ import java.io.*;
 import java.util.Arrays;
 public class B_Primers100k {
     public static void main (String[] args){
+        if (!args[0].equals("primes-to-100k.txt")){
+            System.out.println("Tens que passar un fitxer");
+        }else if (args[0].equals("primes-to-100k.txt")){
         // long interval = System.currentTimeMillis();
         BufferedReader bRead = null;
         // BufferedReader zRead = null;
@@ -44,3 +47,4 @@ public class B_Primers100k {
             }
         }
     }
+}
