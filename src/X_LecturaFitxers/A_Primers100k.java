@@ -12,7 +12,7 @@ public class A_Primers100k {
             /* Associarem el buffer al fitxer. Va aqui dintre perque de no existir
                el fitxer, es un tros de codi susceptible a errors
             */
-            bRead = new BufferedReader(new FileReader("C:/Users/maldo/Desktop/FicherosJava/palabras.txt"));
+            bRead = new BufferedReader(new FileReader("C:/Users/maldo/Desktop/Java/palabras.txt"));
             while((c = bRead.read()) != -1){
                 if ((char) c == '1')
                     numLs++;
