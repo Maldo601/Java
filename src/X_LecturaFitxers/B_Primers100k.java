@@ -2,16 +2,21 @@ import java.io.*;
 import java.util.Arrays;
 public class B_Primers100k {
     public static void main (String[] args){
-        if (!args[0].equals("primes-to-100k.txt")){
+        /*
+            Es comprova que se li passa un únic parametre (unic arxiu) i que 
+            aquest contingui la 
+        */
+        if (args.length != 1){
             System.out.println("\nPrograma per llegir una llista de primers d'un fitxer\n" + 
                                "-----------------------------------------------------  \n"  +
                                "Ha de passar al programa el nom d'un fitxer de text    \n"  +
                                "contenint números primers. El programa farà una serie  \n"  +
                                "d'operacions amb aquests primers. No s'han passat      \n"  +
                                "arguments al programa. L'execució no pot continuar.");
-        }else if (args.length > 1){
+        // Detecta si el parametre passat acaba amb l'extensió demanada.
+        }else if (!args[0].endsWith(".txt")){
             System.out.println("\nEl nom del fitxer no correspon a cap fitxer trobat al sistema.");
-        }else if (args[0].equals("primes-to-100k.txt")){
+        }else{
         // long interval = System.currentTimeMillis();
         BufferedReader bRead = null;
         // BufferedReader zRead = null;
@@ -47,8 +52,10 @@ public class B_Primers100k {
                     v[counter] = Integer.parseInt(c);
                     counter++;
                 }
+                bRead.close();
             }catch (Exception e){
-                System.out.println("blabla");
+                System.out.println("Error indeterminat en procesar el fitxer.");
+                e.getStackTrace();
             }finally{
                 System.out.println(Arrays.toString(v));
             }
