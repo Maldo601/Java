@@ -2,12 +2,9 @@ import java.io.*;
 import java.util.Arrays;
 public class B_Primers100k {
     public static void main (String[] args){
-        /*
-            Es comprova que se li passa un únic parametre (unic arxiu) i que 
-            aquest contingui la 
-        */
+        
         if (args.length != 1){
-            System.out.println("\nPrograma per llegir una llista de primers d'un fitxer\n" + 
+            System.out.println("\nPrograma per llegir una llista de primers d'un fitxer\n"  + 
                                "-----------------------------------------------------  \n"  +
                                "Ha de passar al programa el nom d'un fitxer de text    \n"  +
                                "contenint números primers. El programa farà una serie  \n"  +
@@ -19,8 +16,6 @@ public class B_Primers100k {
         }else{
         // long interval = System.currentTimeMillis();
         BufferedReader bRead = null;
-        // BufferedReader zRead = null;
-        // String fichero = "primes-to-100k.txt";
         int linies = 0;
         String c;
         int counter = 0;
@@ -42,18 +37,20 @@ public class B_Primers100k {
                 System.out.println("Error.");
             }
             // Vector de Sortida.
-            long v[] = new long [linies];
+            int v[] = new int [linies];
             try{
                 bRead = new BufferedReader
                 (
                     new FileReader("C:/Users/maldo/Desktop/Java/src/X_LecturaFitxers/Ficheros/primes-to-100k.txt")
                 );
-                while((c = bRead.readLine()) != null){
-                    v[counter] = Integer.parseInt(c);
-                    counter++;
+                while((c = bRead.readLine()) != null ){
+                    
+                        v[counter] = Integer.parseInt(c);
+                        counter++;
+                    
                 }
                 bRead.close();
-            }catch (Exception e){
+            }catch ( Exception e ){
                 System.out.println("Error indeterminat en procesar el fitxer.");
                 e.getStackTrace();
             }finally{
