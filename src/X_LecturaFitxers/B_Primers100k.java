@@ -2,7 +2,11 @@ import java.io.*;
 import java.util.Arrays;
 public class B_Primers100k {
     public static void main (String[] args){
-        
+        int v[];
+        BufferedReader bRead = null;
+        int linies = 0;
+        String c;
+        int counter = 0;
         if (args.length != 1){
             System.out.println("\nPrograma per llegir una llista de primers d'un fitxer\n"  + 
                                "-----------------------------------------------------  \n"  +
@@ -14,12 +18,7 @@ public class B_Primers100k {
         }else if (!args[0].endsWith(".txt")){
             System.out.println("\nEl nom del fitxer no correspon a cap fitxer trobat al sistema.");
         }else{
-        // long interval = System.currentTimeMillis();
-        BufferedReader bRead = null;
-        int linies = 0;
-        String c;
-        int counter = 0;
-            // Primer try, conta linies per determinar la longitud del vector
+
             try {
                 // Buffer
                 bRead = new BufferedReader
@@ -37,17 +36,15 @@ public class B_Primers100k {
                 System.out.println("Error.");
             }
             // Vector de Sortida.
-            int v[] = new int [linies];
+            v = new int [linies];
             try{
                 bRead = new BufferedReader
                 (
                     new FileReader("C:/Users/maldo/Desktop/Java/src/X_LecturaFitxers/Ficheros/primes-to-100k.txt")
                 );
                 while((c = bRead.readLine()) != null ){
-                    
-                        v[counter] = Integer.parseInt(c);
-                        counter++;
-                    
+                    v[counter] = Integer.parseInt(c);
+                    counter++;
                 }
                 bRead.close();
             }catch ( Exception e ){
