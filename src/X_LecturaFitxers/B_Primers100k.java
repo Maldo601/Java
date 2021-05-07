@@ -1,8 +1,30 @@
 import java.io.*;
 import java.util.Arrays;
 public class B_Primers100k {
-    public static void main (String[] args){
+
+    // Banderilles de posició. 
+    static int flag1 = 0;
+    static int flag2 = 0;
+    /* Funció qu retorna la màxima distància del vector i registra
+       les posicions. 
+    */
+    static int distance (int v[]){
+        int max = 0;
         
+        for (int i = 0; i < v.length; i ++){
+
+        }
+        return max;
+    }
+    public static void main (String[] args){
+        BufferedReader bRead = null;
+        int linies = 0;
+        String c;
+        int counter = 0;
+        String fichero = "primes-to-100k.txt";
+        long interval = System.currentTimeMillis();
+        int v[];
+
         if (args.length != 1){
             System.out.println("\nPrograma per llegir una llista de primers d'un fitxer\n" + 
                                "-----------------------------------------------------  \n"  +
@@ -14,12 +36,6 @@ public class B_Primers100k {
         }else if (!args[0].endsWith(".txt")){
             System.out.println("\nEl nom del fitxer no correspon a cap fitxer trobat al sistema.");
         }else{
-        // long interval = System.currentTimeMillis();
-        BufferedReader bRead = null;
-        // String fichero = "primes-to-100k.txt";
-        int linies = 0;
-        String c;
-        int counter = 0;
             // Primer try, conta linies per determinar la longitud del vector
             try {
                 // Buffer
@@ -40,7 +56,7 @@ public class B_Primers100k {
                 e.printStackTrace();
             }
             // Vector de Sortida.
-            int v[] = new int [linies];
+            v = new int [linies];
             try{
                 bRead = new BufferedReader
                 (
