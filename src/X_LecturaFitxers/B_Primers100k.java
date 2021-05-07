@@ -2,13 +2,12 @@ import java.io.*;
 import java.util.Arrays;
 public class B_Primers100k {
     public static void main (String[] args){
-        int v[];
-        BufferedReader bRead = null;
-        int linies = 0;
-        String c;
-        int counter = 0;
+        /*
+            Es comprova que se li passa un únic parametre (unic arxiu) i que 
+            aquest contingui la 
+        */
         if (args.length != 1){
-            System.out.println("\nPrograma per llegir una llista de primers d'un fitxer\n"  + 
+            System.out.println("\nPrograma per llegir una llista de primers d'un fitxer\n" + 
                                "-----------------------------------------------------  \n"  +
                                "Ha de passar al programa el nom d'un fitxer de text    \n"  +
                                "contenint números primers. El programa farà una serie  \n"  +
@@ -18,12 +17,19 @@ public class B_Primers100k {
         }else if (!args[0].endsWith(".txt")){
             System.out.println("\nEl nom del fitxer no correspon a cap fitxer trobat al sistema.");
         }else{
-
+        // long interval = System.currentTimeMillis();
+        BufferedReader bRead = null;
+        // BufferedReader zRead = null;
+        // String fichero = "primes-to-100k.txt";
+        int linies = 0;
+        String c;
+        int counter = 0;
+            // Primer try, conta linies per determinar la longitud del vector
             try {
                 // Buffer
                 bRead = new BufferedReader
                 (
-                    new FileReader("C:/Users/maldo/Desktop/Java/src/X_LecturaFitxers/Ficheros/primes-to-100k.txt")
+                    new FileReader("C:/Users/maldo/Desktop/Java/src/X_LecturaFitxers/Ficheros/Primes-to-100k.txt")
                 );
                 while((c = bRead.readLine()) != null)
                     linies++;
@@ -33,26 +39,28 @@ public class B_Primers100k {
                  */ 
                 bRead.close();
             }catch(Exception e){
-                System.out.println("Error.");
+                System.out.println("S'ha produit un error.\n " +
+                                   "Info: ");
+                e.printStackTrace();
             }
             // Vector de Sortida.
-            v = new int [linies];
+            int v[] = new int [linies];
             try{
                 bRead = new BufferedReader
                 (
-                    new FileReader("C:/Users/maldo/Desktop/Java/src/X_LecturaFitxers/Ficheros/primes-to-100k.txt")
+                    new FileReader("C:/Users/maldo/Desktop/Java/src/X_LecturaFitxers/Ficheros/Primes-to-100k.txt")
                 );
-                while((c = bRead.readLine()) != null ){
-                    v[counter] = Integer.parseInt(c);
-                    counter++;
-                }
-                bRead.close();
-            }catch ( Exception e ){
-                System.out.println("Error indeterminat en procesar el fitxer.");
-                e.getStackTrace();
-            }finally{
+                while((c = bRead.readLine()) != null)
+                    v[counter++] = Integer.parseInt(c);
                 System.out.println(Arrays.toString(v));
+                bRead.close();
+            }catch (Exception e){
+                System.out.println("\nError al processar el fitxer. \n" + 
+                                   "Possibles causes: \n"               +
+                                   "La línea" + counter + " no conté números.");
+                e.printStackTrace();
             }
+            System.out.println("Trobat un total de " + linies + " numeros prims.");
         }
     }
 }
