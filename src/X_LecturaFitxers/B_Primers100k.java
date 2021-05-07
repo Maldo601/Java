@@ -2,17 +2,21 @@ import java.io.*;
 import java.util.Arrays;
 public class B_Primers100k {
 
-    // Banderilles de posició. 
+    // Banderilles estàtiques de posició. 
     static int flag1 = 0;
     static int flag2 = 0;
-    /* Funció qu retorna la màxima distància del vector i registra
-       les posicions. 
+    /* 
+       Funció qu retorna la màxima distància del vector i registra
+       les posicions als flaggers de donarse el pas a la condició. 
     */
     static int distance (int v[]){
         int max = 0;
-        
-        for (int i = 0; i < v.length; i ++){
-
+        for (int i = 1; i < v.length; i ++){
+            if(v[i] - v[i-1] > max ){
+                max = v[i] - v[i-1];
+                flag1 = v[i-1];
+                flag2 = v[i];
+            }
         }
         return max;
     }
@@ -21,7 +25,7 @@ public class B_Primers100k {
         int linies = 0;
         String c;
         int counter = 0;
-        String fichero = "primes-to-100k.txt";
+        String fichero = args[0];
         long interval = System.currentTimeMillis();
         int v[];
 
@@ -36,9 +40,8 @@ public class B_Primers100k {
         }else if (!args[0].endsWith(".txt")){
             System.out.println("\nEl nom del fitxer no correspon a cap fitxer trobat al sistema.");
         }else{
-            // Primer try, conta linies per determinar la longitud del vector
+            // Primer try, conta linies per determinar la longitud del vector.
             try {
-                // Buffer
                 bRead = new BufferedReader
                 (
                     new FileReader("C:/Users/maldo/Desktop/Java/src/X_LecturaFitxers/Ficheros/Primes-to-100k.txt")
@@ -73,6 +76,9 @@ public class B_Primers100k {
                 e.printStackTrace();
             }
             System.out.println("Trobat un total de " + linies + " numeros prims.");
+            System.out.println(distance(v));
+            System.out.println(flag1);
+            System.out.println(flag2);
         }
     }
 }
