@@ -2,10 +2,7 @@ import java.io.*;
 import java.util.Arrays;
 public class B_Primers100k {
     public static void main (String[] args){
-        /*
-            Es comprova que se li passa un únic parametre (unic arxiu) i que 
-            aquest contingui la 
-        */
+        
         if (args.length != 1){
             System.out.println("\nPrograma per llegir una llista de primers d'un fitxer\n" + 
                                "-----------------------------------------------------  \n"  +
@@ -19,7 +16,6 @@ public class B_Primers100k {
         }else{
         // long interval = System.currentTimeMillis();
         BufferedReader bRead = null;
-        // BufferedReader zRead = null;
         // String fichero = "primes-to-100k.txt";
         int linies = 0;
         String c;
