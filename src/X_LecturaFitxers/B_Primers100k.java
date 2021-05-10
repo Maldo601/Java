@@ -1,7 +1,38 @@
 package X_LecturaFitxers;
 import java.io.*;
 import java.util.Arrays;
+/*
+    Joan Marc Maldonado
+    GitHub: https://github.com/Maldo601
+    ----------------------------------------------------------------------------------
+    - El programa funciona correctament en els casos de
 
+        1.- Vectors amb mides exactes.
+        2.- Autotancament amb try-with-resources.
+        3.- 
+        4.- 
+        5.- 
+        6.- 
+        7.- 
+        8.- 
+        9.- 
+        10. 
+        11. 
+        12.- Temps òptimitzats per usar lectura amb BufferReader.
+
+    - Presenta problemes del tipo ... {
+
+        - Cap. (crec...)
+
+    - Documentació del Programa:
+
+        1.- Variables Globals.
+        2.- Distance
+        3.- InvertirNumero
+        4.- countNewArray
+        5.- Main
+                
+*/
 public class B_Primers100k {
     static int flag1 = 0;
     static int flag2 = 0;
@@ -28,8 +59,28 @@ public class B_Primers100k {
         }
         return invers;
     }
+    static void countNewArray(int v[]){
+        int count = 0;
+        for (int i = 0; i < v.length; i ++){
+            num = invertirNumero(v[i]);
+            if(v[i] == num){
+                System.out.print("      " + num ); // Camp de 6 precedits d'espai.
+                count++;
+            }
+        }
+        if (count == 0){
+            try {
+                throw new Exception("");
+            }catch (Exception e) {
+                System.out.println("No s'han trobat palíndroms.");
+            }
+        }else{
+            System.out.print("\n");
+            System.out.println("Trobats " + count + " Palíndroms.");
+        }
+    }
+
     public static void main (String[] args){
-        
         int linies = 0;
         String c = "";
         int counter = 0;
@@ -59,8 +110,7 @@ public class B_Primers100k {
             try (FileReader fr = new FileReader(args[0])){
                 BufferedReader bRead = new BufferedReader(fr);
                 while((c = bRead.readLine()) != null)
-                    v[counter++] = Integer.parseInt(c);
-                    
+                    v[counter++] = Integer.parseInt(c);  
                 // System.out.println(Arrays.toString(v));
                 System.out.println("\nTrobat un total de " + linies + " numeros prims.\n"     +
                                    "--------------------------------------------------\n"     +
@@ -69,17 +119,14 @@ public class B_Primers100k {
                 System.out.println("Numero -> " + flag1);
                 System.out.println("Numero -> " + flag2);
                 System.out.println("Gemelos-> " + gem);
+                countNewArray(v);
             }catch (Exception e){
                 System.out.println("\nError al processar el fitxer. \n");
                 System.out.println(e.getMessage());
                 // e.printStackTrace();
             }
             System.out.println("Execution time: " + (System.currentTimeMillis() - temps) + " ms.");
-            for (int i = 0; i < v.length; i ++){
-                num = invertirNumero(v[i]);
-                if( v[i] == num )
-                    System.out.print(" " + num );
-                }
-            }
         }
     }
+}
+    
