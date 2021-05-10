@@ -25,7 +25,6 @@ public class B_Primers100k {
         // String fichero = args[0];
         long temps = System.currentTimeMillis();
         int v[];
-
         if (args.length != 1){
             System.out.println("\nPrograma per llegir una llista de primers d'un fitxer\n" + 
                                "-----------------------------------------------------  \n"  +
