@@ -1,6 +1,6 @@
 package X_LecturaFitxers;
-import java.lang.*;
 import java.io.*;
+
 public class B_Primers100k {
     static int flag1 = 0;
     static int flag2 = 0;
@@ -41,9 +41,7 @@ public class B_Primers100k {
                 while((c = bRead.readLine()) != null)
                     linies++;
             }catch(Exception e){
-                System.out.println("S'ha produit un error.\n " +
-                                   "Info: ");
-                e.printStackTrace();
+                System.out.println("S'ha produit un error.\n ");
             }
             // Vector de Sortida.
             v = new int [linies];
@@ -56,15 +54,12 @@ public class B_Primers100k {
                                    "--------------------------------------------------\n"     +
                                    "La distancia mes gran entre dos numeros consecutius es: " + 
                                     distance(v) + "\n");
-                
                 System.out.println("Numero -> " + flag1);
                 System.out.println("Numero -> " + flag2);
                 System.out.println("Gemelos-> " + counter);
             }catch (Exception e){
-                System.out.println("\nError al processar el fitxer. \n" + 
-                                   "Possibles causes: \n"               +
-                                   "La línea" + counter + " no conté números.");
-                                   System.out.println(e.getMessage());
+                System.out.println("\nError al processar el fitxer. \n");
+                System.out.println(e.getMessage());
                 // e.printStackTrace();
             }
             System.out.println("Execution time: " + (System.currentTimeMillis() - temps) + " ms.");
