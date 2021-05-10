@@ -22,7 +22,6 @@ public class B_Primers100k {
         int linies = 0;
         String c;
         int counter = 0;
-        // String fichero = args[0];
         long temps = System.currentTimeMillis();
         int v[];
         if (args.length != 1){
@@ -36,10 +35,13 @@ public class B_Primers100k {
             // Primer try, conta linies per determinar la longitud del vector.
             try(FileReader fr = new FileReader(args[0])) {
                 BufferedReader bRead = new BufferedReader(fr);
-                while((c = bRead.readLine()) != null)
+                while((c = bRead.readLine()) != null){
                     linies++;
+                }
+                    
             }catch(Exception e){
                 System.out.println("S'ha produit un error.\n ");
+                // e.printStackTrace();
             }
             // Vector de Sortida.
             v = new int [linies];
@@ -47,6 +49,7 @@ public class B_Primers100k {
                 BufferedReader bRead = new BufferedReader(fr);
                 while((c = bRead.readLine()) != null)
                     v[counter++] = Integer.parseInt(c);
+                    
                 // System.out.println(Arrays.toString(v));
                 System.out.println("\nTrobat un total de " + linies + " numeros prims.\n"     +
                                    "--------------------------------------------------\n"     +
@@ -54,14 +57,13 @@ public class B_Primers100k {
                                     distance(v) + "\n");
                 System.out.println("Numero -> " + flag1);
                 System.out.println("Numero -> " + flag2);
-                System.out.println("Gemelos-> " + counter);
+                System.out.println("Gemelos-> " + gem);
             }catch (Exception e){
                 System.out.println("\nError al processar el fitxer. \n");
                 System.out.println(e.getMessage());
                 // e.printStackTrace();
             }
             System.out.println("Execution time: " + (System.currentTimeMillis() - temps) + " ms.");
-            System.out.println(gem);
         }
     }
 }
