@@ -1,15 +1,10 @@
 import java.io.*;
 import java.util.Arrays;
 public class B_Primers100k {
-
-    // Banderilles estàtiques de posició. 
     static int flag1 = 0;
     static int flag2 = 0;
-    /* 
-       Funció qu retorna la màxima distància del vector i registra
-       les posicions als flaggers de donarse el pas a la condició. 
-    */
-    static int distance (int v[]){
+    static int gem = 0;
+    static int distance (int v[ ]){
         int max = 0;
         for (int i = 1; i < v.length; i ++){
             if(v[i] - v[i-1] > max ){
@@ -17,16 +12,17 @@ public class B_Primers100k {
                 flag1 = v[i-1];
                 flag2 = v[i];
             }
-        }
+            if (v[i] - v[i-1] == 2) gem++;
+        }   
         return max;
     }
     public static void main (String[] args){
-        BufferedReader bRead = null;
+        
         int linies = 0;
         String c;
         int counter = 0;
-        String fichero = args[0];
-        long interval = System.currentTimeMillis();
+        // String fichero = args[0];
+        long temps = System.currentTimeMillis();
         int v[];
 
         if (args.length != 1){
@@ -37,22 +33,12 @@ public class B_Primers100k {
                                "d'operacions amb aquests primers. No s'han passat      \n"  +
                                "arguments al programa. L'execució no pot continuar.");
         // Detecta si el parametre passat acaba amb l'extensió demanada.
-        }else if (!args[0].endsWith(".txt")){
-            System.out.println("\nEl nom del fitxer no correspon a cap fitxer trobat al sistema.");
         }else{
             // Primer try, conta linies per determinar la longitud del vector.
-            try {
-                bRead = new BufferedReader
-                (
-                    new FileReader("C:/Users/maldo/Desktop/Java/src/X_LecturaFitxers/Ficheros/Primes-to-100k.txt")
-                );
+            try(FileReader fr = new FileReader(args[0])) {
+                BufferedReader bRead = new BufferedReader(fr);
                 while((c = bRead.readLine()) != null)
                     linies++;
-                /*
-                 * Es tanca el buffer perque el punter ha arribat al final i necessitarem
-                 * reoperar amb ell per introduir al vector els valors, tornant el punter al principi
-                 */ 
-                bRead.close();
             }catch(Exception e){
                 System.out.println("S'ha produit un error.\n " +
                                    "Info: ");
@@ -60,25 +46,28 @@ public class B_Primers100k {
             }
             // Vector de Sortida.
             v = new int [linies];
-            try{
-                bRead = new BufferedReader
-                (
-                    new FileReader("C:/Users/maldo/Desktop/Java/src/X_LecturaFitxers/Ficheros/Primes-to-100k.txt")
-                );
+            try (FileReader fr = new FileReader(args[0])){
+                BufferedReader bRead = new BufferedReader(fr);
                 while((c = bRead.readLine()) != null)
                     v[counter++] = Integer.parseInt(c);
-                System.out.println(Arrays.toString(v));
-                bRead.close();
+                // System.out.println(Arrays.toString(v));
+                System.out.println("\nTrobat un total de " + linies + " numeros prims.\n"     +
+                                   "--------------------------------------------------\n"     +
+                                   "La distancia mes gran entre dos numeros consecutius es: " + 
+                                    distance(v) + "\n");
+                
+                System.out.println("Numero -> " + flag1);
+                System.out.println("Numero -> " + flag2);
+                System.out.println("Gemelos-> " + counter);
             }catch (Exception e){
                 System.out.println("\nError al processar el fitxer. \n" + 
                                    "Possibles causes: \n"               +
                                    "La línea" + counter + " no conté números.");
-                e.printStackTrace();
+                                   System.out.println(e.getMessage());
+                // e.printStackTrace();
             }
-            System.out.println("Trobat un total de " + linies + " numeros prims.");
-            System.out.println(distance(v));
-            System.out.println(flag1);
-            System.out.println(flag2);
+            System.out.println("Execution time: " + (System.currentTimeMillis() - temps) + " ms.");
+            System.out.println(gem);
         }
     }
 }
