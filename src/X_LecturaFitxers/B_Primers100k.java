@@ -5,19 +5,15 @@ import java.io.*;
     Joan Marc Maldonado
     GitHub: https://github.com/Maldo601
     ----------------------------------------------------------------------------------
-    - El programa funciona correctament en els casos de ... {
+    - Testing ... {
 
-        1.- Vectors amb mides exactes.
-        2.- Autotancament amb try-with-resources.
-        3.- Compleix les sortides demanades o molt semblants.
-        4.- Les funcions funcionen correctament.
-        5.- Realitzades proves amb altres fitxers complementaris.
-            Peta perque porten espais. La primera pàgina dona errors 404.
-            Adjunto un fitxer dels primers 10M sense espais. El programa
-            segueix funcionant correctament. Extret de: 
+        1.- Vectors amb mides exactes.                                                  OK
+        2.- Autotancament amb try-with-resources.                                       OK
+        3.- Compleix les sortides demanades o molt semblants.                           OK
+        4.- Les funcions funcionen correctament.                                        OK
+        5.- Escalable a 10.000.000 M                                                    OK
             https://www.mediafire.com/file/6gg0dlrivz7nte5/Primeros10M_Primos.7z/file 
-
-        6.- Temps òptimitzats per usar lectura amb BufferReader.
+        6.- Temps òptimitzats per usar lectura amb BufferReader.                        Possiblement, óptim. 
             Per 10M tarda aprox 1948 ms. 
     ----------------------------------------------------------------------------------
     - Presenta o he vist o m'he trobat amb problemes del tipo ... {
@@ -29,7 +25,7 @@ import java.io.*;
           bastant. Potser hagués vist mes òptim tornar un Array...
         - No sé si hi ha una formula secreta per Utefeijar tot un bloc de codi
           amb una sola instruccio de linea. He anat posant als terminals 
-          "chcp 650001" per fer-ho. 
+          "chcp 650001" per fer-ho. (no uso NetBeans).
         
     ----------------------------------------------------------------------------------
     - Documentació del Programa ... {
@@ -45,7 +41,7 @@ import java.io.*;
             1.5 - Contador de distància.
             1.6 - Altres... 
 
-        2.- Distance
+        2.- Distance()
 
             2.1 - Funció que reb el vector plenat del main, als whiles. Es comproba
                   iniciant a 1, per evitar errors d'index, que "i" i "i-1" tinguin 
@@ -56,7 +52,7 @@ import java.io.*;
                   necessitat de reiterar un nou bucle a una nova funció. 
             2.3 - Retorna la maxima distància. 
 
-        3.- InvertirNumero
+        3.- InvertirNumero()
 
             3.1 - Aquesta funció es un braç de la següent. Es una instrucció de revertiment enter
                   que usarà la següent (palindromColumns) a cada cicle de bucle, retornant una inversió
@@ -64,7 +60,7 @@ import java.io.*;
                   S'ha usat el mètode de mod i divisió per agafar els caracters numèrics i invertirlos
                   ja que amb una cadena hagues suposat mes cost de temps i de procediment. 
 
-        4.- palindromColumns
+        4.- palindromColumns()
 
             4.1 - Aquesta funció void, recorre la llargaria del vector principal d'almacenament
                   i en cada volta reserva i actualitza la variable global "num", variable que 
@@ -76,7 +72,7 @@ import java.io.*;
             4.2 - En aquesta segona part, si hi ha la singularitat que no hi ha palindroms 
                   (counter a 0), es genera i propaga un nou error que ho notifica.
 
-        5.- Main
+        5.- Main()
 
             - Mètode resolt a classe. S'han millorat seguint les explicacions i exemples donats 
               el tema de passar el buffer i la ruta als recursos del try per tancar implicitament.
