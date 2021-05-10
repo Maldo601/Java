@@ -112,7 +112,7 @@ public class B_Primers100k {
         for (int i = 0; i < v.length; i ++){
             num = invertirNumero(v[i]);
             if(v[i] == num){
-                System.out.print("      " + num ); // Camp de 6 precedits d'espai.
+                System.out.print(String.format("%6d", num)); // Camp de 6 precedits d'espai.
                 count++;
             }
         }
