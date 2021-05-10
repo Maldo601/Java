@@ -19,13 +19,9 @@ import java.io.*;
     - Presenta o he vist o m'he trobat amb problemes del tipo ... {
 
         - Cap. (crec...)
-        - No veig massa clar el tema del columneig espaiat als palindroms.
-          Depenent del tamany de les terminals (Vscode, gitCMD, CMD, mingwin64) 
-          o de la longitud numèrica es descuadra
-          bastant. Potser hagués vist mes òptim tornar un Array...
-        - No sé si hi ha una formula secreta per Utefeijar tot un bloc de codi
-          amb una sola instruccio de linea. He anat posant als terminals 
-          "chcp 650001" per fer-ho. (no uso NetBeans).
+        - Formatar a una terminal es un poc maldecap poses el que poses.
+          al agrandar o reduir el tamany de la finestra es torna caótic
+          igualment el String.format()
         
     ----------------------------------------------------------------------------------
     - Documentació del Programa ... {
@@ -77,7 +73,7 @@ import java.io.*;
             - Mètode resolt a classe. S'han millorat seguint les explicacions i exemples donats 
               el tema de passar el buffer i la ruta als recursos del try per tancar implicitament.
               No entenia massa bé el tema de la crida del fitxer i definia el nom a una variable.
-              De la manera que es presenta, només crida fitxers existents a la carpeta o ruta 
+              De la manera que es presenta, ara, només crida fitxers existents a la carpeta o ruta 
               entrada com a arguments. 
 
 */
@@ -86,10 +82,10 @@ public class B_Primers100k {
     static int flag2 = 0;
     static int gem = 0;
     static int num = 0;
-    static int distance (int v[ ]){
+    static int distance (int v[]){
         int max = 0;
-        for (int i = 1; i < v.length; i ++){
-            if(v[i] - v[i-1] > max ){
+        for (int i = 1; i < v.length; i++){
+            if(v[i] - v[i-1] > max){
                 max = v[i] - v[i-1];
                 flag1 = v[i-1];
                 flag2 = v[i];
@@ -100,10 +96,10 @@ public class B_Primers100k {
     }
     static int invertirNumero(int num){
         int xifra, invers = 0;
-        while(num!=0){
-            xifra = num%10;
+        while(num != 0){
+            xifra = num % 10;
             invers = (invers * 10) + xifra;
-            num/=10;
+            num /= 10;
         }
         return invers;
     }
@@ -112,7 +108,7 @@ public class B_Primers100k {
         for (int i = 0; i < v.length; i ++){
             num = invertirNumero(v[i]);
             if(v[i] == num){
-                System.out.print(String.format("%6d", num)); // Camp de 6 precedits d'espai.
+                System.out.print(String.format("%6d", num));
                 count++;
             }
         }
@@ -134,25 +130,21 @@ public class B_Primers100k {
         long temps = System.currentTimeMillis();
         int v[];
         if (args.length != 1){
-            System.out.println("\nPrograma per llegir una llista de primers d'un fitxer\n" + 
+            System.out.println("\nPrograma per llegir una llista de primers d'un fitxer\n"  + 
                                "-----------------------------------------------------  \n"  +
                                "Ha de passar al programa el nom d'un fitxer de text    \n"  +
                                "contenint números primers. El programa farà una serie  \n"  +
                                "d'operacions amb aquests primers. No s'han passat      \n"  +
                                "arguments al programa. L'execució no pot continuar.");
         }else{
-            // Primer try, conta linies per determinar la longitud del vector.
             try(FileReader fr = new FileReader(args[0])) {
                 BufferedReader bRead = new BufferedReader(fr);
-                while((c = bRead.readLine()) != null){
-                    linies++;
-                }
-                    
+                while((c = bRead.readLine()) != null)
+                    linies++;     
             }catch(Exception e){
-                System.out.println("S'ha produit un error.\n ");
+                System.out.println("S'ha produit un error.\n");
                 // e.printStackTrace();
             }
-            // Vector de Sortida.
             v = new int [linies];
             try (FileReader fr = new FileReader(args[0])){
                 BufferedReader bRead = new BufferedReader(fr);
