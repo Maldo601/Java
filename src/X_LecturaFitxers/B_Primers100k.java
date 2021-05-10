@@ -1,5 +1,5 @@
 package X_LecturaFitxers;
-
+import java.lang.*;
 import java.io.*;
 public class B_Primers100k {
     static int flag1 = 0;
