@@ -1,10 +1,12 @@
 package X_LecturaFitxers;
 import java.io.*;
+import java.util.Arrays;
 
 public class B_Primers100k {
     static int flag1 = 0;
     static int flag2 = 0;
     static int gem = 0;
+    static int num = 0;
     static int distance (int v[ ]){
         int max = 0;
         for (int i = 1; i < v.length; i ++){
@@ -17,10 +19,19 @@ public class B_Primers100k {
         }   
         return max;
     }
+    static int invertirNumero(int num){
+        int xifra, invers = 0;
+        while(num!=0){
+            xifra = num%10;
+            invers = (invers * 10) + xifra;
+            num/=10;
+        }
+        return invers;
+    }
     public static void main (String[] args){
         
         int linies = 0;
-        String c;
+        String c = "";
         int counter = 0;
         long temps = System.currentTimeMillis();
         int v[];
@@ -64,6 +75,11 @@ public class B_Primers100k {
                 // e.printStackTrace();
             }
             System.out.println("Execution time: " + (System.currentTimeMillis() - temps) + " ms.");
+            for (int i = 0; i < v.length; i ++){
+                num = invertirNumero(v[i]);
+                if( v[i] == num )
+                    System.out.print(" " + num );
+                }
+            }
         }
     }
-}
