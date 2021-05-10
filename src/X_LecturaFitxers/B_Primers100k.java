@@ -33,7 +33,6 @@ public class B_Primers100k {
                                "contenint números primers. El programa farà una serie  \n"  +
                                "d'operacions amb aquests primers. No s'han passat      \n"  +
                                "arguments al programa. L'execució no pot continuar.");
-        // Detecta si el parametre passat acaba amb l'extensió demanada.
         }else{
             // Primer try, conta linies per determinar la longitud del vector.
             try(FileReader fr = new FileReader(args[0])) {
