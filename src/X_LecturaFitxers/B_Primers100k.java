@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.Arrays;
 public class B_Primers100k {
     static int flag1 = 0;
     static int flag2 = 0;
