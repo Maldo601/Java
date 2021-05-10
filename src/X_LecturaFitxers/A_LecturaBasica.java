@@ -1,3 +1,5 @@
+package X_LecturaFitxers;
+
 import java.io.*;
 
 public class A_LecturaBasica {

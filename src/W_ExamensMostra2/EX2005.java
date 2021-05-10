@@ -1,3 +1,5 @@
+package W_ExamensMostra2;
+
 import java.util.Arrays;
 
 public class EX2005 {
