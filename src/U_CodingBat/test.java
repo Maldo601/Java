@@ -6,37 +6,6 @@ public class test {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   // S T R I N G S      B A S I C S    LVL 1 
 
   // Rotar cadenes.
