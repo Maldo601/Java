@@ -23,27 +23,24 @@ public class C_MesNota {
             score = false;
         }
     }
-    /*
-    Pescar 4 ultimes posicions de la cadena. Parsejarles a Double i tirar error si no se pot parsejar.
-    Comparar este valor parsejat en el valor parsejat del arg[1]. De ser mes gran usarem la nota pescada
-    com a índex revers per determinar el nom de l'alumne. 
-    Comparar el valor double o enter si es corresponent al igual de la cadena real i de ser que si, 
-    tirar el nom de la persona. 
-    
-    */
+
     static void readerDoc(String[] args){
         String c;
         String name = "";
         String note = "";
-        int sc;
+        double sc;
         try(FileReader fr = new FileReader(args[0])){
             BufferedReader bRead = new BufferedReader(fr);
                 while((c = bRead.readLine()) != null){
-
-                    System.out.println(c);
-                }   
+                    note = c.substring(c.length()-4, c.length());
+                    note = note.replace(",", ".");
+                    note = note.replace(" ", "");
+                    note = note.replaceAll("[^0-9+.]", "");
+                    sc = Double.parseDouble(note);
+                    // System.out.println(sc); // Checkpoint.
+                }  
         }catch(Exception e){
-
+            System.out.println("Error al parsejar. Caracters invalids al fitxer.");
         }
     }
     public static void main (String[] args){

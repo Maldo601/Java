@@ -1,8 +1,8 @@
-Miguel Ángel Rodríguez Porosa		4,45
-José Javier Faro Rodríguez	        10
-José Luís Martínez Gutiérrez		5,72
-Eleuterio Lupiáñez López		    9
-Juan Ignacio De Loyola Palacios		6.45
-Miguel De La Torre Hernández		?
+Miguel Ángel Rodríguez Porosa		            4,45
+José Javier Faro Rodríguez	                    10
+José Luís Martínez Gutiérrez		            5,72
+Eleuterio Lupiáñez López		                9
+Juan Ignacio De Loyola Palacios		            6.45
+Miguel De La Torre Hernández		            ?
 EstaLiniaNoPresentaNingúnEspaiQuePuguisAïllar
-Julián Muñóz Mateos			        6,5
+Julián Muñóz Mateos			                    6,5
