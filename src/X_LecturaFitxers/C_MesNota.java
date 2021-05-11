@@ -23,6 +23,14 @@ public class C_MesNota {
             score = false;
         }
     }
+    /*
+    Pescar 4 ultimes posicions de la cadena. Parsejarles a Double i tirar error si no se pot parsejar.
+    Comparar este valor parsejat en el valor parsejat del arg[1]. De ser mes gran usarem la nota pescada
+    com a índex revers per determinar el nom de l'alumne. 
+    Comparar el valor double o enter si es corresponent al igual de la cadena real i de ser que si, 
+    tirar el nom de la persona. 
+    
+    */
     static void readerDoc(String[] args){
         String c;
         String name = "";
@@ -31,9 +39,8 @@ public class C_MesNota {
         try(FileReader fr = new FileReader(args[0])){
             BufferedReader bRead = new BufferedReader(fr);
                 while((c = bRead.readLine()) != null){
-                  
-                    name = c.substring(0, c.length()-4);
-                    System.out.println(name);
+
+                    System.out.println(c);
                 }   
         }catch(Exception e){
 
