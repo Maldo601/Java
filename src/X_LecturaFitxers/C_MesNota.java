@@ -24,7 +24,20 @@ public class C_MesNota {
         }
     }
     static void readerDoc(String[] args){
+        String c;
+        String name = "";
+        String note = "";
+        int sc;
+        try(FileReader fr = new FileReader(args[0])){
+            BufferedReader bRead = new BufferedReader(fr);
+                while((c = bRead.readLine()) != null){
+                  
+                    name = c.substring(0, c.length()-4);
+                    System.out.println(name);
+                }   
+        }catch(Exception e){
 
+        }
     }
     public static void main (String[] args){
         validFormat(args);
