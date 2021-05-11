@@ -1,10 +1,14 @@
 package X_LecturaFitxers;
 import java.io.*;
+import java.util.Arrays;
+
 public class C_MesNota {
     static boolean file = true;
     static boolean score = true;
+    static Double sc;
+    static Double v[];
+    static int counter = 0;
     static void validFormat(String[] args){
-        
         if (args.length != 2){
             System.out.println("Programa per llegir notes d'Alumnes. " + 
                                "Siusplau, passa una nota com argument. ");
@@ -23,30 +27,43 @@ public class C_MesNota {
             score = false;
         }
     }
-
-    static void readerDoc(String[] args){
+    
+    static void extracter(String[] args){
         String c;
-        String name = "";
         String note = "";
-        double sc;
+        try(FileReader fr = new FileReader(args[0])){
+            BufferedReader bRead = new BufferedReader(fr);
+                while((c = bRead.readLine()) != null){
+                    counter++;
+                }
+        }catch (Exception e) {
+            System.out.println("Error indefinit.");
+        }
+        v = new Double[counter];
+        int cnt = 0;
         try(FileReader fr = new FileReader(args[0])){
             BufferedReader bRead = new BufferedReader(fr);
                 while((c = bRead.readLine()) != null){
                     note = c.substring(c.length()-4, c.length());
                     note = note.replace(",", ".");
                     note = note.replace(" ", "");
-                    note = note.replaceAll("[^0-9+.]", "");
-                    sc = Double.parseDouble(note);
-                    // System.out.println(sc); // Checkpoint.
-                }  
+                    note = note.replaceAll("[^0-9+.]", "0");
+                    v[cnt++] = Double.parseDouble(note);
+                }
         }catch(Exception e){
-            System.out.println("Error al parsejar. Caracters invalids al fitxer.");
+            System.out.println("Error indefinit.");
+        }
+        for (int i = 0; i < v.length; i++){
+            if (Double.parseDouble(args[1]) >= v[i]){
+                
+            }
         }
     }
+
     public static void main (String[] args){
         validFormat(args);
         if (file && score == true){
-            readerDoc(args);
+            extracter(args);
         }
     }
 }
