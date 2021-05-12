@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.Arrays;
 // https://stackoverflow.com/questions/696626/java-filereader-encoding-issue
 public class C_MesNota {
-    public static Scanner lect;
+    static Scanner lect;
     static boolean file = true;
     static boolean score = true;
     static Double sc;
@@ -74,11 +74,11 @@ public class C_MesNota {
     static void logs (String[] args, Double v[], String lec[]){
         try {
             PrintWriter writer = new PrintWriter("logs.txt", "UTF-8");
-            writer.printf("%-40s%-2s%-10s\n","Alumne","","Nota");
+            writer.printf("%-35s%-10s%-40s\n","Alumne","","Nota");
             writer.println("---------------------------------------------------------------------------------------");
             for(int i = 0; i < v.length; i++){
                 if(Double.parseDouble(args[1]) <= v[i])
-                    writer.printf("%-46s%-1.2f\n",lec[i].trim(), v[i]);
+                    writer.printf("%-45s%-1.2f\n",lec[i].trim(), v[i]);
         }
             writer.close();
         } catch (Exception e) {
