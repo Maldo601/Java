@@ -1,12 +1,13 @@
 package X_LecturaFitxers;
 import java.io.*;
+// import java.util.Arrays;
 import java.util.Arrays;
-
 public class C_MesNota {
     static boolean file = true;
     static boolean score = true;
     static Double sc;
     static Double v[];
+    static String lec[];
     static int counter = 0;
     static void validFormat(String[] args){
         if (args.length != 2){
@@ -15,7 +16,7 @@ public class C_MesNota {
         }
         try (FileReader fr = new FileReader(args[0])){  }
         catch (Exception e) {
-            System.out.println("Fitxer Desconegut");
+            System.out.println("Fitxer Desconegut.");
             file = false;
         }
         try{
@@ -23,11 +24,10 @@ public class C_MesNota {
                 throw new Exception("");
         }
         catch(Exception e){
-            System.out.println("Nota invàlida. Escriu una nota entre 0 i 10");
+            System.out.println("Nota invàlida. Escriu una nota entre 0 i 10.");
             score = false;
         }
     }
-    
     static void extracter(String[] args){
         String c;
         String note = "";
@@ -37,10 +37,12 @@ public class C_MesNota {
                     counter++;
                 }
         }catch (Exception e) {
-            System.out.println("Error indefinit.");
+            System.out.println("Error per definir 1.");
         }
         v = new Double[counter];
+        lec = new String[counter];
         int cnt = 0;
+        int cnt2 = 0;
         try(FileReader fr = new FileReader(args[0])){
             BufferedReader bRead = new BufferedReader(fr);
                 while((c = bRead.readLine()) != null){
@@ -49,17 +51,20 @@ public class C_MesNota {
                     note = note.replace(" ", "");
                     note = note.replaceAll("[^0-9+.]", "0");
                     v[cnt++] = Double.parseDouble(note);
+                    lec[cnt2++] = c.substring(0, c.length()-4);
                 }
         }catch(Exception e){
-            System.out.println("Error indefinit.");
+            System.out.println("Error per definir 2.");
         }
-        for (int i = 0; i < v.length; i++){
-            if (Double.parseDouble(args[1]) >= v[i]){
+        // System.out.println(Arrays.toString(v));
+        // System.out.println(Arrays.toString(lec));
+    }
+    static void printer (Double v[], String lec[], String[] args){
+        String cad = "";
+            for(int i = 0; i < v.length; i++){
                 
             }
-        }
     }
-
     public static void main (String[] args){
         validFormat(args);
         if (file && score == true){
