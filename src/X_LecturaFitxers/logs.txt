@@ -1,5 +1,5 @@
 Alumne                                       Nota                                    
----------------------------------------------------------------------------------------
+---------------------------------------------------------------
 Miguel Ángel Rodríguez Porosa                4,45
 José Javier Faro Rodríguez                   10,00
 José Luís Martínez Gutiérrez                 5,72
@@ -8,3 +8,4 @@ Juan Ignacio De Loyola Palacios              6,45
 Miguel De La Torre Hernández                 0,00
 EstaLiniaNoPresentaNingúnEspaiQuePuguisAï    0,00
 Julián Muñóz Mateos                          6,50
+---------------------------------------------------------------

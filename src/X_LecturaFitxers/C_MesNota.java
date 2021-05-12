@@ -1,7 +1,7 @@
 package X_LecturaFitxers;
 import java.io.*;
 import java.util.*;
-import java.util.Arrays;
+// import java.util.Arrays;
 // https://stackoverflow.com/questions/696626/java-filereader-encoding-issue
 public class C_MesNota {
     static Scanner lect;
@@ -70,16 +70,17 @@ public class C_MesNota {
                 System.out.printf("%-46s%-1.2f\n",lec[i].trim(), v[i]);
         }
     }
-    // Testing d'impresió per comprobar que UTF-8 with BOM funciona correctament. 
+    // Testing d'impresió ( Feature )
     static void logs (String[] args, Double v[], String lec[]){
         try {
             PrintWriter writer = new PrintWriter("logs.txt", "UTF-8");
             writer.printf("%-35s%-10s%-40s\n","Alumne","","Nota");
-            writer.println("---------------------------------------------------------------------------------------");
+            writer.println("---------------------------------------------------------------");
             for(int i = 0; i < v.length; i++){
                 if(Double.parseDouble(args[1]) <= v[i])
                     writer.printf("%-45s%-1.2f\n",lec[i].trim(), v[i]);
         }
+        writer.println("---------------------------------------------------------------");
             writer.close();
         } catch (Exception e) {
             e.printStackTrace();
