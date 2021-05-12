@@ -42,7 +42,6 @@ public class C_MesNota {
         lec = new String[counter];
         int cnt = 0;
         int cnt2 = 0;
-        String cad = "";
         try(FileReader fr = new FileReader(args[0])){
             BufferedReader bRead = new BufferedReader(fr);
                 while((c = bRead.readLine()) != null){
@@ -62,10 +61,8 @@ public class C_MesNota {
     static void printer (Double v[], String lec[], String[] args){
         // En teoria aqui arriba tot sense errors ja. 
         for(int i = 0; i < v.length; i++){
-            if(Double.parseDouble(args[1]) < v[i]){
+            if(Double.parseDouble(args[1]) <= v[i])
                 System.out.printf("%-46s%-1.2f\n",lec[i].trim(), v[i]);
-               
-            }
         }
     }
     public static void main (String[] args){
@@ -76,7 +73,6 @@ public class C_MesNota {
             System.out.println("---------------------------------------------------------------------------------------");
             printer(v, lec, args);
         }
-        
     }
 }
     
