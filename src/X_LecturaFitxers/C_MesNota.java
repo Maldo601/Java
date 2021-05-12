@@ -1,4 +1,4 @@
-package X_LecturaFitxers;
+﻿package X_LecturaFitxers;
 import java.io.*;
 import java.util.Arrays;
 public class C_MesNota {
