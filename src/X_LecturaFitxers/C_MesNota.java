@@ -1,7 +1,10 @@
-﻿package X_LecturaFitxers;
+package X_LecturaFitxers;
 import java.io.*;
+import java.util.*;
 import java.util.Arrays;
+// https://stackoverflow.com/questions/696626/java-filereader-encoding-issue
 public class C_MesNota {
+    public static Scanner lect;
     static boolean file = true;
     static boolean score = true;
     static Double sc;
@@ -42,7 +45,7 @@ public class C_MesNota {
         lec = new String[counter];
         int cnt = 0;
         int cnt2 = 0;
-        try(FileReader fr = new FileReader(args[0])){
+        try(InputStreamReader fr = new InputStreamReader(new FileInputStream(args[0]), "UTF-8")){
             BufferedReader bRead = new BufferedReader(fr);
                 while((c = bRead.readLine()) != null){
                     note = c.substring(c.length()-4, c.length());
@@ -60,18 +63,42 @@ public class C_MesNota {
     }
     static void printer (Double v[], String lec[], String[] args){
         // En teoria aqui arriba tot sense errors ja. 
+        System.out.printf("%-40s%-2s%-10s\n","Alumne","","Nota");
+        System.out.println("---------------------------------------------------------------------------------------");
         for(int i = 0; i < v.length; i++){
             if(Double.parseDouble(args[1]) <= v[i])
                 System.out.printf("%-46s%-1.2f\n",lec[i].trim(), v[i]);
         }
     }
+    // Testing d'impresió per comprobar que UTF-8 with BOM funciona correctament. 
+    static void logs (String[] args, Double v[], String lec[]){
+        try {
+            PrintWriter writer = new PrintWriter("logs.txt", "UTF-8");
+            writer.printf("%-40s%-2s%-10s\n","Alumne","","Nota");
+            writer.println("---------------------------------------------------------------------------------------");
+            for(int i = 0; i < v.length; i++){
+                if(Double.parseDouble(args[1]) <= v[i])
+                    writer.printf("%-46s%-1.2f\n",lec[i].trim(), v[i]);
+        }
+            writer.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     public static void main (String[] args){
+        lect = new Scanner(System.in);
+        String opt;
         validFormat(args);
         if (file && score == true){
             extracter(args);
-            System.out.printf("%-40s%-2s%-10s\n","Alumne","","Nota");
-            System.out.println("---------------------------------------------------------------------------------------");
             printer(v, lec, args);
+            System.out.print("\nDesitjes imprimir els resultats a un .txt? [yes][no]: ");
+            opt = lect.nextLine();
+            if(opt.equals("yes")){
+                logs(args, v, lec);
+            }else{
+                System.exit(0);
+            }
         }
     }
 }
