@@ -2,6 +2,8 @@ package X_LecturaFitxers;
 // import java.util.Arrays;
 import java.io.*;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /* D O C U M E N T A C I O
     Joan Marc Maldonado
@@ -103,11 +105,18 @@ public class C_MesNota {
             file = false;
         }
         try{
-            if (Double.parseDouble(args[1]) > 10 || Double.parseDouble(args[1]) <  0)
+            if (args[1].matches("[A-Za-z]+") || 
+                args[1].matches("[A-Za-z]+ [A-Za-z]+") ||
+                args[1].matches("[A-Za-z]+ [A-Za-z]+ [A-Za-z]+") || 
+                args[1].matches("[A-Za-z]+ [A-Za-z]+ [A-Za-z]+ [A-Za-z]+") || 
+                args[1].matches("[A-Za-z]+ [A-Za-z]+ [A-Za-z]+ [A-Za-z]+ [A-Za-z]+"))
+                System.out.println("Passed Test.");
+            else if ( (Double.parseDouble(args[1]) > 10 || Double.parseDouble(args[1]) <  0)) 
                 throw new Exception("");
         }
         catch(Exception e){
-            System.out.println("Nota invàlida. Escriu una nota entre 0 i 10.");
+            System.out.println("Nota invalida. Escriu una nota entre 0 i 10 o un nom entre cometes dobles");
+            System.out.println("Exemple: \"Joan Marc Maldonado\"");
             score = false;
         }
     }
@@ -201,17 +210,21 @@ public class C_MesNota {
     public static void main (String[] args){
         long temps = System.currentTimeMillis();
         lect = new Scanner(System.in);
-        String opt;
-        validFormat(args);
-        if (file && score == true){
-            extracter(args);
-            printer(v, lec, args);
-            System.out.print("\nDesitjes imprimir els resultats a un .txt? [yes][no]: ");
-            opt = lect.nextLine();
-            if(opt.equals("yes")){
-                logs(args, v, lec);
-            }
-        }
+        String opt; String op;
+        System.out.println("Vols cercar per [nom] o per [nota]?: ");
+        op = lect.nextLine();
+        if(op.equals("nota")){
+            validFormat(args);
+                if (file && score == true){
+                    extracter(args);
+                    printer(v, lec, args);
+                    System.out.print("\nDesitjes imprimir els resultats a un .txt? [yes][no]: ");
+                    opt = lect.nextLine();
+                    if(opt.equals("yes"))
+                        logs(args, v, lec);
+                }
+        }else 
+            
         System.out.println("Execution time: " + (System.currentTimeMillis() - temps) + " ms.");
     }
 }
