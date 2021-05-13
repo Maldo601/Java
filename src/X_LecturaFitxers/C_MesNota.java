@@ -1,8 +1,71 @@
 package X_LecturaFitxers;
+// import java.util.Arrays;
 import java.io.*;
 import java.util.*;
-// import java.util.Arrays;
-// https://stackoverflow.com/questions/696626/java-filereader-encoding-issue
+
+/* D O C U M E N T A C I O
+    Joan Marc Maldonado
+    GitHub: https://github.com/Maldo601
+    ----------------------------------------------------------------------------------
+    - Plantejament lògic emprat ... {
+
+        0.- Encapsular el màxim possible en funcions, construir al main. 
+        1.- Agafar números, tractarlos i parsejarlos.
+        2.- Agafar noms, no tractarlos. Suposar que tots són vàlids.
+        3.- Establir un 0 tot el que no sigui de [0-10]
+        4.- Tornar una copia de la terminal a un fitxer de logs ben formatat. 
+        
+    ----------------------------------------------------------------------------------
+    - Testing ... {
+
+        1.- Porta d'entrada try-catchejada segons requeriments.         OK
+        2.- 2 Vectors buclejats en condicio de relació "nom-nota"       OK                                
+        3.- Lectura UTF-8 i impresió / volcat                           OK
+        4.- Logs correctes i formatats                                  OK
+        5.- Escalable                                                   OK
+        6.- Mitjana                                                     X
+        7.- Busqueda per nom                                            X
+           
+    ----------------------------------------------------------------------------------
+    - Problemes ... {
+
+        - La cadena sense espais queda retallat el "llar" final. 
+        - Veure que a les terminals "Nota" queda desplaçat i al logs.txt 
+          queda ben formatat, em posa negre. 
+        
+    ----------------------------------------------------------------------------------
+    - Documentació del Programa ... {
+        
+        1.- validFormat()
+
+            1.1 - 
+            1.2 - 
+            1.3 - 
+            1.4 - 
+            1.4 - 
+            1.5 - 
+            1.6 - 
+
+        2.- extracter()
+
+            2.1 - 
+            2.2 - 
+            2.3 -  
+
+        3.- printer()
+
+            3.1 - 
+
+        4.- logs()
+
+            4.1 - 
+            4.2 - 
+
+        5.- Main()
+
+            - 
+
+*/
 public class C_MesNota {
     static Scanner lect;
     static boolean file = true;
@@ -35,9 +98,8 @@ public class C_MesNota {
         String note = "";
         try(FileReader fr = new FileReader(args[0])){
             BufferedReader bRead = new BufferedReader(fr);
-                while((c = bRead.readLine()) != null){
-                    counter++;
-                }
+                while((c = bRead.readLine()) != null)
+                    counter++;        
         }catch (Exception e) {
             System.out.println("Error per definir 1.");
         }
@@ -62,7 +124,6 @@ public class C_MesNota {
         // System.out.println(Arrays.toString(lec));
     }
     static void printer (Double v[], String lec[], String[] args){
-        // En teoria aqui arriba tot sense errors ja. 
         System.out.printf("%-40s%-2s%-10s\n","Alumne","","Nota");
         System.out.println("---------------------------------------------------------------------------------------");
         for(int i = 0; i < v.length; i++){
@@ -70,10 +131,8 @@ public class C_MesNota {
                 System.out.printf("%-46s%-1.2f\n",lec[i].trim(), v[i]);
         }
     }
-    // Testing d'impresió ( Feature )
     static void logs (String[] args, Double v[], String lec[]){
-        try {
-            PrintWriter writer = new PrintWriter("logs.txt", "UTF-8");
+        try (PrintWriter writer = new PrintWriter("logs.txt", "UTF-8");){
             writer.printf("%-35s%-10s%-40s\n","Alumne","","Nota");
             writer.println("---------------------------------------------------------------");
             for(int i = 0; i < v.length; i++){
@@ -81,8 +140,7 @@ public class C_MesNota {
                     writer.printf("%-45s%-1.2f\n",lec[i].trim(), v[i]);
         }
         writer.println("---------------------------------------------------------------");
-            writer.close();
-        } catch (Exception e) {
+        }catch (Exception e) {
             e.printStackTrace();
         }
     }
