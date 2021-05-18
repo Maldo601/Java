@@ -1,5 +1,4 @@
 package X_LecturaFitxers;
-import java.util.*;
 import java.io.*;
 public class D_Taula {
     public static void main (String[] args){
