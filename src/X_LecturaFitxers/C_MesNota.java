@@ -2,8 +2,7 @@ package X_LecturaFitxers;
 // import java.util.Arrays;
 import java.io.*;
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 
 /* D O C U M E N T A C I O
     Joan Marc Maldonado
