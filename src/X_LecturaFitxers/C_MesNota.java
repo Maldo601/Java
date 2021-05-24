@@ -213,9 +213,8 @@ public class C_MesNota {
                     if(opt.equals("yes"))
                         logs(args, v, lec);
                 }
-        else 
-            
-        System.out.println("Execution time: " + (System.currentTimeMillis() - temps) + " ms.");
+                else 
+                    System.out.println("Execution time: " + (System.currentTimeMillis() - temps) + " ms.");
     }
 }
     
