@@ -1,10 +1,12 @@
 Alumne                                       Nota                                    
 ---------------------------------------------------------------
+Miguel Ángel Rodríguez Porosa                4,45
 José Javier Faro Rodríguez                   10,00
+José Luís Martínez Gutiérrez                 5,72
 Eleuterio Lupiáñez López                     9,00
 Juan Ignacio De Loyola Palacios              6,45
 Julián Muñóz Mateos                          6,50
 ---------------------------------------------------------------
-Mitjana:                                     7,99
+Mitjana:                                     7,02
 Alta:                                        10,00
-Baixa:                                       6,45
+Baixa:                                       4,45
