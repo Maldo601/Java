@@ -11,7 +11,6 @@ public class F_ExerciciClase {
             try (BufferedWriter bw = new BufferedWriter(new FileWriter(f))){
                 for(int i = 0; i <= 50; i++){
                     bw.write(String.format("%-3s", i));
-    
                     if (i%5 == 0){
                         bw.newLine();
                     }
