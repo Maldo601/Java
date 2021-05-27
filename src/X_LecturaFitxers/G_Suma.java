@@ -8,7 +8,7 @@ public class G_Suma {
             BufferedReader bRead = new BufferedReader(fr);
             while((c = bRead.readLine()) != null){
                 note = c;
-                note = note.replaceAll("[a-zA-Z]", "0");
+                note = c.replaceAll("[a-zA-Z]", "0");
                 i += Integer.parseInt(note);
             }       
         }catch(Exception e){
