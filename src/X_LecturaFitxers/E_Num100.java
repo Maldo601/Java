@@ -8,7 +8,7 @@ public class E_Num100 {
                     int x = (int)(Math.random()*100) + 0;
                     bw.write(String.format("%3d\n",x));
                 }
-            }catch (Exception ex) {
+            }catch ( Exception ex ) {
                 System.out.println(ex.getMessage());
         }
     }
