@@ -19,7 +19,7 @@ public class E_Num100 {
                         break;
                 }
             }catch ( Exception ex ) {
-                System.out.println(ex.getMessage());
+                ex.getStackTrace();
         }
         System.out.println("\nImpresos " + counter + " resultats a " + f + " en " + countLines + " files." );
     }
