@@ -10,6 +10,7 @@ public class G_Suma {
                 note = c;
                 note = c.replaceAll("[a-zA-Z]", "0");
                 i += Integer.parseInt(note);
+                System.out.println(i);
             }       
         }catch(Exception e){
             e.getStackTrace();
